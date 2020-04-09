@@ -1,0 +1,264 @@
+/* ==========================================================================
+	Social Connect (sidebar)
+============================================================================= */
+
+	.social_sidebar {
+		border: 1px solid #f1f1f1;
+		padding: 30px 20px;
+
+		@media screen and (min-width: 390px) and (max-width: 499px),
+		(min-width: 600px) and (max-width: 739px),
+		(min-width: 840px) and (max-width: 979px),
+		@min_xl {
+			margin-right: -30px;
+			margin-left: -30px;
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+
+		@media @min_lg @and_max_xl {
+			margin-right: -20px;
+			margin-left: -20px;
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+	}
+
+	.social_sidebar_header {}
+
+	.social_sidebar_heading {
+		.font_size(16);
+
+		&.bold_uppercase {
+			.font_size(16);
+		}
+	}
+
+	.social_sidebar_body {
+		.chaparral_light;
+		.font_size(16);
+		.color_black;
+
+		margin: 14px 0 12px;
+		overflow: hidden;
+	}
+
+	.social_sidebar_item {
+		width: ~"calc(50% - 10px)";
+
+		box-shadow: 0 1px 0 #d4d4d4;
+		float: left;
+
+		@media @min_md @and_max_lg {
+			width: 30%;
+
+			margin-right: 5%;
+		}
+
+		@media @min_lg @and_max_xl {
+			width: auto;
+
+			float: none;
+			margin: 0;
+		}
+
+		&:nth-child(even) {
+			float: right;
+
+			@media @min_md @and_max_lg {
+				float: left;
+			}
+
+			@media @min_lg @and_max_xl {
+				float: none;
+			}
+		}
+
+		&:nth-child(3n + 3) {
+
+			@media @min_md @and_max_lg {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.social_sidebar_link {
+		&:extend(.icon_only_before all);
+
+		.block;
+
+		color: inherit;
+		padding: 14px 2px 10px;
+
+		.no-touchevents &:hover {
+			.color_red;
+		}
+
+		&:before {
+			.relative;
+
+			bottom: -1px;
+
+			margin-right: 10px;
+		}
+	}
+
+	.social_sidebar_link_facebook {
+
+		&:before {
+			&:extend(.icon_facebook);
+		}
+	}
+
+	.social_sidebar_link_twitter {
+
+		&:before {
+			&:extend(.icon_twitter);
+		}
+	}
+
+	.social_sidebar_link_instagram {
+
+		&:before {
+			&:extend(.icon_instagram);
+		}
+	}
+
+	.social_sidebar_link_linkedin {
+
+		&:before {
+			&:extend(.icon_linkedin);
+		}
+	}
+
+	.social_sidebar_link_youtube {
+
+		&:before {
+			&:extend(.icon_youtube);
+		}
+	}
+
+	.social_sidebar_footer {}
+
+	.social_sidebar_footer_link {
+		.color_red;
+
+		.no-touchevents &:hover {
+			.color_black;
+		}
+	}
+
+
+/* ==========================================================================
+	Social Share Links
+============================================================================= */
+
+	.service-links {
+		margin: 20px 0;
+
+		@media @min_md {
+			margin-bottom: 36px;
+		}
+
+		.links {
+			display: inline-block;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			&:after {
+				content: normal;
+				display: none;
+			}
+		}
+
+		li {
+			.chaparral_light;
+			.font_size(16);
+
+			display: inline-block;
+			margin: 0 16px 0 0;
+			padding: 0;
+
+			@media @min_md {
+				margin-right: 20px;
+			}
+
+			.typography & {
+
+				&:before {
+					content: normal;
+					display: none;
+				}
+			}
+
+			&.last {
+				margin-right: 0;
+			}
+		}
+
+		a {
+			&:extend(.icon_only_before all);
+
+			.color_black;
+
+			.no-touchevents &:hover {
+				.color_red;
+			}
+
+			&:before {
+				.relative;
+
+				bottom: -1px;
+
+				margin-right: 6px;
+			}
+		}
+
+		img {
+			display: none;
+		}
+	}
+
+	.service-label {
+		&:extend(.bold_uppercase);
+
+		.color_gray_light;
+
+		margin-bottom: 14px;
+
+		@media @min_sm {
+			display: inline-block;
+			margin: 0 26px 0 0;
+		}
+	}
+
+	.service-links-facebook {
+
+		a {
+
+			&:before {
+				&:extend(.icon_facebook);
+			}
+		}
+	}
+
+	.service-links-twitter {
+
+		a {
+
+			&:before {
+				&:extend(.icon_twitter);
+			}
+		}
+	}
+
+	.service-links-linkedin {
+
+		a {
+
+			&:before {
+				&:extend(.icon_linkedin);
+			}
+		}
+	}

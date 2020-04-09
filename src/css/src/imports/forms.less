@@ -1,0 +1,642 @@
+/* ==========================================================================
+	Forms
+============================================================================= */
+
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	input,
+	textarea {
+		border: none;
+		border-radius: 0;
+		padding: 0;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	input[type=tel],
+	input[type=url],
+	input[type=number],
+	input[type=date] {
+		height: 60px;
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	input[type=tel],
+	input[type=url],
+	input[type=number],
+	input[type=date],
+	textarea {
+		.chaparral_light;
+		.font_size(24);
+
+		border: 1px solid #C4C4C4;
+		outline: none;
+		padding: 16px 20px;
+
+		&::-webkit-input-placeholder {
+			.chaparral_light_italic;
+			.color_gray_light;
+		}
+
+		&:-moz-placeholder {
+			.chaparral_light_italic;
+			.color_gray_light;
+		}
+
+		&::-moz-placeholder {
+			.chaparral_light_italic;
+			.color_gray_light;
+		}
+
+		&:-ms-input-placeholder {
+			.chaparral_light_italic;
+			.color_gray_light;
+		}
+
+		&:focus,
+		&:active {
+			.border_gray;
+		}
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	input[type=tel],
+	input[type=url],
+	textarea {
+		-webkit-appearance:none;
+	}
+
+	input[type=submit],
+	button[type=submit],
+	.styled_form .form_action button {
+		.background_red;
+		.color_white;
+		.trade_gothic_bold;
+		.font_size(13);
+		.uppercase;
+
+		display: inline-block;
+		letter-spacing: 1.62px;
+		padding: 20px 25px;
+		transition: background @base_transition_duration;
+
+		.no-touchevents &:hover {
+			background: darken(@red, 10);
+		}
+	}
+
+	label {
+		&:extend(.section_break_intro);
+	}
+
+
+/* ==========================================================================
+	Web Forms
+============================================================================= */
+
+	.webform, .slate_graduate_form, .slate_undergraduate_form, .salesforce_form {
+
+		.fs-dropdown {
+			margin: 0;
+		}
+
+		.fs-checkbox {
+			margin: 0 0 15px 0;
+		}
+
+		.fs-checkbox-marker {
+			.relative;
+
+			bottom: -6px;
+		}
+
+		.fs-checkbox-label {
+			.font_size(20);
+
+			line-height: 165%;
+		}
+
+		.fs-dropdown-selected {
+			&:extend(.icon_only_after all);
+
+			.trade_gothic_light;
+			.font_size(20);
+			.uppercase;
+			.relative;
+
+			height: auto;
+			min-height: 60px;
+
+			border: 1px solid #c4c4c4;
+			border-radius: 0;
+			color: #525252;
+			line-height: 1.4;
+			padding: 16px 80px 16px 20px;
+
+			&:before {
+				.block;
+
+				width: 60px;
+				height: 100%;
+
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				border-left: 1px solid #c4c4c4;
+				content: "";
+			}
+
+			&:after {
+				&:extend(.icon_down_red);
+
+				right: 20px;
+
+				border: 0;
+				transition: transform @base_transition_duration;
+			}
+		}
+
+		.fs-dropdown-open .fs-dropdown-selected,
+		.fs-dropdown-focus .fs-dropdown-selected {
+			box-shadow: none;
+		}
+
+		.fs-dropdown-open .fs-dropdown-selected {
+			border-radius: 0;
+		}
+
+		.fs-dropdown-open .fs-dropdown-options {
+			border-color: #c4c4c4;
+			border-radius: 0;
+			box-shadow: none;
+		}
+
+		.fs-dropdown-open .fs-dropdown-selected {
+
+			&:after {
+				transform: rotate(180deg);
+			}
+		}
+
+		.fs-dropdown-item {
+			.trade_gothic_light;
+			.font_size(14);
+			.uppercase;
+
+			height: auto;
+			min-height: 40px;
+
+			color: #525252;
+			line-height: 1.4;
+			padding: 10px 20px;
+		}
+
+		.required_messge {
+			.chaparral_light_italic;
+
+			position: absolute;
+			top: 0;
+			right: 20px;
+
+			color: fade(@black, 70);
+
+			@media @min_md {
+				right: 30px;
+			}
+
+			@media @min_lg {
+				right: 50px;
+			}
+
+			p {
+				.chaparral_light_italic;
+
+				color: fade(@black, 70);
+			}
+		}
+
+		.required_star {
+			.color_red;
+		}
+	}
+
+	.webform-container-inline {
+
+		div,
+		div.form-item {
+
+			.fs-dropdown-options {
+				display: none;
+			}
+
+			.fs-dropdown-open {
+
+				.fs-dropdown-options {
+					.block;
+				}
+			}
+		}
+	}
+
+	.webform-client-form,
+	.styled_form {
+		.background_gray_pale;
+		.relative;
+		.margined_md;
+
+		padding: 30px 20px;
+
+		@media @min_md {
+			padding: 40px 30px;
+		}
+
+		@media @min_lg {
+			padding: 60px 50px;
+		}
+	}
+
+	.webform-component-fieldset {
+		margin-bottom: 20px;
+
+		legend {
+			&:extend(.heading_5);
+
+			.block;
+
+			width: 100%;
+
+			border-bottom: 1px solid #e6e6e6;
+			letter-spacing: 1.21px;
+			padding-bottom: 18px;
+
+			@media @min_md {
+				width: 75%;
+			}
+		}
+	}
+
+	.fieldset-legend {}
+
+	.fieldset-wrapper {}
+
+	.webform-layout-box {}
+
+	.layout_split_50 {
+		.contain;
+		.relative;
+
+		.webform-component {
+
+			@media @min_md {
+				width: ~"calc(50% - 15px)";
+
+				float: left;
+			}
+
+			&:last-child {
+
+				@media @min_md {
+					float: right;
+				}
+			}
+		}
+	}
+
+	.webform-component {
+		margin-bottom: 20px;
+
+		input {
+			max-width: 100%;
+
+			&.error {
+				border-color: @red;
+			}
+		}
+
+		textarea {
+			max-width: 100%;
+		}
+
+		label {
+			&:extend(.section_break_intro);
+
+			margin-right: 60px;
+		}
+	}
+
+	.block_input {
+
+		.form-text {
+			width: 100%;
+		}
+
+		textarea {
+			width: 100%;
+		}
+
+		label {
+			.block;
+
+			margin-right: 0;
+			margin-bottom: 8px;
+		}
+	}
+
+	.inline_input {
+		.contain;
+		overflow: visible;
+
+		label {
+
+			@media @min_md {
+				display: inline-block;
+				float: left;
+				margin-top: 34px;
+			}
+		}
+
+		.fs-dropdown {
+			margin: 10px 0;
+
+			@media @min_md {
+				min-width: 300px;
+
+				display: inline-block;
+				float: left;
+				margin: 20px 0;
+			}
+		}
+	}
+
+	.form-required {
+		.color_red;
+	}
+
+	.form-actions {
+		border-top: 3px solid @white;
+		padding-top: 20px;
+
+		@media @min_md {
+			padding-top: 30px;
+		}
+	}
+
+	input.webform-submit {}
+
+	.webform-component-date {
+
+		> label {
+
+			@media @min_md {
+				display: inline-block;
+				float: left;
+				margin-top: 34px;
+				margin-right: 60px;
+			}
+		}
+
+		.webform-container-inline {
+
+			@media @min_md {
+				display: inline-block;
+			}
+		}
+
+		.form-item {
+			margin-bottom: 20px;
+
+			@media @min_md {
+				display: inline-block;
+				margin: 0 10px 0 0;
+			}
+
+			label {
+
+				@media @min_md {
+					display: none;
+				}
+			}
+		}
+
+		.fs-dropdown {
+
+			@media @min_md {
+				display: inline-block;
+				margin: 20px 0;
+			}
+		}
+	}
+
+	.webform-component-radios,
+	.webform-component-checkboxes {
+
+		> label {
+			.block;
+
+			margin-bottom: 10px;
+		}
+	}
+
+	.form-radios,
+	.form-checkboxes {
+
+		label {
+			margin-right: 0;
+		}
+
+		.form-item {
+			margin: 10px 0;
+		}
+	}
+
+	.input_columns {
+
+		.form-radios {
+
+			@media @min_md {
+				.columns(2, 0);
+			}
+		}
+
+		.form-item {
+			display: inline-block;
+		}
+	}
+
+	.webform-calendar {
+		margin-top: 20px;
+	}
+
+	.webform-component-radios {
+
+		div.form-type-radio,
+		div.fs-checkbox-element_wrapper,
+		div.fs-checkbox-radio,
+		div.fs-checkbox-marker,
+		div.fs-checkbox-flag {
+			.block;
+		}
+	}
+
+/* Slate/Salesforce Form Overrides
+============================================================================= */
+
+	.styled_form {
+		form > div {
+			margin: 0 !important; // It's an inline style
+		}
+
+		div.form_question {
+			margin: 0 0 10px 0;
+			padding: 0;
+		}
+
+		.form_action button {
+			margin: 20px 0 0 0;
+		}
+
+		br {
+			display: none;
+		}
+
+		div.form_question.form_radio .form_label {
+			display: block;
+			width: auto;
+	
+			legend {
+				&:extend(.section_break_intro);
+			}
+		}
+	
+		div.form_question.form_layout_table .form_responses {
+			display: block;
+		}
+
+		&.salesforce_form {
+			label {
+				display: block;
+			}
+
+			input {
+				display: block;
+				margin: 0 0 10px 0;
+
+				&[type=text] {
+					width: 100%;
+				}
+
+				&[type=submit] {
+					margin: 20px 0 0 0;
+				}
+			}
+		}
+	}
+
+
+/* Sidebar Form
+============================================================================= */
+
+	.sidebar {
+
+		.webform-client-form,
+		.styled_form {
+			margin-top: 20px;
+
+			padding: 12px 10px 24px;
+		}
+
+		.webform-component {
+
+			input {
+				.font_size(16);
+
+				width: 100%;
+				height: auto;
+
+				padding: 14px;
+			}
+
+			label {
+				margin-right: 0;
+			}
+		}
+
+		.form-item {
+			margin-bottom: 10px;
+
+			> label {
+				.chaparral_light;
+				.font_size(18);
+			}
+		}
+
+		.styled_form .form_label,
+		.styled_form div.form_question.form_radio .form_label legend,
+		.salesforce_form label {
+			.chaparral_light;
+			.font_size(18);
+		}
+
+		.fs-checkbox-label {
+			.font_size(16);
+
+			padding: 3px 0 0 0;
+		}
+
+		.form-actions {
+			border-top-width: 0;
+			padding-top: 0;
+		}
+
+		.webform-submit {
+			width: 100%;
+		}
+
+		.node-webform .fs-dropdown-selected {
+			.font_size(18);
+			.chaparral_light;
+
+			text-transform: none;
+		}
+	}
+
+	.siderbar_form_header {}
+
+	.siderbar_form_heading {
+		.trade_gothic_bold;
+		.font_size(30);
+		.line_height(36, 30);
+		.color_red;
+
+		border-bottom: 1px solid @gray_pale;
+		letter-spacing: 1.28px;
+		margin: 0 0 15px;
+		padding-bottom: 4px;
+		text-transform: uppercase;
+	}
+
+	.siderbar_form_description {
+		.trade_gothic_light;
+		.font_size(16);
+		.line_height(22, 16);
+
+		color: fade(@true_black, 70);
+
+		p {
+			margin: 0;
+		}
+	}

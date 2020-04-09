@@ -1,0 +1,677 @@
+/* ==========================================================================
+	 Events - Common
+============================================================================= */
+
+	.events_item {
+		border-color: fade(@black, 10);
+		border-style: solid;
+		border-width: 0;
+	}
+
+
+/* ==========================================================================
+	 Events List
+============================================================================= */
+
+	.events_list_header {
+		margin-bottom: 10px;
+
+		@media @min_lg {
+			margin-bottom: 30px;
+		}
+	}
+
+	.events_list_heading {}
+
+	.events_list_all {}
+
+	.events_list_section {
+		// padding-top: 40px;
+
+		@media @max_md {
+			border-bottom-width: 0;
+		}
+
+		@media @min_md {
+			// padding-top: 70px;
+		}
+
+		@media @min_lg {
+			// padding-top: 90px;
+		}
+	}
+
+	.events_list_item {
+		padding: 30px 0;
+
+		@media @min_md {
+			padding: 40px 0;
+		}
+	}
+
+	.events_list_item_figure {
+		float: right;
+		margin-left: 15px;
+
+		@media @min_lg {
+			margin-left: 30px;
+		}
+	}
+
+	.events_list_item_picture {}
+
+	.events_list_item_image {}
+
+	.events_list_item_content {}
+
+	.events_list_item_date {}
+
+	.events_list_item_day {
+		&:extend(.article_date);
+
+		margin-right: 6px;
+	}
+
+	.events_list_item_time {
+		&:extend(.light_uppercase);
+
+		.color_gray;
+	}
+
+	.events_list_item_title {
+		&:extend(.article_title_sm);
+
+		margin: 6px 0;
+
+		@media @max_lg {
+			.font_size(18);
+		}
+	}
+
+	.events_list_item_title_link {
+		color: inherit;
+
+		.no-touchevents &:hover {
+			.color_red;
+		}
+	}
+
+	.events_list_item_description {
+		.trade_gothic_light;
+		.font_size(14);
+		.color_gray;
+
+		margin: 10px 0;
+
+		@media @max_lg {
+			display: none;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+
+/* Important Dates
+============================================================================= */
+
+	.dates_section {}
+
+	.dates_header {}
+
+	.dates_list {
+
+		@media @min_lg {
+			margin: 20px 0;
+		}
+	}
+
+	.dates_item {
+
+		@media @max_lg {
+			border-bottom: 1px solid fade(@black, 10);
+			padding: 15px 0;
+		}
+
+		&:last-child {
+
+			@media @max_lg {
+				border-bottom-width: 0;
+			}
+		}
+	}
+
+	.dates_item_link {
+		.block;
+
+		.no-touchevents &:hover {
+
+			.dates_item_date {
+				.color_black;
+			}
+
+			.dates_item_title {
+				.color_red;
+			}
+		}
+	}
+
+	.dates_item_date {
+		&:extend(.article_date);
+
+		margin: 10px 0;
+		transition: color @base_transition_duration;
+	}
+
+	.dates_item_title {
+		&:extend(.callout_body);
+
+		margin: 10px 0;
+		transition: color @base_transition_duration;
+	}
+
+
+/* ==========================================================================
+	 Events List Wide
+============================================================================= */
+
+	.events_list_wide {
+		max-width: 1020px;
+
+		margin-right: auto;
+		margin-left: auto;
+
+		@media @min_xl {
+			max-width: 1272px;
+		}
+	}
+
+	.events_list_wide_day {
+		margin-bottom: 30px;
+
+		@media @min_md {
+			margin-bottom: 60px;
+		}
+	}
+
+	.events_list_day_header {
+
+		@media screen and (min-width: 1060px) and (max-width: 1219px) {
+			margin-left: -50px;
+		}
+
+		@media screen and (min-width: 1312px) {
+			margin-left: -60px;
+		}
+	}
+
+	.events_list_day_date {
+		&:extend(.callout_heading_lg);
+
+		.color_red;
+
+		width: 100%;
+
+		position: relative;
+
+		display: inline-block;
+		margin: 0;
+		overflow: hidden;
+
+		&:after {
+			.background_red;
+
+			height: 1px;
+			width: 100%;
+
+			position: absolute;
+			top: 10px;
+
+			content: "";
+			margin-left: 24px;
+
+			@media @min_lg {
+				top: 14px;
+			}
+		}
+	}
+
+	.events_list_wide_body {}
+
+
+
+	.events_list_wide_item {
+		padding: 30px 0;
+
+		&:nth-child(even) {
+			.background_gray_pale;
+		}
+	}
+
+	.events_list_wide_item_figures {
+
+		.events_list_wide_body .events_list_wide_item & {
+
+			@media @max_md {
+				width: 80px;
+
+				margin: 0 0 10px 15px;
+			}
+		}
+	}
+
+	.events_list_wide_figure {
+
+		@media @min_xl {
+			width: 125px;
+		}
+	}
+
+	.events_list_wide_picture {}
+
+	.events_list_wide_image {}
+
+	.events_list_wide_item_content {
+
+		.events_list_wide_body .events_list_wide_item & {
+
+			@media @max_md {
+				float: none;
+			}
+		}
+	}
+
+	.events_list_wide_item_date {
+		&:extend(.light_uppercase);
+
+		.color_gray;
+
+		line-height: 1.5;
+	}
+
+	.events_list_wide_item_time {
+		&:extend(.icon_only_before all);
+
+		@media @min_sm {
+			margin-right: 10px;
+		}
+
+		&:before {
+			&:extend(.icon_time);
+
+			margin-right: 10px;
+		}
+
+		@media @max_sm {
+			.block;
+		}
+	}
+
+	.events_list_wide_item_cat {
+
+		@media @max_sm {
+			.block;
+		}
+
+		@media @min_sm {
+			margin-left: 8px;
+		}
+	}
+
+	.events_list_wide_item_date_divider {
+
+		&:before {
+
+			@media @min_sm {
+				.background_gray_light;
+				.size(1, 14);
+
+				position: relative;
+				bottom: -2px;
+
+				content: "";
+				display: inline-block;
+			}
+		}
+	}
+
+	.events_list_wide_item_title {
+		.chaparral;
+		.font_size(20);
+		.color_black;
+
+		margin: 10px 0;
+
+		@media @min_md {
+			.font_size(24);
+		}
+	}
+
+	.events_list_wide_item_description {
+		&:extend(.callout_body);
+
+		.color_black_2;
+
+		margin: 10px 0;
+
+		@media @max_md {
+			display: none;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.events_list_wide_item_buttons {
+		margin-top: 14px;
+
+		@media @max_md {
+			margin-bottom: 14px;
+		}
+	}
+
+	.events_list_wide_item_button {
+		&:extend(.link_arrow all);
+
+		margin: 0;
+
+		@media @max_md {
+			.block;
+		}
+	}
+
+	.events_list_wide_item_button_detail {}
+
+	.events_list_wide_item_locations {
+
+		.events_list_wide_body .events_list_wide_item & {
+
+			@media @max_md {
+				float: none;
+			}
+		}
+	}
+
+	.events_list_wide_item_location {
+		padding-bottom: 10px;
+	}
+
+	.events_list_wide_item_location_label {
+		&:extend(.light_uppercase);
+		&:extend(.icon_only_before all);
+
+		.color_gray;
+
+		margin-bottom: 10px;
+		position: relative;
+
+		&:before {
+			&:extend(.icon_pin_gray);
+
+			@media @max_md {
+				margin-right: 10px;
+			}
+
+			@media @min_md {
+				position: absolute;
+				top: 2px;
+				left: -20px;
+			}
+		}
+	}
+
+	.events_list_wide_item_location_data {
+		.trade_gothic_light;
+		.font_size(14);
+
+		.color_black_2;
+
+		margin: 10px 0;
+	}
+
+	.events_list_wide_item_links {
+		border-top: 1px solid @gray_light;
+		padding: 6px 0;
+	}
+
+	.events_list_wide_item_link {
+		.block;
+
+		margin: 10px 0;
+
+		@media @min_sm @and_max_md,
+		@min_lg {
+			display: inline-block;
+			margin-right: 6px;
+		}
+
+		&:last-child {
+
+			@media @min_sm @and_max_md,
+			@min_lg {
+				margin-right: 0;
+			}
+		}
+	}
+
+
+/* ==========================================================================
+	 Calendar Controls
+============================================================================= */
+
+	.calendar_controls {
+		&:extend(.clearfix all);
+
+		border-top-width: 0;
+
+		@media @min_lg {
+			position: relative;
+			margin-right: -50px;
+			margin-left: -50px;
+			padding-right: 50px;
+			padding-left: 50px;
+		}
+
+		@media @min_xl {
+			margin-right: -60px;
+			margin-left: -60px;
+			padding-right: 60px;
+			padding-left: 60px;
+		}
+
+		@media screen and (min-width: 1060px) and (max-width: 1219px),
+		screen and (min-width: 1312px)  {
+			padding-right: 14px;
+			padding-left: 14px;
+		}
+
+		.fs-dropdown-selected {
+
+			@media @min_md {
+				min-width: 240px;
+			}
+		}
+	}
+
+	.calendar_filter_form {
+		&:extend(.clearfix all);
+
+		margin-bottom: 10px;
+
+		@media @min_lg {
+			float: left;
+			margin: 0;
+		}
+	}
+
+	.calendar_filter_fieldset {
+		margin-bottom: 10px;
+
+		@media @min_md {
+			float: left;
+			margin-right: 10px;
+		}
+	}
+
+	.calendar_filter_label {}
+
+	.calendar_filter_select {}
+
+	.calendar_filter_clear {
+		.color_black;
+
+		margin-top: 10px;
+
+		@media @min_md {
+			margin: 14px 0 0 18px;
+		}
+
+		.no-touchevents &:hover {
+			.color_red;
+		}
+	}
+
+	.calendar_controls_link {
+
+		@media @min_lg {
+			float: right;
+			margin-top: 14px;
+		}
+	}
+
+
+/* ==========================================================================
+	 Calendar Detail Header
+============================================================================= */
+
+	.calendar_detail_header {
+		border-bottom: 1px solid #d7d7d7;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+
+	.calendar_detail_header_cat {
+		margin: 8px 0;
+	}
+
+	.calendar_detail_header_info {}
+
+	.calendar_detail_header_date {
+		&:extend(.heading_3);
+
+		.color_red;
+
+		margin: 0;
+
+		@media @max_md {
+			margin: 4px 0;
+		}
+
+		@media @min_md {
+			display: inline-block;
+			margin-right: 20px;
+		}
+	}
+
+	.calendar_detail_header_time {
+		&:extend(.icon_only_before all);
+
+		@media @max_md {
+			.block;
+
+			margin: 8px 0;
+		}
+
+		@media @min_md {
+			display: inline-block;
+			margin-right: 20px;
+		}
+
+		&:before {
+			&:extend(.icon_time_black);
+
+			margin-right: 8px;
+		}
+	}
+
+	.calendar_detail_header_location {
+		&:extend(.icon_only_before all);
+
+		.trade_gothic_light;
+		.font_size(14);
+
+		@media @max_md {
+			margin: 8px 0;
+		}
+
+		@media @min_md {
+			display: inline-block;
+		}
+
+		&:before {
+			&:extend(.icon_pin_black);
+
+			margin-right: 8px;
+		}
+	}
+
+	.calendar_detail_header_title {
+
+		.typography & {
+			.chaparral;
+			.font_size(32);
+
+			line-height: 1.2;
+			margin: 16px 0 26px;
+
+			@media @min_md {
+				.font_size(38);
+			}
+
+			@media @min_xl {
+				.font_size(48);
+			}
+		}
+	}
+
+	.calendar_detail_header_subtitle {
+
+		.typography & {
+			.trade_gothic_light;
+			.font_size(14);
+
+			line-height: 1.4;
+			margin: 10px 0;
+			opacity: 0.83;
+			text-transform: none;
+
+			@media @min_md {
+				.font_size(18);
+			}
+		}
+	}
+
+	.calendar_detail_controls {
+		&:extend(.clearfix all);
+
+		margin-bottom: 15px;
+
+		.service-links {
+
+			@media @min_lg {
+				float: left;
+			}
+		}
+	}
+
+	.calendar_detail_links {
+
+		@media @min_lg {
+			float: left;
+			margin-right: 60px;
+		}
+	}
+
+	.calendar_detail_link {}

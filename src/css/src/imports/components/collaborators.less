@@ -1,0 +1,133 @@
+/* ==========================================================================
+	Collaborators - Common
+============================================================================= */
+.collaborators {
+	background: @gray_pale;
+	
+	padding: 75px 0;
+	
+	.callout_link {
+		margin: 0 0 53px 0;
+	}
+}
+
+.logo_container {
+	@media @min_lg {
+		margin-left: -3%;
+	}
+	
+	@media @min_xl {
+		margin-left: -5%;
+	}
+}
+
+.logo_wrap {
+	padding: 15px 0;
+	border-bottom: 1px solid fade(@black, 30);
+	
+	@media @min_sm {
+		border-bottom: none;
+		min-height: 195px;
+		margin: 10px 7% 10px 0;
+		padding: 0;
+	}
+	
+	@media @min_md {
+		min-height: 220px;
+		margin: 20px 6% 20px 0;
+		border-right: 1px solid fade(@black, 30);
+		
+	}
+	
+	@media @min_lg {
+		
+		margin: 20px 0;
+	}
+
+	a {
+		.block;
+		color: inherit;
+		
+		&:hover {
+			.color_red; 
+		}
+	}
+
+	p {
+		.trade_gothic;
+		.font_size(16);
+		
+		margin: 19px auto 0;
+		
+		@media @min_md @and_max_lg {
+			.font_size(14);
+		}
+		
+		@media @min_lg {
+			max-width: 151px;
+		}
+	}
+}
+
+/* Special Cases for child elements */
+.logo_col {
+	
+	&:last-child {
+		.logo_wrap {
+			border-right: none;
+		}
+	}
+	
+	&:nth-child(-n+2) {
+		.logo_wrap {
+			@media @min_sm @and_max_md {
+				border-bottom: 1px solid fade(@black, 30);
+			}
+		}
+	}
+	
+	&:nth-child(even) {
+		.logo_wrap {
+			@media @min_sm @and_max_md {
+				border-left: 1px solid fade(@black, 30);
+				padding-left: 18%;
+			}
+		}
+	}
+	
+	&:nth-child(2) {
+		.logo_wrap {
+			.relative;
+			&:after {
+				@media @min_sm @and_max_md {
+					content: "";
+					background: @gray_pale;
+					height: 20px;
+					width: 20px;
+					.absolute;
+					bottom: -3px;
+					left: -3px;
+					
+				}
+			}
+		}
+	}
+
+}
+
+/* Logo styling */
+.logo {
+	.relative;
+	background: @white;
+	
+	height: 115px;
+	max-width: 151px;
+	
+	@media @min_lg {
+		margin: 0 auto;
+	}
+	
+	img {
+		.center();
+	}
+}

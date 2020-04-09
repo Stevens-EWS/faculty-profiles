@@ -1,0 +1,65 @@
+/* ==========================================================================
+	Checklist - Common
+============================================================================= */
+
+.print_icon {
+	margin-top: 7px;
+	
+	&:extend(.icon_only_before all);
+	
+	&:before {
+		.relative;
+		top: 3px;
+		left: 0;
+		
+		margin-right: 10px;
+		
+		&:extend(.icon_print); 
+	}
+	
+	&:hover {
+		color: @black;
+	}
+}
+
+.checklist_form {
+	border-bottom: 1px solid @gray_pale;
+	
+	.form-type-checkbox {
+		border-top: 1px solid @gray_pale;
+		padding: 25px 65px 10px 0;
+	}
+	
+	.fs-checkbox-marker {
+		width: 28px;
+		height: 28px;
+		
+		margin: 4px 20px 0 0;
+	}
+	
+	.fs-checkbox-flag {
+		
+		&:before {
+			border-width: 0 4px 4px 0;
+			width: 8px;
+			height: 14px;
+			margin: 4px 0 0 9px;
+			border-color: @gray_pale;
+			transform:
+				rotate(45deg)
+				scale(1);
+		}
+	}
+	
+	.fs-checkbox-checked {
+		
+		.fs-checkbox-flag {
+			
+			&:before {
+				border-color: @red;
+			}
+		}
+	}
+}
+
+

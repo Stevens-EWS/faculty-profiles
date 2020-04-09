@@ -1,0 +1,89 @@
+/* ==========================================================================
+	People
+============================================================================= */
+
+	.people {
+		.margined_lg;
+
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.carousel_controls {
+
+			@media @max_md {
+				display: none;
+			}
+		}
+
+		.fs-carousel-enabled .fs-carousel-item {
+			opacity: 0;
+			transition: opacity @base_transition_duration ease;
+
+			&.fs-carousel-visible {
+				opacity: 1;
+			}
+		}
+
+		&.background_gray_pale {
+			.padded_lg;
+		}
+	}
+
+	/* People Callout
+	============================================================================= */
+
+	.people_callout {
+		margin-right: 30px;
+
+		@media @min_sm {
+			margin-right: 40px;
+		}
+
+		@media @min_md {
+			margin-right: 50px;
+		}
+
+		@media @min_lg {
+			margin-right: 40px;
+		}
+
+		@media @min_xl {
+			margin-right: 50px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.no-touchevents & a:hover {
+
+			.people_callout_name {
+				.color_red;
+				.transition_link;
+			}
+
+			.people_callout_title {
+				.color_black;
+				.transition_link;
+			}
+		}
+	}
+
+	.people_callout_content {
+		.relative;
+		.killFlicker;
+
+		margin-top: 20px;
+	}
+
+	.people_callout_name {
+		.bold_uppercase;
+		.font_size(18);
+		.color_black;
+	}
+
+	.people_callout_title {
+		.chaparral_italic;
+		.font_size(18);
+		.color_red;
+	}

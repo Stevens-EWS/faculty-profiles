@@ -1,0 +1,399 @@
+/* ==========================================================================
+	Homepage Gallery
+============================================================================= */
+
+	.homepage_gallery {
+		.padded_lg_top;
+		.background_gray_pale;
+
+		@media @max_md {
+			padding-bottom: 30px;
+		}
+
+		.component_header {
+			margin-bottom: 10px;
+
+			@media @min_md {
+				text-align: center;
+			}
+		}
+
+		.fs-carousel-enabled {
+
+			.fs-carousel-controls {
+
+				@media @max_md {
+					display: none;
+				}
+			}
+
+			.fs-carousel-pagination {
+				.absolute;
+
+				top: 0;
+
+				@media @min_md {
+					display: none;
+				}
+
+				.fs-carousel-page {
+					.background_white;
+
+					opacity: 0.4;
+
+					&.fs-carousel-active {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.homepage_gallery_buttons {
+		margin-bottom: 15px;
+
+		@media @min_md {
+			text-align: center;
+		}
+	}
+
+	.homepage_gallery_button {
+		.bold_uppercase;
+		.font_size(16);
+		.inline_block;
+		.color_gray;
+
+		border-bottom: 3px solid transparent;
+		line-height: 1;
+		margin: 0 8px 15px 0;
+		padding-bottom: 5px;
+		transition: color @base_transition_duration linear,
+					border @base_transition_duration linear;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@media @min_sm {
+			.font_size(20);
+
+			border-bottom-width: 4px;
+			margin: 0 15px 15px 0;
+		}
+
+		@media @min_md {
+
+		}
+
+		@media @min_lg {
+			.font_size(24);
+
+			border-bottom-width: 5px;
+			margin: 0 15px 20px;
+			padding-bottom: 10px;
+		}
+
+		&.fs-swap-active,
+		.no-touchevents &:hover {
+			.border_red;
+			.color_black;
+		}
+	}
+
+	/* Gallery
+	============================================================================= */
+
+	.homepage_gallery_carousels,
+	.homepage_gallery_carousels_container {
+
+		@media @min_md {
+			width: 100% !important;
+			margin: 0 !important;
+		}
+	}
+
+	.homepage_gallery_carousels_container {
+		.relative;
+	}
+
+	.homepage_gallery_carousel {
+		max-height: 0;
+
+		opacity: 0;
+		visibility: hidden;
+
+		&.fs-carousel-enabled {
+			.absolute;
+
+			transition: opacity @base_transition_duration linear,
+						max-height 0s linear @base_transition_duration,
+						visibility @base_transition_duration linear @base_transition_duration;
+
+			&.fs-swap-active {
+				.relative;
+
+				max-height: 9999px;
+
+				opacity: 1;
+				transition: opacity @base_transition_duration linear @base_transition_duration * 2,
+							max-height 0s linear 0s,
+							visibility @base_transition_duration linear @base_transition_duration * 2;
+				visibility: visible;
+			}
+		}
+	}
+
+	/* Gallery Item
+	============================================================================= */
+
+	.homepage_gallery_item {
+		.relative;
+
+		background: @true_black;
+	}
+
+	.homepage_gallery_item_inner {
+		.full_width;
+
+		padding-top: 66.67%;
+
+		@media @min_lg {
+			padding-top: 56.25%;
+		}
+
+		&:after {
+			.absolute;
+			.full_width;
+			.gradient_vertical(fade(@true_black, 70), fade(@true_black, 0));
+
+			height: 50px;
+
+			top: 0;
+			left: 0;
+			z-index: 1;
+
+			@media @max_md {
+				content: "";
+			}
+
+			.no-cssgradients & {
+				height: 100%;
+
+				background: fade(@true_black, 60);
+			}
+		}
+	}
+
+	.homepage_gallery_item_video_container {
+		.cover();
+
+		z-index: 0;
+
+		.homepage_gallery_item.js-video_embedded & {
+			z-index: 3;
+		}
+
+		.video_frame {
+			.absolute;
+
+			top: 0;
+			left: 0;
+
+			@media @max_lg {
+				padding-bottom: 66.67%;
+			}
+		}
+	}
+
+	.homepage_gallery_item_figure {
+		.cover();
+
+		&:before {
+			.absolute;
+			.full_width;
+			.gradient_vertical(fade(@true_black, 0), fade(@true_black, 100));
+
+			height: 100px;
+
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+
+			content: "";
+
+			.no-cssgradients & {
+				height: 100%;
+
+				background: fade(@true_black, 60);
+			}
+		}
+
+		.image & {
+			.icon_only_after;
+
+			&:after {
+				.icon_stack;
+				.absolute;
+				.inline_block;
+
+				bottom: 20px;
+				left: 20px;
+				z-index: 2;
+
+				content: '';
+
+				pointer-events: none;
+
+				@media @min_md {
+					left: 60px;
+				}
+
+				.js-toggle_active& {
+					.size(30);
+					.color_white;
+					.trade_gothic_bold;
+					.font_size(18);
+
+					background: none;
+					border: 2px solid @white;
+					border-radius: 100%;
+					line-height: 24px;
+					margin-bottom: -7px;
+					margin-left: -8px;
+					content: "\00d7";
+					text-align: center;
+				}
+			}
+
+		}
+
+		.js-video_embed & {
+			cursor: pointer;
+
+			&:after {
+				.absolute;
+				.size(0);
+				.inline_block;
+
+				bottom: 20px;
+				left: 20px;
+				z-index: 2;
+
+				border-top:    8px solid transparent;
+				border-bottom: 8px solid transparent;
+				border-left:   14px solid @white;
+				content: '';
+
+				@media @min_md {
+					left: 60px;
+				}
+			}
+		}
+	}
+
+	.homepage_gallery_item_caption {
+		.cover();
+		.killFlicker;
+
+		z-index: 2;
+
+		transition: background @base_transition_duration linear;
+
+		.js-toggle_active & {
+			background: fade(@black, 85);
+		}
+	}
+
+	.homepage_gallery_item_caption_content {
+		.absolute;
+
+		bottom: 68px;
+
+		cursor: pointer;
+		padding: 30px 30px 12px 60px;
+		transform: translateY(100%);
+		transition: bottom @base_transition_duration ease,
+					transform @base_transition_duration ease;
+
+		@media @min_sm {
+			padding: 30px 30px 30px 60px;
+		}
+
+		@media @min_md {
+			padding: 30px 60px 40px 100px;
+		}
+
+		@media @min_lg {
+			padding: 30px 70px 50px 100px;
+		}
+
+		@media @min_xl {
+			padding: 30px 90px 50px 100px;
+		}
+
+		.js-toggle_active & {
+			bottom: 0;
+
+			transform: translateY(0);
+		}
+	}
+
+	.homepage_gallery_item_caption_label {
+		.bold_uppercase;
+		.color_white;
+		.font_size(16);
+		.relative;
+
+		cursor: pointer;
+		transition: color @base_transition_duration linear;
+
+		&:before {
+			.size(2,25);
+			.block;
+			.absolute;
+
+			top: -2px;
+			left: -15px;
+
+			background: fade(@white, 30);
+			content: "";
+			transition: opacity @base_transition_duration linear;
+		}
+
+		@media @max_sm {
+			visibility: hidden;
+		}
+
+		.js-toggle_active & {
+			.color_gray_light;
+
+			&:before {
+				opacity: 0;
+			}
+		}
+	}
+
+	.homepage_gallery_item_caption_text {
+
+		&,
+		p {
+			.color_white;
+
+			@media @max_sm {
+				.font_size(15);
+			}
+		}
+	}
+
+	.homepage_gallery_item_caption_link {
+		.link_arrow;
+		.color_white;
+
+		.no-touchevents &:hover {
+			color: fade(@white, 50);
+		}
+	}

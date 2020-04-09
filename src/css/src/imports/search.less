@@ -1,0 +1,254 @@
+/* ==========================================================================
+	Search
+============================================================================= */
+
+	.search_results {}
+
+	.search_results_form {
+		.contain;
+
+		max-width: 730px;
+
+		.search_form {
+			.relative;
+
+			width: 100%;
+			max-width: 100%;
+
+			float: left;
+			padding-right: 60px;
+		}
+
+		.search_input {
+			.block;
+			.trade_gothic_light;
+			.font_size(20);
+			.line_height(24, 20);
+
+			width: 100%;
+
+			letter-spacing: 0.28px;
+		}
+
+		.search_submit {
+			&:extend(.icon_only_before all);
+
+			.size(60);
+			.absolute;
+
+			top: 0;
+			right: 0;
+
+			&:before {
+				&:extend(.icon_search_white_lg);
+				.absolute_center();
+			}
+		}
+	}
+
+	.search-form {
+		.contain;
+
+		max-width: 730px;
+
+		> div {}
+
+		.form-wrapper {
+			.relative;
+
+			width: 100%;
+			max-width: 100%;
+
+			float: left;
+			padding-right: 110px;
+		}
+
+		.form-item {
+
+			label {
+				&:extend(.visually_hidden all);
+			}
+
+			input {
+				.block;
+				.trade_gothic_light;
+				.font_size(20);
+				.line_height(24, 20);
+
+				width: 100%;
+
+				letter-spacing: 0.28px;
+			}
+		}
+
+		.form-submit {
+			&:extend(.icon_only_before all);
+
+			.size(110, 60);
+			.absolute;
+
+			top: 0;
+			right: 0;
+
+			&:before {
+				&:extend(.icon_search_white_lg);
+				.absolute_center();
+			}
+		}
+	}
+
+
+
+									// <form class="search-form" action="/search/site/math" method="post" id="search-form" accept-charset="UTF-8">
+									// 	<div>
+									// 		<div class="container-inline form-wrapper" id="edit-basic">
+									// 			<div class="form-item form-type-textfield form-item-keys">
+									// 				<label for="edit-keys">Enter terms </label>
+									// 				<input type="text" id="edit-keys" name="keys" value="math" size="20" maxlength="255" class="form-text">
+									// 			</div>
+									// 			<input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+									// 			<input type="hidden" name="get" value="[]">
+									// 		</div>
+									// 		<input type="hidden" name="form_build_id" value="form-kWVAC8IVzjlpo0v2Qqm9A5P6NJGyhMnwzSz3wqk23kU">
+									// 		<input type="hidden" name="form_id" value="apachesolr_search_custom_page_search_form">
+									// 	</div>
+									// </form>
+
+
+
+	.search_result_message,
+	.search_result_message p {
+		.chaparral_light_italic;
+		.font_size(20);
+		.line_height(28, 20);
+		.color_gray_dark;
+	}
+
+	.search_result_message {
+		margin: 20px 0;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.spelling-suggestions {
+		.chaparral_light_italic;
+		.font_size(20);
+		.line_height(28, 20);
+		.color_gray_dark;
+
+		.form-item {
+
+			dt {}
+
+			strong {
+				font-weight: normal;
+			}
+
+			dd {
+				margin-left: 0;
+			}
+
+			a {
+				border-bottom: 1px solid transparent;
+				color: @red;
+
+				.no-touchevents &:hover {
+					border-bottom-color: @red;
+					color: @black;
+				}
+			}
+		}
+	}
+
+
+/* Search Results
+============================================================================= */
+
+	.search_result {
+		padding: 40px 22px;
+
+		&:nth-child(odd) {
+			.background_gray_pale;
+		}
+
+		@media @min_lg {
+			margin: 0 -60px;
+			padding-right: 60px;
+			padding-left: 60px;
+		}
+	}
+
+	.search_result_content {
+		max-width: 570px;
+
+		@media @min_lg {
+			max-width: 760px;
+		}
+
+		@media @min_xl {
+			max-width: 950px;
+		}
+	}
+
+	.search_result_header {
+		margin-bottom: 10px;
+	}
+
+	.search_result_title {
+		.chaparral_light;
+		.font_size(24);
+		.color_red;
+		.line_height(27, 24);
+
+		a {
+			border-bottom: 1px solid transparent;
+			color: inherit;
+
+			.no-touchevents &:hover {
+				.color_black;
+			}
+		}
+	}
+
+	.search_result_title_link {}
+
+	.search_result_description,
+	.search_result_description p {
+		.trade_gothic_light;
+		.font_size(16);
+		.color_black;
+		.line_height(25, 16);
+	}
+
+	.search_result_description {
+		margin: 0 0 20px 0;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.search_result_footer {}
+
+	.search_result_url {
+		.link_arrow;
+		.trade_gothic_bold;
+		.font_size(14);
+		.color_black;
+		.line_height(17, 14);
+
+		border-bottom: 1px solid transparent;
+		letter-spacing: 0.6px;
+		text-transform: uppercase;
+
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		word-break: break-all;
+		word-break: break-word;
+
+		.no-touchevents &:hover {
+			.color_red;
+		}
+	}

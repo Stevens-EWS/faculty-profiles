@@ -1,0 +1,190 @@
+/* ==========================================================================
+	Topic - Group
+============================================================================= */
+
+	.topic_group {
+		.padded_md;
+		.background_gray_pale;
+	}
+
+	.topic_group_callouts {
+
+	}
+
+
+	/* Callout
+	============================================================================= */
+
+	.topic_group_callout {
+		.background_white;
+		.clearfix;
+	}
+
+	.topic_group_callout_header {
+		padding: 30px;
+
+		@media @min_md {
+			padding: 40px 30px;
+		}
+
+		@media @min_lg {
+			width: 345px;
+
+			float: left;
+			padding: 40px 40px 30px;
+		}
+
+		@media @min_xl {
+			width: 576px;
+
+			padding: 60px 50px;
+		}
+	}
+
+	.topic_group_callout_heading {
+		.callout_heading_lg;
+	}
+
+	.topic_group_callout_text {
+
+		&,
+		&.typography p {
+			.content_body;
+
+			@media @max_md,
+			       @min_lg @and_max_xl {
+				.font_size(18);
+			}
+		}
+	}
+
+	.topic_group_callout_link {
+		.link_arrow;
+	}
+
+
+	/* Carousel
+	============================================================================= */
+
+	.topic_group_carousel_cards {
+
+		@media @min_lg {
+			width: 576px;
+
+			float: right;
+		}
+	}
+
+	.topic_group_carousel {
+
+		&.fs-carousel-enabled {
+			.fs-carousel-controls {
+
+				@media @max_md {
+					display: none;
+				}
+			}
+			.fs-carousel-pagination {
+				.background_gray_pale;
+				margin: 0;
+				padding-top: 20px;
+				padding-bottom: 10px;
+			}
+		}
+	}
+
+
+	/* Carousel Card
+	============================================================================= */
+
+	.topic_group_carousel_card {
+
+		&,
+		.fs-carousel-enabled &.fs-carousel-item {
+
+			@media @min_lg {
+				// min-height: 400px;
+			}
+		}
+	}
+
+	.topic_group_carousel_card_figure {
+		// height: 164px;
+
+		z-index: 1;
+
+		border: 6px solid transparent;
+
+		@media @min_sm {
+			// height: 260px;
+		}
+
+		@media @min_md {
+			// .full_height;
+
+			width: 50%;
+
+			float: left;
+		}
+	}
+
+	.topic_group_carousel_card_image {
+
+	}
+
+	.topic_group_carousel_card_content {
+		.killFlicker;
+
+		padding: 30px;
+
+		@media @min_md {
+			width: 50%;
+
+			float: right;
+			padding: 40px 72px 30px 30px;
+		}
+
+		@media @min_lg {
+			padding: 40px 72px 30px 25px;
+		}
+
+		@media @min_xl {
+			padding: 60px 72px 40px 25px;
+		}
+	}
+
+	.topic_group_carousel_card_heading {
+		.light_uppercase;
+		.font_size(20);
+		.color_white;
+
+		letter-spacing: 0.4px;
+		margin: 0 0 20px;
+	}
+
+	.topic_group_carousel_card_text {
+
+		&,
+		p {
+			.callout_body;
+			.color_white;
+		}
+	}
+
+	.topic_group_carousel_card_link {
+		.link_arrow;
+		.block;
+		.color_white;
+
+		margin-bottom: 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.no-touchevents &:hover {
+			.color_white;
+
+			opacity: 0.5;
+		}
+	}

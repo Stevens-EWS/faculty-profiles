@@ -1,0 +1,56 @@
+/* ==========================================================================
+	 Multi-Column List
+============================================================================= */
+
+	.multi_column_list {
+		border: 6px solid @gray_light;
+	}
+
+	.multi_column_list_heading {
+		margin: 0 0 25px;
+	}
+
+	.multi_column_list_container {
+		padding: 30px;
+
+		@media @min_lg {
+			padding: 30px 40px;
+		}
+	}
+
+	.multi_column_list_items {
+
+		.typography & {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media @min_sm {
+			.columns(2, 10px);
+		}
+
+		@media @min_lg {
+			.columns(3, 10px);
+		}
+	}
+
+	.multi_column_list_item {
+		.typography & {
+			.bold_uppercase;
+			.full_width;
+
+			border-top: 1px solid #E6E6E6;
+			display: inline-block;
+			margin: 0;
+			padding-top: 10px;
+			padding-bottom: 20px;
+			padding-left: 15px;
+
+			&:before {
+				.size(4);
+
+				margin-top: 9px;
+				margin-left: -15px;
+			}
+		}
+	}

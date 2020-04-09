@@ -1,0 +1,177 @@
+/* ==========================================================================
+	Page Header Program
+============================================================================= */
+
+	.page_header_program {
+
+		.fs-cell {
+			.relative;
+		}
+	}
+
+	.school_heading {
+		.trade_gothic_light;
+		.font_size(14);
+		.uppercase;
+
+		color: #777;
+		line-height: 1;
+	}
+
+
+	/* Page Header Program Bar
+	============================================================================= */
+
+	.page_header_program_bar {
+		.clearfix;
+
+		@media @min_sm {
+			.absolute;
+
+			right: 20px;
+			bottom: 0;
+			left: 20px;
+		}
+
+		@media @min_md {
+			.absolute;
+
+			right: 20px;
+			bottom: 20px;
+			left: auto;
+		}
+
+		@media @min_lg {
+			right: 0;
+		}
+	}
+
+	.page_header_program_bar_inner {
+		.inline_block;
+		.full_width;
+
+		@media @min_md {
+			width: auto;
+			height: 100px;
+		}
+	}
+
+	.page_header_program_bar_availability {
+		.full_width;
+
+		background: @black;
+		padding: 0 20px;
+
+		@media @min_sm {
+			height: 80px;
+
+			background: fade(@true_black, 80);
+		}
+
+		@media @min_md {
+			width: auto;
+			height: 100px;
+
+			float: left;
+			padding: 0 40px;
+		}
+	}
+
+	.page_header_program_bar_offerings {
+		padding: 17px 0px;
+
+		@media @min_md {
+			padding: 27px 0px;
+		}
+
+		@media @min_lg {
+			padding: 0;
+		}
+
+		> span {
+			.color_white;
+
+			@media @min_lg {
+				line-height: 100px;
+			}
+		}
+	}
+
+	.page_header_program_bar_label {
+		.light_uppercase;
+		.block;
+
+		margin-bottom: 10px;
+
+		@media @max_lg {
+			margin-right: 0;
+		}
+
+		@media @min_lg {
+			.inline_block;
+
+			margin-right: 25px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.page_header_program_bar_link {
+		.inline_block;
+		.bold_uppercase;
+		.icon_only_before;
+		.icon_left;
+
+		margin-right: 25px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.on-campus {
+
+			&:before {
+				.icon_pin_red;
+			}
+		}
+
+		&.online {
+
+			&:before {
+				.icon_pointer;
+			}
+		}
+
+		&.corporate {
+
+			&:before {
+				.icon_briefcase;
+			}
+		}
+	}
+
+	.page_header_program_bar_button {
+		width: 100%;
+
+		margin: 0;
+
+		@media @min_md {
+			width: auto;
+
+			float: right;
+		}
+
+		@media @min_lg {
+			width: 305px;
+		}
+	}
+
+
+	/* Page Header Program Image
+	============================================================================= */
+
+	.page_header_program_figure {
+
+	}

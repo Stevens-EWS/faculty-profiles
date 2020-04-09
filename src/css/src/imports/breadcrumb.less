@@ -1,0 +1,44 @@
+/* ==========================================================================
+	Breadcrumb
+============================================================================= */
+
+	.breadcrumb {
+		padding: 20px 0 30px;
+
+		@media @max_md {
+			display: none;
+		}
+	}
+
+	.breadcrumb_item {
+		.light_uppercase;
+		.color_black;
+	}
+
+	.breadcrumb_link {
+		.color_gray;
+
+		.no-touchevents &:hover {
+			.color_red;
+		}
+
+		&:after {
+			.color_gray_light;
+
+			content: "–";
+			margin: 0 14px;
+			pointer-events: none;
+		}
+
+		&.home {
+			.icon_only_before;
+			.icon_left;
+
+			&:before {
+				.icon_home;
+
+				margin-top: -4px;
+				vertical-align: middle;
+			}
+		}
+	}

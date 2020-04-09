@@ -1,0 +1,93 @@
+/* ==========================================================================
+	Announcement | Inherits from .callout in components.less
+============================================================================= */
+
+	.announcement_callout {
+		.background_cyan;
+
+		border: 6px solid @cyan;
+
+		&.bordered {
+			.background_white;
+		}
+	}
+
+	.announcement_container {
+		.icon_only_before;
+
+		padding: 70px 30px 30px;
+
+		@media @min_md {
+			padding: 30px 40px;
+		}
+
+		@media @min_lg {
+			padding: 40px;
+		}
+
+		@media @min_xl {
+			padding: 40px 50px;
+		}
+
+		&:before,
+		&:after {
+			.block;
+			.absolute;
+		}
+
+		&:before {
+			.icon_info_circle_white;
+
+			top: 13px;
+			left: 13px;
+			z-index: 1;
+
+			@media @min_md {
+				top: 7px;
+				left: -37px;
+			}
+		}
+
+		&:after {
+			.size(44);
+			.background_cyan;
+
+			top: 0;
+			left: 0;
+
+			content: "";
+
+			@media @min_md {
+				top: -6px;
+				left: -50px;
+			}
+		}
+	}
+
+	.announcement_heading {
+		.article_title_lg;
+
+		&:after {
+			.block;
+			.size(44,1);
+			.background_gray_dark;
+
+			content: "";
+			margin-top: 13px;
+		}
+	}
+
+	.announcement_content {
+
+	}
+
+	.announcement_link {
+
+		.no-touchevents &:hover {
+			.color_white;
+		}
+
+		.no-touchevents .announcement_callout.bordered &:hover {
+			.color_teal;
+		}
+	}

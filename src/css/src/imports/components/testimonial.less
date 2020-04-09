@@ -1,0 +1,138 @@
+/* ==========================================================================
+	Testimonial
+============================================================================= */
+
+	.testimonial {
+		.padded_lg;
+		.background_gray_pale;
+
+		.carousel_controls {
+
+			@media @max_md {
+				display: none;
+			}
+		}
+	}
+
+	.testimonial_carousel {
+
+		&.fs-carousel-enabled {
+			position: static;
+
+			.fs-carousel-viewport,
+			.fs-carousel-wrapper,
+			.fs-carousel-container,
+			.fs-carousel-canister {
+				position: static;
+			}
+		}
+	}
+
+	.testimonial_callouts {
+		.relative;
+	}
+
+	/* Testimonial Callout
+	============================================================================= */
+
+	.testimonial_callout {
+
+		@media @min_md {
+			height: 350px;
+		}
+	}
+
+	.testimonial_callout_container {
+
+		@media @min_md {
+			height: 350px;
+		}
+	}
+
+	.testimonial_callout_figure {
+
+		@media @min_md {
+			.size(350);
+
+			float: left;
+		}
+	}
+
+	.testimonial_callout_image {
+
+	}
+
+	.testimonial_callout_content {
+		.relative;
+		.killFlicker;
+
+		padding: 35px;
+
+		@media @min_md {
+			.contain;
+
+			height: 350px;
+
+			padding: 40px;
+		}
+
+		@media @min_lg {
+			padding: 50px;
+		}
+
+		@media @min_xl {
+			padding: 65px;
+		}
+	}
+
+	.testimonial_callout_heading {
+		.callout_heading_lg;
+		.color_white;
+		.font_size(20);
+	}
+
+	.testimonial_callout_quote {
+		.chaparral_light_italic;
+		.font_size(20);
+		.color_white;
+
+		margin: 20px 0;
+
+		@media @min_lg {
+			.font_size(24);
+		}
+
+		@media @min_xl {
+			.font_size(26);
+		}
+	}
+
+	.testimonial_callout_name {
+		.light_uppercase;
+		.color_white;
+	}
+
+	.testimonial_callout_link {
+		.link_arrow;
+		.color_white;
+
+		margin-top: 20px;
+
+		@media @min_md {
+			.absolute;
+
+			bottom: 35px;
+		}
+
+		@media @min_lg {
+		}
+
+		@media @min_xl {
+		}
+
+		.no-touchevents &:hover {
+			.color_white;
+
+			opacity: 0.5;
+		}
+	}

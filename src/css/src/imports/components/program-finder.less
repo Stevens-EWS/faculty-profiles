@@ -1,0 +1,407 @@
+/* ==========================================================================
+	Program Finder
+============================================================================= */
+
+	.program_finder {
+		.padded_lg;
+		.gradient_vertical(@white, @gray_pale);
+
+		border-top: 1px solid @gray_pale;
+
+		.component_header {
+
+			@media @max_md {
+				margin-bottom: 0;
+			}
+		}
+
+		.component_text {
+
+			@media @min_lg {
+				.font_size(30);
+			}
+		}
+
+		.fs-carousel-controls {
+
+			@media @max_md {
+				display: none;
+			}
+		}
+
+		.fs-carousel-control {
+			top: 109px;
+			bottom: auto;
+
+			@media @min_sm {
+				top: 81px;
+			}
+
+			@media @min_md {
+				top: 125px;
+			}
+
+			@media @min_lg {
+				top: 75px;
+			}
+
+			@media @min_xl {
+				top: 94px;
+			}
+		}
+
+		.fs-carousel-enabled {
+			.fs-carousel-item {
+				opacity: 0;
+				transition: opacity @base_transition_duration ease;
+
+				&.fs-carousel-visible {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.program_finder_form {
+		margin-bottom: 30px;
+
+		@media @min_lg {
+			padding-left: 40px;
+		}
+
+		@media @min_xl {
+			padding-left: 50px;
+		}
+
+		fieldset {
+			.relative;
+		}
+	}
+
+	.program_finder_search_input {
+		.full_width;
+	}
+
+	button.program_finder_search_submit {
+		.size(60);
+		.text_indent(60);
+		.icon_center;
+		.absolute;
+
+		top: 0;
+		right: 0;
+		z-index: 1;
+
+		background-color: transparent;
+		padding: 0;
+
+		&:after {
+			.icon_search_red_lg;
+		}
+
+		.no-touchevents &:hover {
+			background-color: transparent;
+
+			&:after {
+				opacity: 0.65;
+			}
+		}
+	}
+
+	.program_finder_link {
+		.link_arrow;
+		.color_red;
+
+		@media @max_md {
+			margin-bottom: 40px;
+		}
+
+		@media @min_md {
+			float: right;
+		}
+
+		.no-touchevents &:hover {
+			.color_black;
+		}
+	}
+
+	.program_finder_results {
+		.relative;
+	}
+
+	.program_finder_results_header {
+		padding-bottom: 25px;
+	}
+
+	.program_finder_results_message {
+		.relative;
+		.contain;
+
+		z-index: 1;
+
+		p {
+			.color_gray;
+
+			margin: 0;
+
+			&:after {
+				.full_width;
+				.absolute;
+
+				height: 3px;
+
+				top: 15px;
+				z-index: -1;
+
+				background: #D8D8D8;
+
+				@media @min_md {
+					content: "";
+				}
+			}
+		}
+
+		a {
+			border: none !important;
+
+			.no-touchevents &:hover {
+				.color_black;
+			}
+		}
+
+		.inner {
+			@media @min_md {
+
+				padding-right: 10px;
+			}
+		}
+	}
+
+	.program_finder_carousel {
+		.relative;
+		min-height: 254px;
+	}
+
+
+	/* Blocks
+	============================================================================= */
+
+	.program_finder_block,
+	.program_finder_block_empty {
+		margin-right: 30px;
+
+		@media @min_lg {
+			margin-right: 40px;
+		}
+
+		@media @min_xl {
+			margin-right: 50px;
+		}
+
+		&:last-child {
+			// margin-right: 0;
+		}
+	}
+
+	.program_finder_block {
+		.killFlicker;
+
+		.no-touchevents &:hover .program_finder_block_name {
+			.color_red;
+		}
+	}
+
+	.program_finder_block_name {
+		.chaparral_light;
+		.font_size(24);
+		.color_black;
+
+		margin: 10px 0 6px;
+		transition: color @base_transition_duration linear;
+	}
+
+	.program_finder_block_type {
+		.trade_gothic;
+		.font_size(16);
+		.color_gray;
+	}
+
+	.program_finder_block_figure {
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.program_finder_block_empty_inner {
+		width: 100%;
+		height: 218px;
+
+		background: #EDEDED;
+
+		@media @min_sm {
+			height: 163px;
+		}
+
+		@media @min_md {
+			height: 250px;
+		}
+
+		@media @min_lg {
+			height: 151px;
+		}
+
+		@media @min_xl {
+			height: 189px;
+		}
+
+		.no_results & {
+			.background_red;
+			.relative;
+
+			padding: 20px;
+
+			@media @min_md @and_max_lg,
+			@min_xl {
+					padding: 30px 20px;
+			}
+		}
+	}
+
+	.program_finder_block_empty_heading {
+		.bold_uppercase;
+		.font_size(20);
+		.color_white;
+		.font_smoothing;
+
+		margin-bottom: 20px;
+
+		@media @max_sm,
+		@min_md @and_max_lg,
+		@min_xl {
+			.font_size(24);
+		}
+	}
+
+	.program_finder_block_empty_link {
+		.link_arrow;
+		.color_white;
+		.absolute;
+
+		right: 20px;
+		bottom: 25px;
+		left: 20px;
+
+		.no-touchevents &:hover {
+			.color_white;
+
+			opacity: 0.5;
+		}
+	}
+
+
+/* ==========================================================================
+	Program Finder - Homepage
+============================================================================= */
+
+	.program_finder_homepage {
+		.padded_md_top;
+
+		border-top: none;
+
+		.program_finder_form {
+			clear: both;
+			margin-bottom: 40px;
+		}
+	}
+
+	.program_finder_form_buttons {
+		.clearfix;
+
+		margin-bottom: 25px;
+
+		@media @min_lg {
+			float: right;
+			text-align: right;
+		}
+	}
+
+	.program_finder_form_button {
+		.bold_uppercase;
+		.font_size(20);
+		.inline_block;
+		.color_gray;
+
+		border-bottom: 3px solid transparent;
+		line-height: 1;
+		margin-right: 15px;
+		margin-bottom: 15px;
+		padding-bottom: 5px;
+		transition: color @base_transition_duration linear,
+					border @base_transition_duration linear;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@media @min_sm {
+			margin-bottom: 0;
+		}
+
+		@media @min_md {
+			.font_size(24);
+
+			border-bottom-width: 5px;
+			float: right;
+			margin-right: 0;
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+		}
+
+		@media @min_lg {
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+		@media @min_xl {
+			float: none;
+			margin-bottom: 0;
+			margin-left: 20px;
+		}
+
+		&.fs-swap-active,
+		.no-touchevents &:hover {
+			.border_red;
+			.color_black;
+		}
+	}
+
+	.program_finder_homepage_link {
+		.link_arrow;
+		.color_gray;
+		.relative;
+
+		display: none;
+		margin-right: 0;
+
+		@media @max_lg {
+			margin-bottom: 20px;
+		}
+
+		@media @min_lg {
+
+			z-index: 2;
+
+			float: right;
+			margin-top: 7px;
+			margin-bottom: 0;
+			padding-left: 10px;
+		}
+
+		&.fs-swap-active {
+			.inline_block;
+		}
+	}

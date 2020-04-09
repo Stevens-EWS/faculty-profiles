@@ -1,0 +1,109 @@
+/* ==========================================================================
+	Accordion - Common
+============================================================================= */
+
+.accordion_list {
+	border-bottom: 1px solid fade(@black, 10);
+}
+
+.accordion_item {
+	.fs-swap-target {
+		display: none;
+	}
+
+	.fs-swap-active {
+		.block;
+
+		&.acc_q {
+			&:after {
+				transform: rotate(0deg);
+			}
+		}
+	}
+
+	a {
+		.color_red;
+
+		border-bottom: 1px solid transparent;
+
+		.no-touchevents &:hover {
+			.border_red;
+		}
+	}
+}
+
+.acc_wrap {
+	.relative;
+	border-top: 1px solid fade(@black, 10);
+	padding-bottom: 25px;
+}
+
+.acc_q {
+
+	&:after,
+	&:before {
+		.absolute;
+		top: 0;
+		right: 0;
+
+		height: 42px;
+		width: 42px;
+
+		cursor: pointer;
+	}
+
+	&:before {
+		border: 1px solid fade(@black, 10);
+		border-top: none;
+		content: "";
+	}
+
+	&:after {
+		color: @red;
+		content: "\02c6";
+		font-size: 52px;
+		text-align: center;
+		transform: rotate(180deg);
+		transition-duration: 0.35s;
+		transition-timing-function: ease;
+	}
+
+	&:hover {
+
+		&:after {
+			background: @red;
+			color: @white;
+		}
+	}
+
+	&.fs-swap-active {
+		&:hover {
+			&:after {
+				background: none;
+				color: @red;
+			}
+		}
+	}
+
+	.directory_heading {
+		padding-right: 60px;
+		padding-top: 29px;
+		cursor: pointer;
+
+		&:hover {
+			color: @red;
+		}
+	}
+}
+
+.acc_a {
+	padding-bottom: 28px;
+
+	@media @min_lg {
+		max-width: 750px;
+	}
+
+	.callout_link {
+		margin-top: 5px;
+	}
+}

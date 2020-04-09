@@ -1,0 +1,83 @@
+/* ==========================================================================
+	Style Guide
+============================================================================= */
+
+	/* Imports
+	============================================================================= */
+	
+	@import "setup.less";
+	@import "imports/type.less";
+	@import "imports/base.less";
+
+
+	/* Base
+	============================================================================= */
+
+	.sg_heading {
+		&,
+		.typography & {
+
+			&,
+			&:first-child,
+			&:last-child {
+				margin: 0 0 15px;
+
+				@media @min_md {
+					margin: 0 0 30px;
+				}
+			}
+		}
+	}
+
+	.sg_subheading {
+		&,
+		.typography & {
+
+			&,
+			&:first-child,
+			&:last-child {
+				margin: 15px 0;
+
+				@media @min_md {
+					margin: 30px 0;
+				}
+			}
+		}
+	}
+	
+
+	/* Color Blocks
+	============================================================================= */
+
+	.color_block_cell {
+		.margined;
+	}
+
+	.color_block {
+		position: relative;
+
+		padding-top: 30%;
+
+		@media @min_sm {
+			padding-top: 100%;
+			
+			&.slim {
+				padding-top: 50%;
+			}
+		}
+
+		.content {
+			.light_uppercase;
+			.absolute;
+			
+			top: 0;
+			left: 0;
+			z-index: 1;
+
+			padding: 15px;
+
+			@media @min_md {
+				padding: 20px 25px;
+			}
+		}
+	}

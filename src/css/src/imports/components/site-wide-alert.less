@@ -1,0 +1,63 @@
+/* ==========================================================================
+	Site Wide Alert - Common
+============================================================================= */
+.site_wide_alert_container {
+	.relative;
+
+	background: @black;
+
+	text-align: center;
+
+	&.js-toggle_active {
+		.hide;
+	}
+
+	.close_wrap {
+		.absolute;
+		.background_red;
+
+		height: 50px;
+		width: 45px;
+
+		top: 0;
+		right: 0;
+
+		transition: background @base_transition_duration;
+
+		.alert_close {
+			.font_size(40);
+
+			color: @white;
+			font-weight: bold;
+			line-height: 45px;
+		}
+
+		.no-touchevents &:hover {
+			background: darken(@red, 10);
+		}
+	}
+}
+
+.site_wide_alert {
+	padding: 40px 0;
+
+	.directory_heading {
+		color: @white;
+
+		margin-top: 10px;
+		
+		p {
+			margin: 0;
+		}
+	}
+
+	a {
+		color: @white;
+
+		text-decoration: underline;
+
+		.no-touchevents &:hover {
+			color: @red;
+		}
+	}
+}

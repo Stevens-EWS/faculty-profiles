@@ -1,0 +1,381 @@
+/* ==================================================================
+	Base Icons
+================================================================== */
+
+	.icon_only {
+
+		.icon_text {
+			.hide;
+		}
+	}
+
+	.icon_only_before {
+
+		&:before {
+			.icon_sprite();
+
+			content: "";
+			display: inline-block;
+		}
+	}
+
+	.icon_only_after {
+
+		&:after {
+			.icon_sprite();
+
+			content: "";
+			display: inline-block;
+		}
+	}
+
+
+	.icon_left {
+
+		&:before {
+			margin-right: 10px;
+		}
+	}
+
+	.icon_right {
+
+		&:after {
+			margin-left: 10px;
+		}
+	}
+
+	.icon_center {
+		position: relative;
+
+		display: block;
+		line-height: 1;
+		overflow: hidden;
+		text-indent: 100%;
+
+		&:after {
+			.icon_sprite();
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			display: block;
+			content: '';
+			margin: auto;
+		}
+	}
+
+
+/* ==================================================================
+   Icons
+================================================================== */
+
+	/* 11x11 Icons
+	============================================================================= */
+
+	.icon_pointer,
+	.icon_briefcase,
+	.icon_pin_red,
+	.icon_pin_gray,
+	.icon_pin_black,
+	.icon_time,
+	.icon_time_black {
+		.size(11);
+	}
+
+	.icon_pointer {
+		background-position: -400px 0;
+	}
+
+	.icon_briefcase {
+		background-position: -411px 0;
+	}
+
+	.icon_pin_red {
+		background-position: -422px 0;
+	}
+
+	.icon_pin_gray {
+		background-position: -433px 0;
+	}
+
+	.icon_pin_black {
+		background-position: -456px 0;
+	}
+
+	.icon_time {
+		background-position: -444px 0;
+	}
+
+	.icon_time_black {
+		background-position: -470px 0;
+	}
+
+
+	/* 14x14 Icons
+	============================================================================= */
+
+	.icon_facebook,
+	.icon_facebook_red,
+	.icon_twitter,
+	.icon_twitter_red,
+	.icon_instagram,
+	.icon_instagram_red,
+	.icon_linkedin,
+	.icon_linkedin_red,
+	.icon_youtube,
+	.icon_youtube_red,
+	.icon_reply_gold,
+	.icon_reply_white,
+	.icon_retweet_gold,
+	.icon_retweet_white,
+	.icon_favorite_gold,
+	.icon_favorite_white,
+	.icon_search_red,
+	.icon_search_black,
+	.icon_list_red,
+	.icon_list_white,
+	.icon_calendar,
+	.icon_stack,
+	.icon_pencil,
+	.icon_mail,
+	.icon_mobile,
+	.icon_refresh,
+	.icon_people,
+	.icon_heart,
+	.icon_lock_red,
+	.icon_lock_white,
+	.icon_link,
+	.icon_info_circle_red,
+	.icon_home {
+		.size(14);
+	}
+
+	/* Social Media */
+
+	.icon_facebook {
+		background-position: -320px -60px;
+	}
+
+	.icon_facebook_red {
+		background-position: -320px -40px;
+	}
+
+	.icon_twitter {
+		background-position: -334px -60px;
+	}
+
+	.icon_twitter_red {
+		background-position: -334px -40px;
+	}
+
+	.icon_instagram {
+		background-position: -348px -60px;
+	}
+
+	.icon_instagram_red {
+		background-position: -348px -40px;
+	}
+
+	.icon_linkedin {
+		background-position: -362px -60px;
+	}
+
+	.icon_linkedin_red {
+		background-position: -362px -40px;
+	}
+
+	.icon_youtube {
+		background-position: -376px -60px;
+	}
+
+	.icon_youtube_red {
+		background-position: -376px -40px;
+	}
+
+
+	/* Twitter Intents */
+
+	.icon_reply_gold {
+		background-position: -442px -40px;
+	}
+
+	.icon_reply_white {
+		background-position: -442px -60px;
+	}
+
+	.icon_retweet_gold {
+		background-position: -456px -40px;
+	}
+
+	.icon_retweet_white {
+		background-position: -456px -60px;
+	}
+
+	.icon_favorite_gold {
+		background-position: -470px -40px;
+	}
+
+	.icon_favorite_white {
+		background-position: -470px -60px;
+	}
+
+
+	/* Search */
+
+	.icon_search_red {
+		background-position: -400px -40px;
+	}
+
+	.icon_search_black {
+		background-position: -400px -60px;
+	}
+
+
+	/* List */
+
+	.icon_list_red {
+		background-position: -414px -40px;
+	}
+
+	.icon_list_white {
+		background-position: -414px -60px;
+	}
+
+
+	/* Other */
+
+	.icon_calendar {
+		background-position: -428px -40px;
+	}
+
+	.icon_stack {
+		background-position: -428px -60px;
+	}
+
+	.icon_pencil {
+		background-position: -320px -80px;
+	}
+
+	.icon_mail {
+		background-position: -334px -80px;
+	}
+
+	.icon_mobile {
+		background-position: -348px -80px;
+	}
+
+	.icon_refresh {
+		background-position: -362px -80px;
+	}
+
+	.icon_people {
+		background-position: -376px -80px;
+	}
+
+	.icon_heart {
+		background-position: -390px -80px;
+	}
+
+	.icon_lock_red {
+		background-position: -404px -80px;
+	}
+
+	.icon_lock_white {
+		background-position: -404px -100px;
+	}
+
+	.icon_link {
+		background-position: -418px -80px;
+	}
+
+	.icon_info_circle_red {
+		background-position: -432px -80px;
+	}
+
+	.icon_home {
+		background-position: -446px -80px;
+	}
+
+
+	/* 16x16 Icons
+	============================================================================= */
+
+	.icon_facebook_white,
+	.icon_twitter_white,
+	.icon_instagram_white,
+	.icon_linkedin_white,
+	.icon_youtube_white,
+	.icon_expand,
+	.icon_print {
+		.size(16);
+	}
+
+	.icon_facebook_white {
+		background-position: -320px -20px;
+	}
+
+	.icon_twitter_white {
+		background-position: -336px -20px;
+	}
+
+	.icon_instagram_white {
+		background-position: -352px -20px;
+	}
+
+	.icon_linkedin_white {
+		background-position: -368px -20px;
+	}
+
+	.icon_youtube_white {
+		background-position: -384px -20px;
+	}
+
+	.icon_expand {
+		background-position: -400px -20px;
+	}
+
+	.icon_print {
+		background-position: -376px 0;
+	}
+
+	/* 18x18 Icons
+	============================================================================= */
+
+	.icon_search_red_lg,
+	.icon_search_white_lg,
+	.icon_info_circle_white {
+		.size(18);
+	}
+
+	/* Header Search Icon */
+
+	.icon_search_header {
+		background: url(../images/icon_search.png) no-repeat center center;
+
+		.svg & {
+			background-image: url(../images/icon_search.svg);
+		}
+	}
+
+	/* Other */
+
+	.icon_search_red_lg {
+		background-position: -320px 0;
+	}
+	
+	.icon_search_white_lg { 
+		background-position: -356px 0;
+	}
+
+	.icon_info_circle_white {
+		background-position: -338px 0;
+	}
+
+	.icon_down_red {
+		.size(18, 11);
+
+		background-position: -320px -100px;
+	}

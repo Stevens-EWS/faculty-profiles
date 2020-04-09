@@ -1,0 +1,246 @@
+/* ==========================================================================
+	Page Header Admissions
+============================================================================= */
+
+	.page_header_admissions {
+		.clearfix;
+		.relative;
+
+		z-index: 1;
+
+		.fs-carousel-controls .fs-carousel-control {
+
+			@media @max_md {
+				top: 150px;
+				bottom: auto;
+			}
+		}
+	}
+
+	/* Content
+	============================================================================= */
+
+	.page_header_admissions_content {
+		.relative;
+		.killFlicker;
+
+		z-index: 2;
+		
+		padding: 30px;
+
+		@media @min_sm {
+			padding: 40px;
+		}
+
+		@media @min_md {
+			width: 50%;
+
+			float: right;
+
+			padding: 40px 30px;
+		}
+
+		@media @min_lg {
+			padding: 40px 30px;
+		}
+
+		@media @min_xl {
+			min-height: 480px;
+
+			padding: 55px 40px;
+		}
+	}
+
+	.page_header_admissions_content_inner {
+
+		@media @min_xl {
+			// max-width: 540px;
+		}
+	}
+
+	.page_header_admissions_heading {
+		.light_uppercase;
+		.color_gray_light;
+
+		margin: 0 0 20px;
+	}
+
+	.page_header_admissions_buttons {
+		.clearfix;
+
+		@media @min_sm @and_max_md,
+		@min_lg {
+			margin-right: -1%;
+			margin-left: -1%;
+		}
+
+		@media @min_lg {
+			
+		}
+	}
+
+	.page_header_admissions_button {
+
+		@media @max_xl {
+			.link_button_sm;
+			.block;
+
+			margin: 0 0 10px;
+		}
+
+		@media @min_sm @and_max_md {
+			padding: 0 14px;
+		}
+
+		@media @min_sm @and_max_md,
+		@min_lg {
+			width: 48%;
+
+			float: left;
+			margin: 0 1% 2%;
+		}
+
+		@media @min_xl {
+			.link_button_lg;
+			.block;
+
+			margin: 0 1% 2%;
+		}
+
+		@media @min_xl and (max-width: 1450px) {
+			.font_size(19);
+
+			padding: 0 20px;
+		}
+	}
+
+	.page_header_admissions_links {
+		.clearfix;
+
+		overflow: hidden;
+		padding-top: 30px;
+
+		@media @min_sm @and_max_md,
+		@min_lg {
+			margin-right: -1%;
+			margin-left: -1%;
+		}
+	}
+
+	.page_header_admissions_link {
+		.link_arrow;
+		.color_white;
+
+		box-shadow: 0 1px fade(@white, 20);
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		@media @max_sm {
+			margin: 0;
+		}
+
+		@media @min_md {
+			.block;
+			.full_width;
+		}
+
+		@media @min_sm @and_max_md,
+		@min_lg {
+			width: 48%;
+
+			float: left;
+			margin: 0 1%;
+		}
+
+		@media only screen and (min-width: 1450px) {
+			width: 30%;
+
+			margin: 0 1%;
+		}
+
+		.no-touchevents &:hover {
+			color: fade(@white, 50);
+		}
+	}
+
+
+	/* Carousel
+	============================================================================= */
+
+	.page_header_admissions_carousel {
+
+		&.fs-carousel.fs-carousel-enabled {
+
+			&,
+			.fs-carousel-viewport,
+			.fs-carousel-wrapper,
+			.fs-carousel-container,
+			.fs-carousel-canister,
+			.page_header_admissions_carousel_callout {
+				.full_height;
+			}
+
+			.relative;
+
+			z-index: 1;
+
+			@media @min_md {
+				.absolute;
+
+				width: 50%;
+
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+
+	.page_header_admissions_figure {
+		height: 300px;
+
+		@media @min_md {
+			.full_height;
+		}
+	}
+
+
+	/* Background Image
+	============================================================================= */
+
+	.page_header_admissions_background_container {
+		.absolute;
+		.full_width;
+		.full_height;
+
+		z-index: 0;
+
+		@media @max_md {
+			top: 0;
+
+			padding-top: 300px;
+		}
+
+		@media @min_md {
+			.full_height;
+			
+
+			width: 51%;
+
+			
+			right: 0;
+		}
+
+		&:before {
+			.cover();
+			.block;
+
+			z-index: 1;
+
+			background: fade(@black, 81);
+			content: "";
+		}
+	}
+
+	.page_header_admissions_background_figure {
+		.full_height;
+	}

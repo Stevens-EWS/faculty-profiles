@@ -1,0 +1,159 @@
+/* ==========================================================================
+	Statistics
+============================================================================= */
+
+	.statistics {
+		.margined_lg;
+
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.carousel_controls {
+
+			@media @max_md {
+				display: none;
+			}
+		}
+
+		.fs-carousel-enabled .fs-carousel-item {
+
+			@media @min_md {
+				opacity: 0;
+				transition: opacity @base_transition_duration ease;
+			}
+
+			&.fs-carousel-visible {
+
+				@media @min_md {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.statistics_carousel {
+
+		.fs-carousel-viewport {
+
+			@media @max_sm {
+				width: 250px;
+			}
+		}
+	}
+
+
+	/* Statistics Callout
+	============================================================================= */
+
+	.statistics_callout {
+		.killFlicker;
+
+		margin-right: 30px;
+
+		@media @min_lg {
+			margin-right: 40px;
+		}
+
+		@media @min_xl {
+			margin-right: 50px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.blue {
+			.statistics_callout_header {
+				border-bottom-color: @blue;
+			}
+			.statistics_callout_heading,
+			.statistics_callout_link {
+				.color_blue;
+			}
+		}
+
+		&.red {
+			.statistics_callout_header {
+				border-bottom-color: @red;
+			}
+			.statistics_callout_heading,
+			.statistics_callout_link {
+				.color_red;
+			}
+		}
+
+		&.orange {
+			.statistics_callout_header {
+				border-bottom-color: @orange;
+			}
+			.statistics_callout_heading,
+			.statistics_callout_link {
+				.color_orange;
+			}
+		}
+
+		&.teal {
+			.statistics_callout_header {
+				border-bottom-color: @teal;
+			}
+			.statistics_callout_heading,
+			.statistics_callout_link {
+				.color_teal;
+			}
+		}
+
+		&.green {
+			.statistics_callout_header {
+				border-bottom-color: @green;
+			}
+			.statistics_callout_heading,
+			.statistics_callout_link {
+				.color_green;
+			}
+		}
+
+		&.cyan {
+			.statistics_callout_header {
+				border-bottom-color: @cyan;
+			}
+			.statistics_callout_heading,
+			.statistics_callout_link {
+				.color_cyan;
+			}
+		}
+	}
+
+	.statistics_callout_header {
+		border-bottom: 3px solid;
+		padding-bottom: 5px;
+	}
+
+	.statistics_callout_heading {
+		.chaparral_light;
+		.font_size(22);
+
+		line-height: 1;
+		padding-bottom: 6px;
+
+		span {
+			.inline_block;
+
+			&.large {
+				.font_size(54);
+
+				margin-right: 3px;
+			}
+		}
+	}
+
+	.statistics_callout_text {
+
+		&,
+		p {
+			.callout_body;
+		}
+	}
+
+	.statistics_callout_link {
+		.link_arrow;
+	}

@@ -1,0 +1,316 @@
+/* ==========================================================================
+	 Directory - Common
+============================================================================= */
+
+.directory_container {
+	padding: 25px;
+
+	@media @min_lg {
+		margin: 0 -60px;
+		padding: 28px 0 36px 0;
+	}
+
+	&:nth-child(even) {
+		background: @gray_pale;
+	}
+
+	&:last-of-type {
+		.margined_lg_bottom;
+	}
+}
+
+.directory_office {
+	@media @min_lg {
+		margin: 0 30px;
+	}
+
+	.callout_link {
+		margin: 10px 0 12px 0;
+	}
+
+	p {
+		&:extend(.callout_body);
+
+		margin: 0 0 10px 0;
+	}
+}
+
+.directory_heading {
+	.article_title_lg;
+
+	margin: 0;
+}
+
+ .directory_detail {
+	 p {
+		 .trade_gothic_light;
+		 .font_size(14);
+
+		 margin: 10px 0;
+
+		 a {
+			 color: @red;
+
+			 overflow-wrap: break-word;
+			 word-wrap: break-word;
+
+			 .no-touchevents &:hover {
+				 color: black;
+			 }
+		 }
+	}
+ }
+ /* ==========================================================================
+	 Directory - Controls
+============================================================================= */
+
+.directory_controls {
+	background: @gray_pale;
+
+	height: 145px;
+
+	margin: 0 auto;
+
+	border: none;
+
+	@media @min_md {
+		height: auto;
+		padding: 20px 0;
+	}
+
+	@media @min_lg {
+		position: relative;
+		height: 80px;
+		margin-right: -50px;
+		margin-left: -50px;
+		padding: 25px 50px;
+	}
+
+	@media @min_xl {
+		margin-right: -60px;
+		margin-left: -60px;
+		padding-right: 60px;
+		padding-left: 60px;
+	}
+
+	@media screen and (min-width: 1060px) and (max-width: 1219px),
+	screen and (min-width: 1312px)  {
+		padding-right: 14px;
+		padding-left: 14px;
+	}
+
+	ul {
+		.clearfix;
+		margin: 0 0 0 -15px;
+		padding: 0 0 0 14px;
+
+		list-style: none;
+
+		@media @min_md @and_max_lg {
+			margin: 0 auto;
+			padding: 0 22px;
+			width: 100%;
+		}
+
+		@media @min_md {
+			margin-bottom: 15px;
+		}
+
+		li {
+			.left;
+			.font_size(20);
+			.trade_gothic_bold;
+
+			color: @black;
+			text-align: center;
+
+			// padding: 0 3px;
+
+			// &:after {
+			// 	content: "";
+			// 	padding: 0 7px;
+
+			// 	@media @min_md {
+			// 		padding: 0 9px;
+			// 	}
+			// }
+
+			a {
+				.block;
+
+				color: @black;
+
+				@media @min_md {
+					padding: 3px 6px;
+				}
+
+				&:after {
+					.block;
+					border-bottom: 1px solid transparent;
+					content: "";
+					transition: color @base_transition_duration linear,
+								border @base_transition_duration linear;
+				}
+
+				&.active,
+				.no-touchevents &:hover {
+					color: @red;
+						&:after {
+							border-bottom: 1px solid @red;
+						}
+				}
+			}
+
+			.disabled {
+				.block;
+				color: @gray_light;
+
+				text-align: center;
+
+				@media @min_md {
+					padding: 3px 6px;
+				}
+			}
+		}
+	}
+
+	.directory_controls_all {
+		border-right: 1px solid #C4C4C4;
+		margin-right: 4px;
+		text-transform: uppercase;
+
+		a {
+			padding-right: 10px;
+			padding-left: 0;
+		}
+	}
+
+	/* SEARCH BOX
+	============================================================================= */
+
+	.secondary_nav_item {
+
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+
+		@media @min_md {
+			display: inline-block;
+			margin: 0;
+			padding: 0 22px;
+		}
+
+		@media @min_lg {
+			.center_vertical();
+			right: 14px;
+			width: 25%;
+			padding: 0;
+		}
+
+		.secondary_nav_button {
+			.font_size(15);
+
+			background: transparent;
+
+			color: @black;
+
+			width: 96%;
+
+		}
+
+		.news_search_submit {
+			&:extend(.icon_only_before all);
+
+
+			&:before {
+				&:extend(.icon_search_white_lg);
+				.absolute_center();
+			}
+		}
+
+		.search_dropdown {
+			width: 100%;
+
+			@media @min_md {
+				width: 320px;
+			}
+
+		}
+	}
+
+	/* ALPHA DROPDOWN SHOWS ON MOBILE ONLY
+	============================================================================= */
+
+	.alpha_drop_wrap {
+
+		.fs-dropdown-selected {
+			&:extend(.icon_only_after all);
+
+			.trade_gothic_light;
+			.font_size(20);
+			.uppercase;
+			.relative;
+
+			height: 45px;
+
+			border: 1px solid #c4c4c4;
+			border-radius: 0;
+			color: #525252;
+			line-height: 0.6;
+			padding: 16px 80px 16px 20px;
+
+			&:before {
+				.block;
+
+				width: 60px;
+				height: 100%;
+
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				border-left: 1px solid #c4c4c4;
+				content: "";
+			}
+
+			&:after {
+				&:extend(.icon_down_red);
+
+				right: 20px;
+
+				border: 0;
+				transition: transform @base_transition_duration;
+			}
+		}
+	}
+
+	.fs-dropdown-selected {
+		&:after {
+			border-top: 5px solid @red;
+		}
+	}
+
+	.fs-dropdown.fs-dropdown-open {
+
+		.fs-dropdown-selected {
+
+			&:after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+
+}
+
+
+/* In Content Directory List
+============================================================================= */
+
+	.directory_list_in_content {
+
+		.directory_container,
+		.directory_office {
+			margin: 0;
+		}
+	}
