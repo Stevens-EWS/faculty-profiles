@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+//import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,20 +25,36 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <a href="#page" id="skip_to_content" className="offscreen">
+        Skip to Main Content
+      </a>
+      <div className="header_push_mobile"></div>
+
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+
+      <div className="page_wrapper js-navigation_push">
+        {/* Page : Main Content */}
+        <main id="page" className="page" role="main" tabIndex="-1">
+          {/* Page Content */}
+          <section className="page_content_area">
+            <hr className="top-bar" />
+            <div className="fs-row">
+              {/* Right Sidebar Navigation */}
+              <aside className="sidebar sidebar_subnavigation fs-cell-right fs-lg-3"></aside>
+
+              {/* Left Content Area */}
+              <div className="page_content fs-cell fs-lg-12">
+                {/* @todo Place faculty data here. */}
+              </div>
+              {/* END: page_content */}
+
+              {/* Right Sidebar Callouts */}
+              <aside className="sidebar sidebar_callouts fs-cell-right fs-lg-3"></aside>
+            </div>
+          </section>
+          {/* END: page_content_area */}
+        </main>
+        {/* END: page */}
       </div>
     </>
   )

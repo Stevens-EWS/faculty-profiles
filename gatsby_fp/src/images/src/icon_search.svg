@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon_search" sketch:type="MSArtboardGroup" fill="#9D1535">
+            <path d="M29.2521973,19 C25.5256348,19 22.5021973,22.0234375 22.5021973,25.75 C22.5021973,27.0859375 22.880127,28.3164062 23.5480957,29.3535156 L18.4416504,34.4335938 C17.8527832,35.0224609 17.8527832,35.9804688 18.4416504,36.5605469 C18.7316895,36.8505859 19.1096191,37 19.505127,37 C19.8742676,37 20.2697754,36.8505859 20.5686035,36.5605469 L25.6486816,31.4541016 C26.685791,32.1220703 27.9162598,32.5 29.2521973,32.5 C32.9787598,32.5 36.0021973,29.4765625 36.0021973,25.75 C36.0021973,22.0234375 32.9787598,19 29.2521973,19 L29.2521973,19 Z M29.2521973,30.25 C26.7736816,30.25 24.7521973,28.2285156 24.7521973,25.75 C24.7521973,23.2714844 26.7736816,21.25 29.2521973,21.25 C31.7307129,21.25 33.7521973,23.2714844 33.7521973,25.75 C33.7521973,28.2285156 31.7307129,30.25 29.2521973,30.25 L29.2521973,30.25 Z" id="search-copy" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
