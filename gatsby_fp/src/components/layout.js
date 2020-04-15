@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Fields from "./TestFields"
+import BodyClassName from "react-body-classname"
+import Helmet from "react-helmet"
 //import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -28,6 +30,11 @@ const Layout = ({ children }) => {
       <a href="#page" id="skip_to_content" className="offscreen">
         Skip to Main Content
       </a>
+      <Helmet
+        bodyAttributes={{
+          class: "fs-grid",
+        }}
+      />
       <div className="header_push_mobile"></div>
 
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -43,7 +50,9 @@ const Layout = ({ children }) => {
               <aside className="sidebar sidebar_subnavigation fs-cell-right fs-lg-3"></aside>
 
               {/* Left Content Area */}
+
               <div className="page_content fs-cell fs-lg-12">
+                <Fields />
                 {/* @todo Place faculty data here. */}
               </div>
               {/* END: page_content */}
@@ -52,11 +61,8 @@ const Layout = ({ children }) => {
               <aside className="sidebar sidebar_callouts fs-cell-right fs-lg-3"></aside>
             </div>
           </section>
-          {/* END: page_content_area */}
         </main>
-        {/* END: page */}
       </div>
-      <Fields />
     </>
   )
 }
