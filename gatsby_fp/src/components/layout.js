@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
-import Fields from "./TestFields"
+import Fields from "./fields"
 import BodyClassName from "react-body-classname"
 import Helmet from "react-helmet"
 //import "./layout.css"
@@ -72,3 +72,5 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+

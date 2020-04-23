@@ -5,6 +5,16 @@ module.exports = {
     author: `Stevens Institute of Technology`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-rest-api',
+      options: {
+        endpoints: [
+          'https://jsonplaceholder.typicode.com/users',
+          'https://jsonplaceholder.typicode.com/posts',
+          'http://localhost:3000/employees'
+        ]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -26,9 +36,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
+    },  
+  ]
+  
 }
