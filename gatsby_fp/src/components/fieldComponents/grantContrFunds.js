@@ -1,14 +1,12 @@
 import React from "react"
 
-//grants contracts and funds
-const GrantContrFunds = () => (
-<>
-<div className="sectiontitle">Grants, Contracts &amp; Funds</div>
-    <div>
-      <ul>
-      </ul>
-    </div>
-</>
-)
-
-export default GrantContrFunds
+export default function GrantContrFunds ({grantContrFunds}){
+   return(
+    <>
+    <div className="sectiontitle">Grants, Contracts, and Funds</div>
+        <div>
+          <p dangerouslySetInnerHTML={{__html: grantContrFunds}}></p>
+        </div>
+    </>
+  )
+}

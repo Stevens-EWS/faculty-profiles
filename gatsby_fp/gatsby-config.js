@@ -1,3 +1,4 @@
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Faculty Profile | Stevens Institute of Technology`,
@@ -6,14 +7,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-rest-api',
+      resolve: 'gatsby-source-multi-api-FORKED',
       options: {
-        endpoints: [
-          'https://jsonplaceholder.typicode.com/users',
-          'https://jsonplaceholder.typicode.com/posts',
-          'http://localhost:3000/employees'
-        ]
-      }
+        apis: [
+          `https://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}`
+        ],
+      },
     },
     `gatsby-plugin-react-helmet`,
     {

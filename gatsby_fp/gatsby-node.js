@@ -1,24 +1,16 @@
 const path = require("path")
-
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
   //this is going to be referencing fields.js - not that specific node
-  const profileTemplate = path.resolve("src/components/fieldComponents/genInfoTable.js")
+  const profileTemplate = path.resolve("src/components/layout.js")
 
   //query to return user data
-  return graphql(`
+ return graphql(`
   {
-      allRestApiEmployees {
+    allMultiApiSourcePeopleFaculty {
           edges {
               node {
-                  pf_address
-                  pf_email
-                  pf_fax
-                  pf_first_name
-                  pf_last_name
-                  pf_phone
-                  pf_title
                   pf_username
               }
             }
@@ -28,13 +20,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     if (res.errors) {
       return Promise.reject(res.errors)
     }
-    res.data.allRestApiEmployees.edges.forEach(({ node }) => {
+    console.log(res.data.allMultiApiSourcePeopleFaculty.edges)
+    res.data.allMultiApiSourcePeopleFaculty.edges.forEach(({ node }) => {
+        var path = "/" + node.pf_username
         createPage({
-          path: ("/" + node.pf_username),
+          path,
           component: profileTemplate,
+          context: {
+            pagePath: node.pf_username
+          }
         })
       })
   })
-
- 
 }

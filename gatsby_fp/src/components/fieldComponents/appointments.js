@@ -1,13 +1,12 @@
 import React from "react"
 
-const Appointments = () => (
-<>
-<div className="sectiontitle">Appointments</div>
-    <div>
-      <ul>
-      </ul>
-    </div>
-</>
-)
-
-export default Appointments
+export default function Appointments ({appointments}){
+  return(
+    <>
+    <div className="sectiontitle">Appointments</div>
+        <div>
+          <p dangerouslySetInnerHTML={{__html: appointments}}></p>
+        </div>
+    </>
+  )
+}
