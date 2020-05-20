@@ -7,11 +7,11 @@ import Helmet from "react-helmet"
 export default function Layout({children, data}) {
   // const sanitizeHtml = require('sanitize-html-react')
 
-  function sanitizeMarkup(child) {
-      return sanitizeHtml(child, {
-        allowedTags: ['p', 'br']
-      })
-  }
+  // function sanitizeMarkup(child) {
+  //     return sanitizeHtml(child, {
+  //       allowedTags: ['p', 'br']
+  //     })
+  // }
 
   //var sanitizedData = data.multiApiSourcePeopleFaculty
 
