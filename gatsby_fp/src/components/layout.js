@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import { graphql } from "gatsby"
 import Header from "./header"
@@ -12,7 +5,7 @@ import Fields from "./fields"
 import Helmet from "react-helmet"
 
 export default function Layout({children, data}) {
-  const sanitizeHtml = require('sanitize-html-react')
+  // const sanitizeHtml = require('sanitize-html-react')
 
   function sanitizeMarkup(child) {
       return sanitizeHtml(child, {
@@ -104,6 +97,7 @@ query dataByPath($pagePath: String!){
         pf_username
         research
         room
+        photo_base64
         service_university {
           scope
           org

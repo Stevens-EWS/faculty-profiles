@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 export default function GenInfoTable
 ({school, title, imgsrc, building, room, phone, fax, username, website}){
@@ -19,9 +18,10 @@ export default function GenInfoTable
                 <tr>
                   <td valign="top" align="left" width="160px">
                     <img
-                      // src={`data:image/jpeg;base64,${imgsrc}`}
+                      src={`data:image/jpeg;base64,${imgsrc}`}
                       className="bioimage"
                       style={{ maxWidth: "150px" }}
+                      alt=""
                     />
                   </td>
                   <td valign="top" align="left">
