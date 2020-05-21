@@ -1,12 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Header from "./header"
 import Fields from "./fields"
 import Helmet from "react-helmet"
 
 export default function Layout({children, data}) {
   // const sanitizeHtml = require('sanitize-html-react')
-
   // function sanitizeMarkup(child) {
   //     return sanitizeHtml(child, {
   //       allowedTags: ['p', 'br']
@@ -41,7 +40,7 @@ export default function Layout({children, data}) {
       />
       <div className="header_push_mobile"></div>
 
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header/>
 
       <div className="page_wrapper js-navigation_push">
         {/* Page : Main Content */}
@@ -56,8 +55,9 @@ export default function Layout({children, data}) {
               {/* Left Content Area */}
 
               <div className="page_content fs-cell fs-lg-12">
-                <Fields facultyData={data.multiApiSourcePeopleFaculty}/>
-                {/* @todo Place faculty data here. */}
+                {data &&
+                  <Fields facultyData={data.multiApiSourcePeopleFaculty}/>
+                }
               </div>
               {/* END: page_content */}
 
@@ -73,11 +73,6 @@ export default function Layout({children, data}) {
 
 export const facultyData = graphql`
 query dataByPath($pagePath: String!){
-  site {
-    siteMetadata {
-      title
-    }
-  }
   multiApiSourcePeopleFaculty(pf_username: {eq: $pagePath}){
         appointment
         bio

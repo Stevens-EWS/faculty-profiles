@@ -4,7 +4,7 @@ exports.createPages = ({ actions, graphql }) => {
   const profileTemplate = path.resolve("src/components/layout.js")
 
  return graphql(`
-  {
+  {  
     allMultiApiSourcePeopleFaculty {
           edges {
               node {
