@@ -4,29 +4,28 @@ import Header from "./header"
 import Fields from "./fields"
 import Helmet from "react-helmet"
 
-export default function Layout({children, data}) {
-  // const sanitizeHtml = require('sanitize-html-react')
-  // function sanitizeMarkup(child) {
-  //     return sanitizeHtml(child, {
-  //       allowedTags: ['p', 'br']
-  //     })
-  // }
+export default function Layout({ children, data }) {
+  const sanitizeHtml = require("sanitize-html-react")
+  function sanitizeMarkup(child) {
+    return sanitizeHtml(child, {
+      allowedTags: ["b", "i", "u", "sup", "sub", "br"],
+    })
+  }
 
-  //var sanitizedData = data.multiApiSourcePeopleFaculty
+  var sanitizedData = data.multiApiSourcePeopleFaculty
 
-  // function traverse(parent) {
-  //     for (var child in parent) { 
-  //         if (parent[child] !== null && typeof(parent[child])=="object") {
-  //             //going one step down in the object tree!!
-  //             traverse(parent[child]);
-  //         }
-  //         else{
-  //           parent[child] = sanitizeMarkup(parent[child]);
-  //         }
-  //     }
-  // }
+  function traverse(parent) {
+    for (var child in parent) {
+      if (parent[child] !== null && typeof parent[child] == "object") {
+        //going one step down in the object tree!!
+        traverse(parent[child])
+      } else {
+        parent[child] = sanitizeMarkup(parent[child])
+      }
+    }
+  }
 
-  // traverse(sanitizedData)
+  traverse(sanitizedData)
 
   return (
     <>
@@ -40,7 +39,7 @@ export default function Layout({children, data}) {
       />
       <div className="header_push_mobile"></div>
 
-      <Header/>
+      <Header />
 
       <div className="page_wrapper js-navigation_push">
         {/* Page : Main Content */}
@@ -55,9 +54,7 @@ export default function Layout({children, data}) {
               {/* Left Content Area */}
 
               <div className="page_content fs-cell fs-lg-12">
-                {data &&
-                  <Fields facultyData={data.multiApiSourcePeopleFaculty}/>
-                }
+                {data && <Fields facultyData={sanitizedData} />}
               </div>
               {/* END: page_content */}
 
@@ -72,126 +69,124 @@ export default function Layout({children, data}) {
 }
 
 export const facultyData = graphql`
-query dataByPath($pagePath: String!){
-  multiApiSourcePeopleFaculty(pf_username: {eq: $pagePath}){
-        appointment
-        bio
-        building
-        consult_service
-        experience
-        grant_contract
-        honor_award
-        innovate_enterpreneur
-        patent_invention
-        pf_email
-        pf_work_fax
-        pf_first_name
-        pf_last_name
-        pf_work_phone
-        pf_title
-        pf_username
-        research
-        room
-        photo_base64
-        service_university {
-          scope
-          org
-          member_type
-          compensation
-          dtm_start
-          dtd_start
-          dty_start
-          dtm_end
-          dyd_end
-          dty_end
-          desc
-          elecapp
-          exofficio
+  query dataByPath($pagePath: String!) {
+    multiApiSourcePeopleFaculty(pf_username: { eq: $pagePath }) {
+      appointment
+      bio
+      building
+      consult_service
+      experience
+      grant_contract
+      honor_award
+      innovate_enterpreneur
+      patent_invention
+      pf_email
+      pf_work_fax
+      pf_first_name
+      pf_last_name
+      pf_work_phone
+      pf_title
+      pf_username
+      research
+      room
+      photo_base64
+      service_university {
+        scope
+        org
+        member_type
+        compensation
+        dtm_start
+        dtd_start
+        dty_start
+        dtm_end
+        dyd_end
+        dty_end
+        desc
+        elecapp
+        exofficio
+      }
+      service_professional {
+        type
+        type_other
+        title
+        org
+        desc
+        elecapp
+        compensated
+        dtm_start
+        dty_start
+        dtm_end
+        dty_end
+        audience
+        city
+        state
+        country
+      }
+      education {
+        dty_comp
+        deg
+        school
+        city
+        state
+        country
+        major
+      }
+      member {
+        dtm_end
+        dty_end
+        dtd_end
+        dtm_start
+        dty_start
+        dtd_start
+        org
+        orgabbr
+        status
+      }
+      intellcont {
+        contype
+        contypeother
+        classification
+        journal_name
+        pagenum
+        status
+        publicavail
+        title
+        volume
+        publisher
+        pubctyst
+        pubcntry
+        refereed
+        audience
+        user_reference_creator
+        number_of_pages
+        editorial_reviewed
+        isbnissn
+        issue
+        dtm_pub
+        dtd_pub
+        dty_pub
+        dtm_acc
+        dtd_acc
+        dty_acc
+        dtm_expsub
+        dtd_expsub
+        dty_expsub
+        dtm_sub
+        dtd_sub
+        dty_sub
+        doi
+        abstract
+        full_text
+        web_address
+        intellcont_auth {
+          faculty_name
+          fname
+          lname
+          role
+          institution
+          student_level
         }
-        service_professional{
-          type
-          type_other
-          title
-          org
-          desc
-          elecapp
-          compensated
-          dtm_start
-          dty_start
-          dtm_end
-          dty_end
-          audience
-          city
-          state
-          country
-        }
-        education{
-          dty_comp
-          deg
-          school
-          city
-          state
-          country
-          major
-        }
-        member {
-          dtm_end
-          dty_end
-          dtd_end
-          dtm_start
-          dty_start
-          dtd_start
-          org
-          orgabbr
-          status
-        }
-        intellcont {
-          contype
-          contypeother
-          classification
-          journal_name
-          pagenum
-          status
-          publicavail
-          title
-          volume
-          publisher
-          pubctyst
-          pubcntry
-          refereed
-          audience
-          user_reference_creator
-          number_of_pages
-          editorial_reviewed
-          isbnissn
-          issue
-          dtm_pub
-          dtd_pub
-          dty_pub
-          dtm_acc
-          dtd_acc
-          dty_acc
-          dtm_expsub
-          dtd_expsub
-          dty_expsub
-          dtm_sub
-          dtd_sub
-          dty_sub
-          doi  
-          abstract
-          full_text
-          web_address  
-          intellcont_auth{
-            faculty_name
-            fname
-            lname
-            role
-            institution
-            student_level
-          } 
-        }        
+      }
+    }
   }
-}
 `
-
-
