@@ -2,18 +2,11 @@ import React from "react"
 import GenInfoTable from "./fieldComponents/genInfoTable"
 import Education from "./fieldComponents/education"
 import ProfService from "./fieldComponents/profService"
-import Appointments from "./fieldComponents/appointments"
-import GrantContrFunds from "./fieldComponents/grantContrFunds"
 import PatentInv from "./fieldComponents/patentInv"
-import GenInfoBio from "./fieldComponents/genInfoBio"
-import Research from "./fieldComponents/research"
-import Experience from "./fieldComponents/experience"
-import InnovateEnt from "./fieldComponents/innovateEnt"
-import ConsultService from "./fieldComponents/consultService"
-import HonorAward from "./fieldComponents/honorAward"
 import UnivService from "./fieldComponents/univService"
 import ProfSocieties from "./fieldComponents/profSocieties"
 import IntellCont from "./fieldComponents/intellCont"
+import Section from "./fieldComponents/section"
 
 export default function Fields({ facultyData }) {
   return (
@@ -35,10 +28,14 @@ export default function Fields({ facultyData }) {
       {facultyData.education && (
         <Education educationList={facultyData.education} />
       )}
-      {facultyData.research && <Research research={facultyData.research} />}
-      {facultyData.bio && <GenInfoBio bio={facultyData.bio} />}
+      {facultyData.research && (
+        <Section fieldLabel="Research" fieldData={facultyData.research} />
+      )}
+      {facultyData.bio && (
+        <Section fieldLabel="General Information" fieldData={facultyData.bio} />
+      )}
       {facultyData.experience && (
-        <Experience experience={facultyData.experience} />
+        <Section fieldLabel="Experience" fieldData={facultyData.experience} />
       )}
       {facultyData.service_university && (
         <UnivService univServiceList={facultyData.service_university} />
@@ -47,22 +44,37 @@ export default function Fields({ facultyData }) {
         <ProfService profServiceList={facultyData.service_professional} />
       )}
       {facultyData.consult_service && (
-        <ConsultService consultService={facultyData.consult_service} />
+        <Section
+          fieldLabel="Consulting Service"
+          fieldData={facultyData.consult_service}
+        />
       )}
       {facultyData.appointment && (
-        <Appointments appointments={facultyData.appointment} />
+        <Section
+          fieldLabel="Appointments"
+          fieldData={facultyData.appointment}
+        />
       )}
       {facultyData.innovate_enterpreneur && (
-        <InnovateEnt innovateEnt={facultyData.innovate_enterpreneur} />
+        <Section
+          fieldLabel="Innovation and Entrepreneurship"
+          fieldData={facultyData.innovate_enterpreneur}
+        />
       )}
       {facultyData.honor_award && (
-        <HonorAward honorAward={facultyData.honor_award} />
+        <Section
+          fieldLabel="Honors and Awards"
+          fieldData={facultyData.honor_award}
+        />
       )}
       {facultyData.member && (
         <ProfSocieties profSocietiesList={facultyData.member} />
       )}
       {facultyData.grant_contract && (
-        <GrantContrFunds grantContrFunds={facultyData.grant_contract} />
+        <Section
+          fieldLabel="Grants, Contracts, and Funds"
+          fieldData={facultyData.grant_contract}
+        />
       )}
       {facultyData.patent_invention && (
         <PatentInv patentInv={facultyData.patent_invention} />

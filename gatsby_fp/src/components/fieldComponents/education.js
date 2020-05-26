@@ -11,7 +11,7 @@ export default function Education({ educationList }) {
               key={index}
               dangerouslySetInnerHTML={{
                 __html: `${element.deg} (${element.dty_comp})
-             ${element.school} (${element.major}) in ${element.city}, ${element.state}, ${element.country}`,
+                ${element.school} (${element.major}) in ${element.city}, ${element.state}, ${element.country}`,
               }}
             ></li>
           ))}
