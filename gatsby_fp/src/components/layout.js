@@ -11,9 +11,9 @@ export default function Layout({ children, data }) {
       allowedTags: ["p", "b", "i", "u", "sup", "sub", "br"],
     })
   }
-
-  var sanitizedData = data.multiApiSourcePeopleFaculty
-
+  if(data){
+    var sanitizedData = data.multiApiSourcePeopleFaculty
+  }
   function traverse(parent) {
     for (var child in parent) {
       if (parent[child] !== null && typeof parent[child] == "object") {
