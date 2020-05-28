@@ -8,17 +8,6 @@ export default function IntellCont({ intellContList }) {
       <div>
         <ol>
           {intellContList.map(element => (
-            // <li key={index} dangerouslySetInnerHTML = {{__html:
-            //   `${element.contype} ${element.contypeother}
-            //   <br>(${element.dtm_pub} ${element.dtd_pub} ${element.dty_pub}).
-            //   ${element.title}, ${element.title_secondary}, ${element.publisher}
-            //   <br>Issue: ${element.issue}
-            //   <br>Number of Pages: ${element.number_of_pages}
-            //   <br>Status: ${element.status}<br>Refereed:${element.refereed}
-            //   <br>Editorial Reviewed: ${element.editorial_reviewed}
-            //   <br> ISBNISSN: ${element.isbnissn}
-            //   <br>User Reference Creator: ${element.user_reference_creator}`}}>
-            // </li>
             <li
               key={shortid.generate}
               dangerouslySetInnerHTML={{

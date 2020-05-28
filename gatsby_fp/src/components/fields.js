@@ -2,7 +2,6 @@ import React from "react"
 import GenInfoTable from "./fieldComponents/genInfoTable"
 import Education from "./fieldComponents/education"
 import ProfService from "./fieldComponents/profService"
-import PatentInv from "./fieldComponents/patentInv"
 import UnivService from "./fieldComponents/univService"
 import ProfSocieties from "./fieldComponents/profSocieties"
 import IntellCont from "./fieldComponents/intellCont"
@@ -77,7 +76,10 @@ export default function Fields({ facultyData }) {
         />
       )}
       {facultyData.patent_invention && (
-        <PatentInv patentInv={facultyData.patent_invention} />
+        <Section 
+          fieldLabel="Patents and Inventions"
+          fieldData={facultyData.patent_invention} 
+        />
       )}
       {facultyData.intellcont && (
         <IntellCont intellContList={facultyData.intellcont} />

@@ -8,11 +8,6 @@ export default function UnivService({ univServiceList }) {
       <div>
         <ul>
           {univServiceList.map(element=> (
-            // <li key={index} dangerouslySetInnerHTML ={{__html:
-            // `${element.scope}<br>${element.member_type} of ${element.org}
-            // (${element.dtm_start} ${element.dty_start} - ${element.dtm_end}
-            // ${element.dty_end})<br> Compenstated:  ${element.compensation}`}}>
-            // </li>
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{

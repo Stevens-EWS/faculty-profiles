@@ -8,13 +8,6 @@ export default function ProfService({ profServiceList }) {
       <div>
         <ul>
           {profServiceList.map(element=> (
-            // <li key={index} dangerouslySetInnerHTML ={{__html:
-            //   `${element.type} - ${element.type_other}<br>${element.elecapp}<br>${element.title}
-            //   ${element.org} in ${element.city}, ${element.state} (${element.dtm_start} ${element.dty_start} -
-            //   ${element.dtm_end} ${element.dty_end}) <br> Compensated:
-            //   ${element.compensated}
-            //   <br>Audience: ${element.audience}`}}>
-            // </li>
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{

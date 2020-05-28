@@ -8,11 +8,6 @@ export default function ProfSocieties({ profSocietiesList }) {
       <div>
         <ul>
           {profSocietiesList.map(element => (
-            // <li key={index} dangerouslySetInnerHTML ={{__html:
-            //   `${element.orgabbr} - ${element.org} (${element.dtm_start} ${element.dtd_start}
-            //   ${element.dty_start} - ${element.dtm_end} ${element.dtd_end} ${element.dty_end})
-            //   <br>${element.status}`}}>
-            // </li>
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{

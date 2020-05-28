@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import Header from "./header"
 import Fields from "./fields"
 import Helmet from "react-helmet"
