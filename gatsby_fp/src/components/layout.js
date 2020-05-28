@@ -11,16 +11,18 @@ export default function Layout({ children, data }) {
       allowedTags: ["p", "b", "i", "u", "sup", "sub", "br"],
     })
   }
-  if(data){
+  if (data) {
     var sanitizedData = data.multiApiSourcePeopleFaculty
   }
   function traverse(parent) {
-    for (var child in parent) {
+    for (let child in parent) {
       if (parent[child] !== null && typeof parent[child] == "object") {
         //going one step down in the object tree!!
         traverse(parent[child])
       } else {
-        parent[child] = sanitizeMarkup(parent[child])
+        if (parent[child]) {
+          parent[child] = sanitizeMarkup(parent[child])
+        }
       }
     }
   }
