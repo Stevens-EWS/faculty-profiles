@@ -1,11 +1,11 @@
 import React from "react"
-import GenInfoTable from "./fieldComponents/genInfoTablex"
-import Education from "./fieldComponents/educationx"
-import ProfService from "./fieldComponents/profServicex"
-import UnivService from "./fieldComponents/univServicex"
-import ProfSocieties from "./fieldComponents/profSocietiesx"
-import IntellCont from "./fieldComponents/intellContx"
-import GeneralSection from "./fieldComponents/generalSectionx"
+import GenInfoTable from "./fieldComponents/genInfoTable"
+import Education from "./fieldComponents/education"
+import ProfService from "./fieldComponents/profService"
+import UnivService from "./fieldComponents/univService"
+import ProfSocieties from "./fieldComponents/profSocieties"
+import IntellCont from "./fieldComponents/intellCont"
+import Section from "./fieldComponents/generalSection"
 
 export default function Fields({ facultyData }) {
   return (
@@ -28,22 +28,13 @@ export default function Fields({ facultyData }) {
         <Education educationList={facultyData.education} />
       )}
       {facultyData.research && (
-        <GeneralSection
-          fieldLabel="Research"
-          fieldData={facultyData.research}
-        />
+        <Section fieldLabel="Research" fieldData={facultyData.research} />
       )}
       {facultyData.bio && (
-        <GeneralSection
-          fieldLabel="General Information"
-          fieldData={facultyData.bio}
-        />
+        <Section fieldLabel="General Information" fieldData={facultyData.bio} />
       )}
       {facultyData.experience && (
-        <GeneralSection
-          fieldLabel="Experience"
-          fieldData={facultyData.experience}
-        />
+        <Section fieldLabel="Experience" fieldData={facultyData.experience} />
       )}
       {facultyData.service_university && (
         <UnivService univServiceList={facultyData.service_university} />
@@ -52,25 +43,25 @@ export default function Fields({ facultyData }) {
         <ProfService profServiceList={facultyData.service_professional} />
       )}
       {facultyData.consult_service && (
-        <GeneralSection
+        <Section
           fieldLabel="Consulting Service"
           fieldData={facultyData.consult_service}
         />
       )}
       {facultyData.appointment && (
-        <GeneralSection
+        <Section
           fieldLabel="Appointments"
           fieldData={facultyData.appointment}
         />
       )}
       {facultyData.innovate_enterpreneur && (
-        <GeneralSection
+        <Section
           fieldLabel="Innovation and Entrepreneurship"
           fieldData={facultyData.innovate_enterpreneur}
         />
       )}
       {facultyData.honor_award && (
-        <GeneralSection
+        <Section
           fieldLabel="Honors and Awards"
           fieldData={facultyData.honor_award}
         />
@@ -79,15 +70,15 @@ export default function Fields({ facultyData }) {
         <ProfSocieties profSocietiesList={facultyData.member} />
       )}
       {facultyData.grant_contract && (
-        <GeneralSection
+        <Section
           fieldLabel="Grants, Contracts, and Funds"
           fieldData={facultyData.grant_contract}
         />
       )}
       {facultyData.patent_invention && (
-        <GeneralSection
+        <Section 
           fieldLabel="Patents and Inventions"
-          fieldData={facultyData.patent_invention}
+          fieldData={facultyData.patent_invention} 
         />
       )}
       {facultyData.intellcont && (
