@@ -1,4 +1,5 @@
 import React from "react"
+const shortid = require("shortid")
 
 export default function ProfSocieties({ profSocietiesList }) {
   return (
@@ -6,14 +7,14 @@ export default function ProfSocieties({ profSocietiesList }) {
       <div className="sectiontitle">Professional Societies</div>
       <div>
         <ul>
-          {profSocietiesList.map((element, index) => (
+          {profSocietiesList.map(element => (
             // <li key={index} dangerouslySetInnerHTML ={{__html:
             //   `${element.orgabbr} - ${element.org} (${element.dtm_start} ${element.dtd_start}
             //   ${element.dty_start} - ${element.dtm_end} ${element.dtd_end} ${element.dty_end})
             //   <br>${element.status}`}}>
             // </li>
             <li
-              key={index}
+              key={shortid.generate()}
               dangerouslySetInnerHTML={{
                 __html: ` 
               ${

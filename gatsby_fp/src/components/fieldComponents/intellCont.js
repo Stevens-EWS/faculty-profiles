@@ -1,4 +1,5 @@
 import React from "react"
+const shortid = require("shortid")
 
 export default function IntellCont({ intellContList }) {
   return (
@@ -6,7 +7,7 @@ export default function IntellCont({ intellContList }) {
       <div className="sectiontitle">Selected Publications</div>
       <div>
         <ol>
-          {intellContList.map((element, index) => (
+          {intellContList.map(element => (
             // <li key={index} dangerouslySetInnerHTML = {{__html:
             //   `${element.contype} ${element.contypeother}
             //   <br>(${element.dtm_pub} ${element.dtd_pub} ${element.dty_pub}).
@@ -19,7 +20,7 @@ export default function IntellCont({ intellContList }) {
             //   <br>User Reference Creator: ${element.user_reference_creator}`}}>
             // </li>
             <li
-              key={index}
+              key={shortid.generate}
               dangerouslySetInnerHTML={{
                 __html: ` 
                   ${

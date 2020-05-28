@@ -1,4 +1,5 @@
 import React from "react"
+const shortid = require("shortid")
 
 export default function UnivService({ univServiceList }) {
   return (
@@ -6,14 +7,14 @@ export default function UnivService({ univServiceList }) {
       <div className="sectiontitle">Institutional Service</div>
       <div>
         <ul>
-          {univServiceList.map((element, index) => (
+          {univServiceList.map(element=> (
             // <li key={index} dangerouslySetInnerHTML ={{__html:
             // `${element.scope}<br>${element.member_type} of ${element.org}
             // (${element.dtm_start} ${element.dty_start} - ${element.dtm_end}
             // ${element.dty_end})<br> Compenstated:  ${element.compensation}`}}>
             // </li>
             <li
-              key={index}
+              key={shortid.generate()}
               dangerouslySetInnerHTML={{
                 __html: ` 
              ${
