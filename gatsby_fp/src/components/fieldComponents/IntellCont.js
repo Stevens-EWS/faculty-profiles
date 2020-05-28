@@ -9,7 +9,7 @@ export default function IntellCont({ intellContList }) {
         <ol>
           {intellContList.map(element => (
             <li
-              key={shortid.generate}
+              key={shortid.generate()}
               dangerouslySetInnerHTML={{
                 __html: ` 
                   ${
