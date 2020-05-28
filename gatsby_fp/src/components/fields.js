@@ -6,7 +6,7 @@ import PatentInv from "./fieldComponents/patentInv"
 import UnivService from "./fieldComponents/univService"
 import ProfSocieties from "./fieldComponents/profSocieties"
 import IntellCont from "./fieldComponents/intellCont"
-import Section from "./fieldComponents/section"
+import Section from "./fieldComponents/generalSection"
 
 export default function Fields({ facultyData }) {
   return (
