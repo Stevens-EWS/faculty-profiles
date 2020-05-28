@@ -8,7 +8,7 @@ body {
   font-size: 1.4em;
   font-weight: bold;
   padding-top: 0.4em;
-  margin-bottom:-0.2em;
+  margin-bottom: -0.2em;
 }
 
 .publicationtitle {
@@ -19,24 +19,26 @@ body {
 }
 
 .biotitle {
-  color: #9D1535;
+  color: #9d1535;
   padding-bottom: 0.5em;
 }
 
 .bioimage {
-  margin-bottom:0.5em;
+  margin-bottom: 0.5em;
+  max-width: 150px;
 }
 
 a {
-  color: #9D1535;
+  color: #9d1535;
 }
 
 li {
-  margin: 0 0 10px 0;   
+  margin: 0 0 10px 0;
   padding-left: 0.5em;
 }
 
-ul, ol {
+ul,
+ol {
   margin-left: -0.8em;
 }
 
@@ -44,21 +46,43 @@ p {
   line-height: 25px;
 }
 
-.table_wrapper > .table_wrapper_inner > table > tbody > tr > td > .table_wrapper > .table_wrapper_inner > table > tbody > tr:first-child > td {
-  font-family: "Chaparral W01",Georgia,Times,"Times New Roman",serif;
+.table_wrapper
+  > .table_wrapper_inner
+  > table
+  > tbody
+  > tr
+  > td
+  > .table_wrapper
+  > .table_wrapper_inner
+  > table
+  > tbody
+  > tr:first-child
+  > td {
+  font-family: "Chaparral W01", Georgia, Times, "Times New Roman", serif;
   padding-top: 0;
   padding-bottom: 20px;
   padding-left: 0;
   padding-right: 0;
-  border-bottom: 1px solid #E0E0E0;
-  font-size: 1.3em; 
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1.3em;
 }
 
-.table_wrapper > .table_wrapper_inner > table > tbody > tr > td > .table_wrapper > .table_wrapper_inner > table > tbody > tr:nth-child(2) > td {
+.table_wrapper
+  > .table_wrapper_inner
+  > table
+  > tbody
+  > tr
+  > td
+  > .table_wrapper
+  > .table_wrapper_inner
+  > table
+  > tbody
+  > tr:nth-child(2)
+  > td {
   padding-top: 20px;
 }
 
-.table_wrapper{
+.table_wrapper {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -70,17 +94,17 @@ p {
 table td {
   border-left: 0 solid white;
   border-right: 0 solid white;
-  background: white; 
+  background: white;
   padding-left: 0;
   padding-top: 5px;
   padding-bottom: 2px;
   font-size: 0.9em;
 }
 
-hr.top-bar{
+hr.top-bar {
   width: 100%;
   height: 3px;
-  background: #9D1535;
+  background: #9d1535;
   border: none;
   clear: both;
   margin: 0.5em 0 0.5em 0;
@@ -91,7 +115,7 @@ hr.top-bar{
   hr.top-bar {
     width: 100%;
     height: 3px;
-    background: #9D1535;
+    background: #9d1535;
     border: none;
     clear: both;
     margin: 3em 0 0.5em 0;

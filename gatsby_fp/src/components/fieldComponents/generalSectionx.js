@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Section({ fieldLabel, fieldData }) {
+export default function GeneralSection({ fieldLabel, fieldData }) {
   return (
     <>
       <div className="sectiontitle">{fieldLabel}</div>
