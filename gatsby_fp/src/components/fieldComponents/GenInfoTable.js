@@ -28,7 +28,6 @@ export default function GenInfoTable({
                   <img
                     src={`data:image/jpeg;base64,${imgsrc}`}
                     className="bioimage"
-                    style={{ maxWidth: "150px" }}
                     alt=""
                   />
                 </td>
