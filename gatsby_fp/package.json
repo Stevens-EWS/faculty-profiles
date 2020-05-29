@@ -16,6 +16,7 @@
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-apiserver": "^2.1.4",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-source-multi-api-FORKED": "https://github.com/Stevens-EWS/gatsby-source-multi-api",
