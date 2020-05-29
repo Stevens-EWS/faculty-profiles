@@ -25,6 +25,7 @@ body {
 
 .bioimage {
   margin-bottom:0.5em;
+  max-width: 150px;
 }
 
 a {
