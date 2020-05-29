@@ -89,6 +89,7 @@ export const facultyData = graphql`
       pf_work_phone
       pf_title
       pf_username
+      website
       research
       room
       photo_base64

@@ -23,6 +23,8 @@ export default function Fields({ facultyData }) {
         imgsrc={facultyData.photo_base64}
         username={facultyData.pf_username}
         website={facultyData.website}
+        firstName={facultyData.pf_first_name}
+        lastName={facultyData.pf_last_name}
       />
       {facultyData.education && (
         <Education educationList={facultyData.education} />

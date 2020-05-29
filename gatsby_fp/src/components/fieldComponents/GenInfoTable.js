@@ -10,6 +10,8 @@ export default function GenInfoTable({
   fax,
   username,
   website,
+  firstName,
+  lastName,
 }) {
   return (
     <>
@@ -28,7 +30,7 @@ export default function GenInfoTable({
                   <img
                     src={`data:image/jpeg;base64,${imgsrc}`}
                     className="bioimage"
-                    alt=""
+                    alt={`Photo of ${firstName} ${lastName}`}
                   />
                 </td>
                 <td valign="top" align="left">
@@ -98,12 +100,9 @@ export default function GenInfoTable({
                           )}
                           {website && (
                             <tr>
-                              <td
-                                valign="top"
-                                dangerouslySetInnerHTML={{
-                                  __html: `Website: ${website}`,
-                                }}
-                              ></td>
+                              <td>
+                                <a href={website}>Website</a>
+                              </td>
                             </tr>
                           )}
                         </tbody>
