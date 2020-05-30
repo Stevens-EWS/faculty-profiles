@@ -13,7 +13,6 @@ export default function Fields({ facultyData }) {
       <h1 className="biotitle">
         {facultyData.pf_first_name} {facultyData.pf_last_name}
       </h1>
-      {/* still need to conditionally render fields for this component */}
       <GenInfoTable
         title={facultyData.pf_title}
         building={facultyData.building}

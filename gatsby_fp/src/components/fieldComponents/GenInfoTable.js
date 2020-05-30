@@ -101,7 +101,7 @@ export default function GenInfoTable({
                           {website && (
                             <tr>
                               <td>
-                                <a href={website}>Website</a>
+                                <a href={website} target="_blank">Website</a>
                               </td>
                             </tr>
                           )}
