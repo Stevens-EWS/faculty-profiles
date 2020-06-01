@@ -11,8 +11,39 @@ export default function Education({ educationList }) {
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{
-                __html: `${element.deg} (${element.dty_comp})
-                ${element.school} (${element.major}) in ${element.city}, ${element.state}, ${element.country}`,
+                __html: ` 
+               ${
+                 element.deg
+                   ? `
+                   deg: ${element.deg}<br> `
+                   : ``
+               }
+               ${
+                 element.degother
+                   ? `
+                  degother: ${element.degother}<br> `
+                   : ``
+               }
+               ${
+                 element.dty_comp
+                   ? `
+                  dty_comp: ${element.dty_comp}<br> `
+                   : ``
+               }
+              ${
+                element.school
+                  ? `
+                  school: ${element.school}<br> `
+                  : ``
+              }
+              ${
+                element.major
+                  ? `
+                  major: ${element.major}<br> `
+                  : ``
+              }
+
+            `,
               }}
             ></li>
           ))}

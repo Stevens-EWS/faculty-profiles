@@ -25,9 +25,9 @@ export default function IntellCont({ intellContList }) {
                       : ``
                   }
                   ${
-                    element.classification
+                    element.status
                       ? `
-                    classification: ${element.classification}<br> `
+                    status: ${element.status}<br> `
                       : ``
                   }
                   ${
@@ -43,21 +43,15 @@ export default function IntellCont({ intellContList }) {
                       : ``
                   }
                   ${
-                    element.status
-                      ? `
-                    status: ${element.status}<br> `
-                      : ``
-                  }
-                  ${
-                    element.publicavail
-                      ? `
-                    publicavail: ${element.publicavail}<br> `
-                      : ``
-                  }
-                  ${
                     element.title
                       ? `
                     title: ${element.title}<br> `
+                      : ``
+                  }
+                  ${
+                    element.title_secondary
+                      ? `
+                    title_secondary: ${element.title_secondary}<br> `
                       : ``
                   }
                   ${
@@ -79,63 +73,9 @@ export default function IntellCont({ intellContList }) {
                       : ``
                   }
                   ${
-                    element.pubcntry
-                      ? `
-                    pubcntry: ${element.pubcntry}<br> `
-                      : ``
-                  }
-                  ${
-                    element.refereed
-                      ? `
-                    refereed: ${element.refereed}<br> `
-                      : ``
-                  }
-                  ${
-                    element.audience
-                      ? `
-                    audience: ${element.audience}<br> `
-                      : ``
-                  }
-                  ${
-                    element.user_reference_creator
-                      ? `
-                    user_reference_creator: ${element.user_reference_creator}<br> `
-                      : ``
-                  }
-                  ${
-                    element.number_of_pages
-                      ? `
-                    number_of_pages: ${element.number_of_pages}<br> `
-                      : ``
-                  }
-                  ${
-                    element.editorial_reviewed
-                      ? `
-                    editorial_reviewed: ${element.editorial_reviewed}<br> `
-                      : ``
-                  }
-                  ${
-                    element.isbnissn
-                      ? `
-                    isbnissn: ${element.isbnissn}<br> `
-                      : ``
-                  }
-                  ${
                     element.issue
                       ? `
                     issue: ${element.issue}<br> `
-                      : ``
-                  }
-                  ${
-                    element.dtm_pub
-                      ? `
-                    dtm_pub: ${element.dtm_pub}<br> `
-                      : ``
-                  }
-                  ${
-                    element.dtd_pub
-                      ? `
-                    dtd_pub: ${element.dtd_pub}<br> `
                       : ``
                   }
                   ${
@@ -145,75 +85,15 @@ export default function IntellCont({ intellContList }) {
                       : ``
                   }
                   ${
-                    element.dtm_acc
-                      ? `
-                    dtm_acc: ${element.dtm_acc}<br> `
-                      : ``
-                  }
-                  ${
-                    element.dtd_acc
-                      ? `
-                    dtd_acc: ${element.dtd_acc}<br> `
-                      : ``
-                  }
-                  ${
                     element.dty_acc
                       ? `
                     dty_acc: ${element.dty_acc}<br> `
                       : ``
                   }
                   ${
-                    element.dtm_expsub
-                      ? `
-                    dtm_expsub: ${element.dtm_expsub}<br> `
-                      : ``
-                  }
-                  ${
-                    element.dtd_expsub
-                      ? `
-                    dtd_expsub: ${element.dtd_expsub}<br> `
-                      : ``
-                  }
-                  ${
-                    element.dty_expsub
-                      ? `
-                    dty_expsub: ${element.dty_expsub}<br> `
-                      : ``
-                  }
-                  ${
-                    element.dtm_sub
-                      ? `
-                    dtm_sub: ${element.dtm_sub}<br> `
-                      : ``
-                  }
-                  ${
-                    element.dtd_sub
-                      ? `
-                    dtd_sub: ${element.dtd_sub}<br> `
-                      : ``
-                  }
-                  ${
                     element.dty_sub
                       ? `
                     dty_sub: ${element.dty_sub}<br> `
-                      : ``
-                  }
-                  ${
-                    element.doi
-                      ? `
-                    doi: ${element.doi}<br> `
-                      : ``
-                  }
-                  ${
-                    element.abstract
-                      ? `
-                    abstract: ${element.abstract}<br> `
-                      : ``
-                  }
-                  ${
-                    element.full_text
-                      ? `
-                    full_text: ${element.full_text}<br> `
                       : ``
                   }
                   ${
@@ -239,25 +119,7 @@ export default function IntellCont({ intellContList }) {
                       ? `
                     intellcont_auth.lname: ${element.intellcont_auth.lname}<br> `
                       : ``
-                  }
-                  ${
-                    element.intellcont_auth.role
-                      ? `
-                    intellcont_auth.role: ${element.intellcont_auth.role}<br> `
-                      : ``
-                  }
-                  ${
-                    element.intellcont_auth.institution
-                      ? `
-                    intellcont_auth.institution: ${element.intellcont_auth.institution}<br> `
-                      : ``
-                  }
-                  ${
-                    element.intellcont_auth.student_level
-                      ? `
-                    intellcont_auth.student_level: ${element.intellcont_auth.student_level}<br> `
-                      : ``
-                  }                    
+                  }                  
               `,
               }}
             ></li>
