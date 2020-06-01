@@ -13,7 +13,6 @@ export default function Fields({ facultyData }) {
       <h1 className="biotitle">
         {facultyData.pf_first_name} {facultyData.pf_last_name}
       </h1>
-      {/* still need to conditionally render fields for this component */}
       <GenInfoTable
         title={facultyData.pf_title}
         building={facultyData.building}
@@ -23,6 +22,8 @@ export default function Fields({ facultyData }) {
         imgsrc={facultyData.photo_base64}
         username={facultyData.pf_username}
         website={facultyData.website}
+        firstName={facultyData.pf_first_name}
+        lastName={facultyData.pf_last_name}
       />
       {facultyData.education && (
         <Education educationList={facultyData.education} />

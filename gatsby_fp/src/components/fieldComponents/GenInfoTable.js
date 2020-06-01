@@ -10,6 +10,8 @@ export default function GenInfoTable({
   fax,
   username,
   website,
+  firstName,
+  lastName,
 }) {
   return (
     <>
@@ -28,7 +30,7 @@ export default function GenInfoTable({
                   <img
                     src={`data:image/jpeg;base64,${imgsrc}`}
                     className="bioimage"
-                    alt=""
+                    alt={`Photo of ${firstName} ${lastName}`}
                   />
                 </td>
                 <td valign="top" align="left">
@@ -46,7 +48,7 @@ export default function GenInfoTable({
                           <tr>
                             <td valign="top">School: (Needs to be filled)</td>
                           </tr>
-                          {building && (
+                          {building ? (
                             <tr>
                               <td
                                 valign="top"
@@ -55,8 +57,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          )}
-                          {room && (
+                          ) : null}
+                          {room ? (
                             <tr>
                               <td
                                 valign="top"
@@ -65,8 +67,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          )}
-                          {phone && (
+                          ) : null}
+                          {phone ? (
                             <tr>
                               <td
                                 valign="top"
@@ -75,8 +77,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          )}
-                          {fax && (
+                          ) : null}
+                          {fax ? (
                             <tr>
                               <td
                                 valign="top"
@@ -85,8 +87,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          )}
-                          {username && (
+                          ) : null}
+                          {username ? (
                             <tr>
                               <td
                                 valign="top"
@@ -95,17 +97,16 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          )}
-                          {website && (
+                          ) : null}
+                          {website ? (
                             <tr>
-                              <td
-                                valign="top"
-                                dangerouslySetInnerHTML={{
-                                  __html: `Website: ${website}`,
-                                }}
-                              ></td>
+                              <td>
+                                <a href={website} target="_blank">
+                                  Website
+                                </a>
+                              </td>
                             </tr>
-                          )}
+                          ) : null}
                         </tbody>
                       </table>
                     </div>

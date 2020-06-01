@@ -31,14 +31,16 @@ export default function Layout({ children, data }) {
 
   return (
     <>
-      <a href="#page" id="skip_to_content" className="offscreen">
-        Skip to Main Content
-      </a>
       <Helmet
         bodyAttributes={{
           class: "fs-grid",
         }}
-      />
+      >
+        <title>Faculty Profile | Stevens Institute of Technology</title>
+      </Helmet>
+      <a href="#page" id="skip_to_content" className="offscreen">
+        Skip to Main Content
+      </a>
       <div className="header_push_mobile"></div>
 
       <Header />
@@ -89,6 +91,7 @@ export const facultyData = graphql`
       pf_work_phone
       pf_title
       pf_username
+      website
       research
       room
       photo_base64
