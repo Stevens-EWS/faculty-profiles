@@ -16,7 +16,6 @@
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
-    "gatsby-source-apiserver": "^2.1.4",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-source-multi-api-FORKED": "https://github.com/Stevens-EWS/gatsby-source-multi-api",
     "gatsby-source-rest-api": "^0.2.3",
@@ -59,5 +58,6 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-default#readme",
-  "main": "gatsby-browser.js"
+  "main": "gatsby-browser.js",
+  "optionalDependencies": {}
 }
