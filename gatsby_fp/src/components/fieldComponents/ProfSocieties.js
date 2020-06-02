@@ -19,53 +19,11 @@ export default function ProfSocieties({ profSocietiesList }) {
                   : ``
               } 
               ${
-                element.orgabbr
-                  ? `
-                orgabbr: ${element.orgabbr}<br> `
-                  : ``
-              } 
-              ${
                 element.status
                   ? `
                 orgabbr: ${element.orgabbr}<br> `
                   : ``
-              } 
-              ${
-                element.dtm_start
-                  ? `
-                dtm_start: ${element.dtm_start}<br> `
-                  : ``
-              } 
-              ${
-                element.dtd_start
-                  ? `
-                dtd_start: ${element.dtd_start}<br> `
-                  : ``
-              } 
-              ${
-                element.dty_start
-                  ? `
-                dty_start: ${element.dty_start}<br> `
-                  : ``
-              }
-              ${
-                element.dtm_end
-                  ? `
-                dtm_end: ${element.dtm_end}<br> `
-                  : ``
-              } 
-              ${
-                element.dtd_end
-                  ? `
-                dtd_end: ${element.dtd_end}<br> `
-                  : ``
-              } 
-              ${
-                element.dty_end
-                  ? `
-                dty_end: ${element.dty_end}<br> `
-                  : ``
-              }
+              }               
           `,
               }}
             ></li>

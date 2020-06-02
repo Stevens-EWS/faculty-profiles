@@ -29,13 +29,22 @@ export default function Fields({ facultyData }) {
         <Education educationList={facultyData.education} />
       )}
       {facultyData.research && (
-        <GeneralSection fieldLabel="Research" fieldData={facultyData.research} />
+        <GeneralSection
+          fieldLabel="Research"
+          fieldData={facultyData.research}
+        />
       )}
       {facultyData.bio && (
-        <GeneralSection fieldLabel="General Information" fieldData={facultyData.bio} />
+        <GeneralSection
+          fieldLabel="General Information"
+          fieldData={facultyData.bio}
+        />
       )}
       {facultyData.experience && (
-        <GeneralSection fieldLabel="Experience" fieldData={facultyData.experience} />
+        <GeneralSection
+          fieldLabel="Experience"
+          fieldData={facultyData.experience}
+        />
       )}
       {facultyData.service_university && (
         <UnivService univServiceList={facultyData.service_university} />
@@ -77,13 +86,19 @@ export default function Fields({ facultyData }) {
         />
       )}
       {facultyData.patent_invention && (
-        <GeneralSection 
+        <GeneralSection
           fieldLabel="Patents and Inventions"
-          fieldData={facultyData.patent_invention} 
+          fieldData={facultyData.patent_invention}
         />
       )}
       {facultyData.intellcont && (
         <IntellCont intellContList={facultyData.intellcont} />
+      )}
+      {facultyData.notable_courses && (
+        <GeneralSection
+          fieldLabel="Courses"
+          fieldData={facultyData.notable_courses}
+        />
       )}
     </>
   )
