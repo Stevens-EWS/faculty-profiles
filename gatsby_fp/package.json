@@ -10,17 +10,17 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
-    "gatsby": "^2.22.15",
-    "gatsby-image": "^2.4.5",
-    "gatsby-plugin-manifest": "^2.4.9",
-    "gatsby-plugin-offline": "^3.2.7",
-    "gatsby-plugin-react-helmet": "^3.3.2",
-    "gatsby-plugin-sharp": "^2.6.9",
-    "gatsby-source-filesystem": "^2.3.8",
+    "gatsby": "^2.22.17",
+    "gatsby-image": "^2.4.6",
+    "gatsby-plugin-manifest": "^2.4.10",
+    "gatsby-plugin-offline": "^3.2.8",
+    "gatsby-plugin-react-helmet": "^3.3.3",
+    "gatsby-plugin-sharp": "^2.6.10",
+    "gatsby-source-filesystem": "^2.3.10",
     "gatsby-source-multi-api": "git+https://github.com/Stevens-EWS/gatsby-source-multi-api.git",
     "gatsby-source-multi-api-FORKED": "https://github.com/Stevens-EWS/gatsby-source-multi-api",
     "gatsby-source-rest-api": "^0.2.3",
-    "gatsby-transformer-sharp": "^2.5.3",
+    "gatsby-transformer-sharp": "^2.5.4",
     "graphiql": "^0.17.5",
     "json-server": "^0.16.1",
     "minify": "^5.1.1",
@@ -59,6 +59,5 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-default#readme",
-  "main": "gatsby-browser.js",
-  "optionalDependencies": {}
+  "main": "gatsby-browser.js"
 }
