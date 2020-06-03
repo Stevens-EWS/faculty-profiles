@@ -7,10 +7,10 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-multi-api-FORKED',
+      resolve: "gatsby-source-multi-api-FORKED",
       options: {
         apis: [
-          `https://${process.env.PEOPLEAPI_USER}:${process.env.PEOPLEAPI_PASS}@${process.env.PEOPLEAPI_HOST}`
+          `https://${process.env.PEOPLEAPI_USER}:${process.env.PEOPLEAPI_PASS}@${process.env.PEOPLEAPI_HOST}`,
         ],
       },
     },
@@ -35,7 +35,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/favicons/favicon-194x194.png`, // This path is relative to the root of the site.
       },
-    },  
-  ]
-  
+    },
+  ],
 }
