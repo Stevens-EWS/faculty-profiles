@@ -15,13 +15,13 @@ export default function ProfSocieties({ profSocietiesList }) {
               ${
                 element.org
                   ? `
-                org: ${element.org}<br> `
+                ${element.org}`
                   : ``
               } 
               ${
                 element.status
                   ? `
-                orgabbr: ${element.orgabbr}<br> `
+               ${element.status}`
                   : ``
               }               
           `,

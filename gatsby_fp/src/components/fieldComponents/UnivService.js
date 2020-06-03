@@ -13,15 +13,15 @@ export default function UnivService({ univServiceList }) {
               dangerouslySetInnerHTML={{
                 __html: ` 
               ${
-                element.member_type
+                element.org
                   ? `
-                member_type: ${element.member_type}<br> `
+                ${element.org}`
                   : ``
               } 
               ${
-                element.org
+                element.member_type
                   ? `
-                org: ${element.org}<br> `
+                ${element.member_type}`
                   : ``
               } 
           `,

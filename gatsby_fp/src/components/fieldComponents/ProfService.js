@@ -13,17 +13,17 @@ export default function ProfService({ profServiceList }) {
               dangerouslySetInnerHTML={{
                 __html: ` 
                 ${
-                  element.title
-                    ? `
-                  title: ${element.title}<br> `
-                    : ``
-                }
-                ${
                   element.org
                     ? `
-                  org: ${element.org}<br> `
+                  ${element.org}`
                     : ``
                 } 
+                ${
+                  element.title
+                    ? `
+                  ${element.title}`
+                    : ``
+                }
             `,
               }}
             ></li>
