@@ -2,6 +2,8 @@ import React from "react"
 const shortid = require("shortid")
 
 export default function Education({ educationList }) {
+
+
   return (
     <>
       <div className="sectiontitle">Education</div>
@@ -13,33 +15,33 @@ export default function Education({ educationList }) {
               dangerouslySetInnerHTML={{
                 __html: ` 
                ${
-                 element.deg
-                   ? `
-                   deg: ${element.deg}<br> `
+                 (element.deg && !(element.degother))
+                   ? `${element.deg}`
                    : ``
                }
                ${
-                 element.degother
-                   ? `
-                  degother: ${element.degother}<br> `
+                (element.degother && !(element.deg))
+                   ? `${element.degother}`
+                   : ``
+               }
+               ${
+                (element.degother && element.deg)
+                   ? `${element.deg}, ${element.degother} `
                    : ``
                }
                ${
                  element.dty_comp
-                   ? `
-                  dty_comp: ${element.dty_comp}<br> `
+                   ? `(${element.dty_comp})`
                    : ``
                }
               ${
                 element.school
-                  ? `
-                  school: ${element.school}<br> `
+                  ? `${element.school}`
                   : ``
               }
               ${
                 element.major
-                  ? `
-                  major: ${element.major}<br> `
+                  ? `(${element.major})`
                   : ``
               }
 

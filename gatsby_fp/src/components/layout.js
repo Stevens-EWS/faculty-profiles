@@ -96,6 +96,8 @@ export const facultyData = graphql`
       room
       photo_base64
       notable_courses
+      school
+      ses_department
       service_university {
         org
         member_type
