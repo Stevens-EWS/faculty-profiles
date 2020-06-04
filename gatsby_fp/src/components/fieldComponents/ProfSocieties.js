@@ -14,14 +14,12 @@ export default function ProfSocieties({ profSocietiesList }) {
                 __html: ` 
               ${
                 element.org
-                  ? `
-                ${element.org}`
+                  ? `${element.org}`
                   : ``
               } 
               ${
                 element.status
-                  ? `
-               ${element.status}`
+                  ? `${element.status}`
                   : ``
               }               
           `,

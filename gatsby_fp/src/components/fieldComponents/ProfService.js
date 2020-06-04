@@ -14,14 +14,12 @@ export default function ProfService({ profServiceList }) {
                 __html: ` 
                 ${
                   element.org
-                    ? `
-                  ${element.org}`
+                    ? `${element.org}`
                     : ``
                 } 
                 ${
                   element.title
-                    ? `
-                  ${element.title}`
+                    ? `${element.title}`
                     : ``
                 }
             `,

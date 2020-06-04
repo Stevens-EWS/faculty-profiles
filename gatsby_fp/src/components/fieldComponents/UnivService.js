@@ -14,14 +14,12 @@ export default function UnivService({ univServiceList }) {
                 __html: ` 
               ${
                 element.org
-                  ? `
-                ${element.org}`
+                  ? `${element.org}`
                   : ``
               } 
               ${
                 element.member_type
-                  ? `
-                ${element.member_type}`
+                  ? `${element.member_type}`
                   : ``
               } 
           `,

@@ -14,32 +14,27 @@ export default function Education({ educationList }) {
                 __html: ` 
                ${
                  element.deg
-                   ? `
-                   ${element.deg}`
+                   ? `${element.deg}`
                    : ``
                }
                ${
                  element.degother
-                   ? `
-                  ,${element.degother}`
+                   ? `, ${element.degother}`
                    : ``
                }
                ${
                  element.dty_comp
-                   ? `
-                  (${element.dty_comp})`
+                   ? `(${element.dty_comp})`
                    : ``
                }
               ${
                 element.school
-                  ? `
-                  ${element.school}`
+                  ? `${element.school}`
                   : ``
               }
               ${
                 element.major
-                  ? `
-                  (${element.major})`
+                  ? `(${element.major})`
                   : ``
               }
 
