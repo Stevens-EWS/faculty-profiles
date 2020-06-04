@@ -24,6 +24,9 @@ export default function Fields({ facultyData }) {
         website={facultyData.website}
         firstName={facultyData.pf_first_name}
         lastName={facultyData.pf_last_name}
+        school={facultyData.school}
+        department={facultyData.ses_department}
+        email={facultyData.pf_email}
       />
       {facultyData.education && (
         <Education educationList={facultyData.education} />
