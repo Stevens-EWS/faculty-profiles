@@ -7,7 +7,7 @@ const Header = () => (
         <div className="header_chevron"></div>
         <div className="header_logo">
           <img
-            src="static/images/bw_logo.png"
+            src="/images/bw_logo.png"
             alt="Stevens Institute of Technology - The Innovation University&reg;"
           />
         </div>
