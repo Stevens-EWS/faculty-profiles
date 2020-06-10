@@ -1,9 +1,27 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "stevens-faculty-profiles",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Displays faculty profiles using external data sources.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "Contributors": [
+    {
+      "name": "Christian Szablewski-Paz",
+      "email": "cszablew@stevens.edu",
+      "url": "https://www.linkedin.com/in/christian-szablewski-paz-54600b16a"
+    },
+    {
+      "name": "David Watson",
+      "email": "dwatson1@stevens.edu"
+    },
+    {
+      "name": "Michael Forbes",
+      "email": "mforbes@stevens.edu"
+    },
+    {
+      "name": "Diaeddin Motan",
+      "email": "dmotan@stevens.edu"
+    }
+  ],
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.22.17",
