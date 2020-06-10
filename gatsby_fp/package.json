@@ -17,8 +17,6 @@
     "gatsby-source-multi-api-FORKED": "https://github.com/Stevens-EWS/gatsby-source-multi-api",
     "gatsby-source-rest-api": "^0.2.3",
     "gatsby-transformer-sharp": "^2.5.4",
-    "graphiql": "^0.17.5",
-    "json-server": "^0.16.1",
     "minify": "^5.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -30,7 +28,9 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "graphiql": "^0.17.5",
+    "json-server": "^0.16.1"
   },
   "keywords": [
     "gatsby"
