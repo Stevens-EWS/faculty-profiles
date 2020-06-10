@@ -36,7 +36,7 @@ export default function Layout({ children, data }) {
           class: "fs-grid",
         }}
       >
-        <title>Faculty Profile | Stevens Institute of Technology</title>
+        <title>{sanitizedData.pf_first_name} {sanitizedData.pf_last_name} - Stevens Institute of Technology</title>
       </Helmet>
       <a href="#page" id="skip_to_content" className="offscreen">
         Skip to Main Content
