@@ -32,21 +32,7 @@ export default function IntellCont({ intellContList, publicationType }) {
                       ? `${element.intellcont_auth.fname}.`
                       : ``
                   }
-                  ${
-                    element.status === "Published"
-                      ? `(${element.dty_pub}).`
-                      : ``
-                  }
-                  ${
-                    element.status === "Accepted"
-                      ? `(${element.dty_acc}).`
-                      : ``
-                  }
-                  ${
-                    element.status === "Submitted"
-                      ? `(${element.dty_sub}).`
-                      : ``
-                  }
+                  (2020).
                   ${
                     element.title
                       ? `${element.title}.`
