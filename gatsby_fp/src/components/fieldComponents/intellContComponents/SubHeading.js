@@ -28,6 +28,11 @@ export default function IntellCont({ intellContList, publicationType }) {
                       : ``
                   }
                   ${
+                    element.intellcont_auth.mname
+                      ? `${element.intellcont_auth.lname},`
+                      : ``
+                  }
+                  ${
                     element.intellcont_auth.fname
                       ? `${element.intellcont_auth.fname}.`
                       : ``
