@@ -117,6 +117,7 @@ export const facultyData = graphql`
       }
       member {
         org
+        orgabbr
         status
       }
       intellcont {
