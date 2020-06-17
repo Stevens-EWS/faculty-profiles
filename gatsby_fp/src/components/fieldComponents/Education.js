@@ -20,7 +20,7 @@ export default function Education({ educationList }) {
                    : ``
                }
                ${
-                (element.degother && element.deg !== "Other")
+                element.degother
                    ? `${element.degother}`
                    : ``
                }
