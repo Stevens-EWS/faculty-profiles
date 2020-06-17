@@ -7,7 +7,7 @@ export default function IntellCont({ intellContList, publicationType }) {
     <>
       <div className="publicationtitle">{publicationType}</div>
         <ol>
-          {intellContList.filter(element => element.contype === publicationType).map(element => (
+          {intellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{
