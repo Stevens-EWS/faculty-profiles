@@ -20,7 +20,7 @@ export default function IntellCont({ intellContList }) {
   }
 
   const contypeList = findExistingContypes(intellContList);
-  console.log(contypeList)
+
   return (
     <>
       <div className="sectiontitle">Selected Publications</div>
