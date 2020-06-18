@@ -19,7 +19,7 @@ export default function IntellCont({ intellContList }) {
     return contypeList
   }
 
-  const contypeList = findExistingContypes(intellContList);
+  const contypeList = findExistingContypes(intellContList)
 
   return (
     <>
