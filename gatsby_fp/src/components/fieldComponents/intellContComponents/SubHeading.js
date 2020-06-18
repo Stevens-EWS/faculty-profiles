@@ -42,7 +42,21 @@ export default function IntellCont({ intellContList, publicationType }) {
                       ? `${element.intellcont_auth.fname}.`
                       : ``
                   }
-                  (2020).
+                  ${
+                    element.status === "Published"
+                      ? `(${element.dty_pub}).`
+                      : ``
+                  }
+                  ${
+                    element.status === "Accepted"
+                      ? `(${element.dty_acc}).`
+                      : ``
+                  }
+                  ${
+                    element.status === "Submitted"
+                      ? `(${element.dty_sub}).`
+                      : ``
+                  }
                   ${
                     element.title
                       ? `${element.title}.`
