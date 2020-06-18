@@ -8,7 +8,7 @@ export default function IntellCont({ intellContList }) {
     var contypeList = []
     intellContList.forEach(element => {
       if(element.contype && !(contypeList.includes(element.contype))){
-        if(element.contype !== "Other"){
+        if(!element.contypeother){
           contypeList.push(element.contype)
         }
       }
@@ -19,7 +19,7 @@ export default function IntellCont({ intellContList }) {
     return contypeList
   }
 
-  const contypeList = findExistingContypes(intellContList)
+  const contypeList = findExistingContypes(intellContList);
 
   return (
     <>
