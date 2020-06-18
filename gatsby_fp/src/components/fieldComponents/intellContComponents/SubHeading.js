@@ -18,12 +18,12 @@ export default function IntellCont({ intellContList, publicationType }) {
                       : ``
                   }
                   ${
-                    (element.contype && element.contype !== "Other")
+                    element.contype && !element.contypeother
                       ? `${element.contype} -`
                       : ``
                   }
                   ${
-                    (element.contypeother && element.contype === "Other")
+                    element.contypeother
                       ? `${element.contypeother} -`
                       : ``
                   }
