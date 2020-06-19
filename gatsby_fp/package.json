@@ -3,7 +3,7 @@
   "private": true,
   "description": "Displays faculty profiles using external data sources.",
   "version": "0.1.0",
-  "Contributors": [
+  "contributors": [
     {
       "name": "Christian Szablewski-Paz",
       "email": "cszablew@stevens.edu",
