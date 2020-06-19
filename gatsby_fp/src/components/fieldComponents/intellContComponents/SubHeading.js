@@ -76,17 +76,17 @@ export default function IntellCont({ intellContList, publicationType }) {
                       : ``
                   }
                   ${
-                    element.status === "Published"
+                    element.status === "Published" && element.dty_pub
                       ? `(${element.dty_pub}).`
                       : ``
                   }
                   ${
-                    element.status === "Accepted"
+                    element.status === "Accepted" && element.dty_acc
                       ? `(${element.dty_acc}).`
                       : ``
                   }
                   ${
-                    element.status === "Submitted"
+                    element.status === "Submitted" && element.dty_sub
                       ? `(${element.dty_sub}).`
                       : ``
                   }
