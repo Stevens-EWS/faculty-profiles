@@ -3,11 +3,44 @@ const shortid = require("shortid")
 
 export default function IntellCont({ intellContList, publicationType }) {
 
+    function sortStatusAndYear(intellContList){
+      var pubIntellContList = [] 
+      var accIntellContList = []
+      var subIntellContList = []
+      var otherIntellContList = []
+
+      intellContList.forEach(element => {
+        switch(element.status){
+          case "Published":
+            pubIntellContList.push(element)
+            break
+          case "Accepted":
+            accIntellContList.push(element)
+            break
+          case "Submitted":
+            subIntellContList.push(element)
+            break  
+          default:
+            otherIntellContList.push(element)
+            break  
+        }
+      })
+      
+      pubIntellContList.sort(function(a,b){return b.dty_pub - a.dty_pub})
+      accIntellContList.sort(function(a,b){return b.dty_acc - a.dty_acc})
+      subIntellContList.sort(function(a,b){return b.dty_sub - a.dty_sub})
+
+      const sortedIntellContList = pubIntellContList.concat(accIntellContList, subIntellContList, otherIntellContList)
+      return sortedIntellContList
+    }
+
+    const sortedIntellContList = sortStatusAndYear(intellContList)
+
     return (
     <>
       <div className="publicationtitle">{publicationType}</div>
         <ol>
-          {intellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => (
+          {sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{
