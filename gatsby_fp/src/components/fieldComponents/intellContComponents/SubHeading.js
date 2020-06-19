@@ -7,7 +7,6 @@ export default function IntellCont({ intellContList, publicationType }) {
       var pubIntellContList = [] 
       var accIntellContList = []
       var subIntellContList = []
-      var otherIntellContList = []
 
       intellContList.forEach(element => {
         switch(element.status){
@@ -21,7 +20,6 @@ export default function IntellCont({ intellContList, publicationType }) {
             subIntellContList.push(element)
             break  
           default:
-            otherIntellContList.push(element)
             break  
         }
       })
@@ -30,7 +28,7 @@ export default function IntellCont({ intellContList, publicationType }) {
       accIntellContList.sort(function(a,b){return b.dty_acc - a.dty_acc})
       subIntellContList.sort(function(a,b){return b.dty_sub - a.dty_sub})
 
-      const sortedIntellContList = pubIntellContList.concat(accIntellContList, subIntellContList, otherIntellContList)
+      const sortedIntellContList = pubIntellContList.concat(accIntellContList, subIntellContList)
       return sortedIntellContList
     }
 
