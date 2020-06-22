@@ -4,15 +4,15 @@ const shortid = require("shortid")
 
 export default function IntellCont({ intellContList }) {
 
-  function findExistingContypes(intellContList){
+  function findExistingContypes(intellContList) {
     var contypeList = []
     intellContList.forEach(element => {
-      if(element.contype && !(contypeList.includes(element.contype))){
-        if(!element.contypeother){
+      if (element.contype && !(contypeList.includes(element.contype))) {
+        if (!element.contypeother) {
           contypeList.push(element.contype)
         }
       }
-      if(element.contypeother && !(contypeList.includes(element.contypeother))){
+      if (element.contypeother && !(contypeList.includes(element.contypeother))) {
         contypeList.push(element.contypeother)
       }
     })

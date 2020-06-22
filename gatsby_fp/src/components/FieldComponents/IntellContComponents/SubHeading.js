@@ -3,34 +3,34 @@ const shortid = require("shortid")
 
 export default function IntellCont({ intellContList, publicationType }) {
 
-    function sortStatusAndYear(intellContList){
-      var pubIntellContList = [] 
-      var accIntellContList = []
-      var subIntellContList = []
+  function sortStatusAndYear(intellContList) {
+    var pubIntellContList = []
+    var accIntellContList = []
+    var subIntellContList = []
 
-      intellContList.forEach(element => {
-        switch(element.status){
-          case "Published":
-            pubIntellContList.push(element)
-            break
-          case "Accepted":
-            accIntellContList.push(element)
-            break
-          case "Submitted":
-            subIntellContList.push(element)
-            break  
-          default:
-            break  
-        }
-      })
-      
-      pubIntellContList.sort(function(a,b){return b.dty_pub - a.dty_pub})
-      accIntellContList.sort(function(a,b){return b.dty_acc - a.dty_acc})
-      subIntellContList.sort(function(a,b){return b.dty_sub - a.dty_sub})
+    intellContList.forEach(element => {
+      switch (element.status) {
+        case "Published":
+          pubIntellContList.push(element)
+          break
+        case "Accepted":
+          accIntellContList.push(element)
+          break
+        case "Submitted":
+          subIntellContList.push(element)
+          break
+        default:
+          break
+      }
+    })
 
-      const sortedIntellContList = pubIntellContList.concat(accIntellContList, subIntellContList)
-      return sortedIntellContList
-    }
+    pubIntellContList.sort(function (a, b) { return b.dty_pub - a.dty_pub })
+    accIntellContList.sort(function (a, b) { return b.dty_acc - a.dty_acc })
+    subIntellContList.sort(function (a, b) { return b.dty_sub - a.dty_sub })
+
+    const sortedIntellContList = pubIntellContList.concat(accIntellContList, subIntellContList)
+    return sortedIntellContList
+  }
 
     const sortedIntellContList = sortStatusAndYear(intellContList)
 
