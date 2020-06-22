@@ -15,18 +15,13 @@ export default function Education({ educationList }) {
               dangerouslySetInnerHTML={{
                 __html: ` 
                ${
-                 (element.deg && !(element.degother))
+                 (element.deg && !element.degother)
                    ? `${element.deg}`
                    : ``
                }
                ${
-                (element.degother && !(element.deg))
+                element.degother
                    ? `${element.degother}`
-                   : ``
-               }
-               ${
-                (element.degother && element.deg)
-                   ? `${element.deg}, ${element.degother} `
                    : ``
                }
                ${

@@ -1,0 +1,18 @@
+# .github/workflows/scheduled-build.yml
+
+# See https://community.netlify.com/t/scheduling-builds-and-deploys-with-netlify/2563/9
+
+name: Scheduled Netlify Build
+on:
+  schedule:
+    # Run at 8:50 AM UTC (3:50 AM or 4:50 AM ET) daily
+    - cron: '50 8 * * *'
+jobs:
+  build:
+    name: Request Netlify Webhook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl request
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: curl -X POST -d {} NETLIFY_BUILD_HOOK
