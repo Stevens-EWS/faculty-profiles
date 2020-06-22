@@ -1,7 +1,7 @@
 const path = require("path")
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const profileTemplate = path.resolve("src/components/layoutx.js")
+  const profileTemplate = path.resolve("src/components/Layout.js")
 
  return graphql(`
   {  

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "./headerx"
-import Fields from "./fieldsx"
+import Header from "./Header"
+import Fields from "./Fields"
 import Helmet from "react-helmet"
 
 export default function Layout({ children, data }) {
