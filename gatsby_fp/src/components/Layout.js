@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "./header"
-import Fields from "./fields"
+import Header from "./Header"
+import Fields from "./Fields"
 import Helmet from "react-helmet"
 
 export default function Layout({ children, data }) {
@@ -124,6 +124,7 @@ export const facultyData = graphql`
       }
       member {
         org
+        orgabbr
         status
       }
       intellcont {
@@ -143,6 +144,7 @@ export const facultyData = graphql`
         web_address
         intellcont_auth {
           faculty_name
+          mname
           fname
           lname
         }

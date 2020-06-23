@@ -13,6 +13,11 @@ export default function ProfSocieties({ profSocietiesList }) {
               dangerouslySetInnerHTML={{
                 __html: ` 
               ${
+                element.orgabbr
+                  ? `${element.orgabbr} -`
+                  : ``
+              } 
+              ${
                 element.org
                   ? `${element.org}`
                   : ``
