@@ -1,5 +1,5 @@
 import React from "react"
-import SubHeading from "./IntellContComponents/SubHeading.js"
+import SubHeading from "./IntellCont/SubHeading.js"
 const shortid = require("shortid")
 
 export default function IntellCont({ intellContList }) {
