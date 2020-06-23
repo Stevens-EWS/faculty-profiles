@@ -1,11 +1,11 @@
 import React from "react"
-import GenInfoTable from "./fieldComponents/GenInfoTable"
-import Education from "./fieldComponents/Education"
-import ProfService from "./fieldComponents/ProfService"
-import UnivService from "./fieldComponents/UnivService"
-import ProfSocieties from "./fieldComponents/ProfSocieties"
-import IntellCont from "./fieldComponents/IntellCont"
-import GeneralSection from "./fieldComponents/GeneralSection"
+import GenInfoTable from "./FieldComponents/GenInfoTable"
+import Education from "./FieldComponents/Education"
+import ProfService from "./FieldComponents/ProfService"
+import UnivService from "./FieldComponents/UnivService"
+import ProfSocieties from "./FieldComponents/ProfSocieties"
+import IntellCont from "./FieldComponents/IntellCont"
+import GeneralSection from "./FieldComponents/GeneralSection"
 
 export default function Fields({ facultyData }) {
   return (
