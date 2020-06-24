@@ -130,7 +130,6 @@ export const facultyData = graphql`
       intellcont {
         contype
         contypeother
-        journal_name
         pagenum
         status
         title
@@ -143,7 +142,6 @@ export const facultyData = graphql`
         dty_sub
         web_address
         intellcont_auth {
-          faculty_name
           mname
           fname
           lname
