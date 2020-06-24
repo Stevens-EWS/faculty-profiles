@@ -119,7 +119,7 @@ export default function GenInfoTable({
                           {website ? (
                             <tr>
                               <td>
-                                <a href={website} target="_blank">
+                                <a href={website} target="_blank" rel="noreferrer">
                                   Website
                                 </a>
                               </td>
