@@ -32,7 +32,7 @@ export default function GenInfoTable({
                   <img
                     src={`data:image/jpeg;base64,${imgsrc}`}
                     className="bioimage"
-                    alt={`Photo of ${firstName} ${lastName}`}
+                    alt={`${firstName} ${lastName}`}
                   />
                 </td>
                 <td valign="top" align="left">
