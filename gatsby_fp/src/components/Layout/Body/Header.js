@@ -3,7 +3,7 @@ import React from "react"
 const Header = () => (
   <header id="header" className="header" role="banner">
     <div className="header_container">
-    <a href= "https://www.stevens.edu" className="header_site_link"/>
+    <a href= "https://www.stevens.edu"/>
         <div className="header_chevron"></div>
         <div className="header_logo">
           <img
