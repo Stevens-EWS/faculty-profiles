@@ -8,7 +8,6 @@ const NotFoundPage = () => (
     <Head
       pageTitle={`Not Found - Stevens Institute of Technology`}
     />
-    <Header/>
     <Body
       bodyContent="Faculty profile not found."
     />
