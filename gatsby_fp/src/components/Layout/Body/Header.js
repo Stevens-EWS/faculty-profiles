@@ -3,7 +3,7 @@ import React from "react"
 const Header = () => (
   <header id="header" className="header" role="banner">
     <div className="header_container">
-      <div className="header_site_link">
+    <a href= "https://www.stevens.edu" className="header_site_link"/>
         <div className="header_chevron"></div>
         <div className="header_logo">
           <img
@@ -11,7 +11,6 @@ const Header = () => (
             alt="Stevens Institute of Technology - The Innovation University&reg;"
           />
         </div>
-      </div>
       <div className="secondary_nav"></div>
       <div className="utility_nav nav_hover nav_button_hover"></div>
       <nav className="primary_nav"></nav>
