@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "./Header"
+import Header from "./Body/Header"
 
 export default function Body({ bodyContent }) {
   return (

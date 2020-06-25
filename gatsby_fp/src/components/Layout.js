@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Fields from "./Fields"
-import Body from "./Body"
-import Head from "./Head"
+import Fields from "./Layout/Body/Fields"
+import Body from "./Layout/Body"
+import Head from "./Layout/Head"
 
 export default function Layout({ children, data }) {
   const sanitizeHtml = require("sanitize-html-react")

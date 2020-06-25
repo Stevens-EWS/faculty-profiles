@@ -1,7 +1,7 @@
 import React from "react"
-import Head from "../components/Head"
-import Header from "../components/Header"
-import Body from "../components/Body"
+import Head from "../components/Layout/Head"
+import Header from "../components/Layout/Body/Header"
+import Body from "../components/Layout/Body"
 
 const NotFoundPage = () => (
   <>
