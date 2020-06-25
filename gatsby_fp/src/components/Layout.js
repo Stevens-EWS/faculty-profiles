@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "./Header"
 import Fields from "./Fields"
+import Body from "./Body"
 import Helmet from "react-helmet"
 
 export default function Layout({ children, data }) {
@@ -41,40 +41,17 @@ export default function Layout({ children, data }) {
             data
               ? `${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - `
               : `Faculty Profiles - `
-          } 
+          }
           Stevens Institute of Technology
         </title>
       </Helmet>
-      <a href="#page" id="skip_to_content" className="offscreen">
-        Skip to Main Content
-      </a>
-      <div className="header_push_mobile"></div>
+      {data &&
+        <Body
+          bodyContent={<Fields facultyData={sanitizedData} />}
+        />
+      }
 
-      <Header />
 
-      <div className="page_wrapper js-navigation_push">
-        {/* Page : Main Content */}
-        <main id="page" className="page" role="main" tabIndex="-1">
-          {/* Page Content */}
-          <section className="page_content_area">
-            <hr className="top-bar" />
-            <div className="fs-row">
-              {/* Right Sidebar Navigation */}
-              <aside className="sidebar sidebar_subnavigation fs-cell-right fs-lg-3"></aside>
-
-              {/* Left Content Area */}
-
-              <div className="page_content fs-cell fs-lg-12">
-                {data && <Fields facultyData={sanitizedData} />}
-              </div>
-              {/* END: page_content */}
-
-              {/* Right Sidebar Callouts */}
-              <aside className="sidebar sidebar_callouts fs-cell-right fs-lg-3"></aside>
-            </div>
-          </section>
-        </main>
-      </div>
     </>
   )
 }
