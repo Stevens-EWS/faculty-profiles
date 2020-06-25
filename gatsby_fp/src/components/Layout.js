@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Fields from "./Fields"
 import Body from "./Body"
-import Helmet from "react-helmet"
+import Head from "./Head"
 
 export default function Layout({ children, data }) {
   const sanitizeHtml = require("sanitize-html-react")
@@ -31,26 +31,19 @@ export default function Layout({ children, data }) {
 
   return (
     <>
-      <Helmet
-        bodyAttributes={{
-          class: "fs-grid",
-        }}
-      >
-        <title>
-          {
-            data
-              ? `${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - `
-              : `Faculty Profiles - `
-          }
-          Stevens Institute of Technology
-        </title>
-      </Helmet>
+      {data
+        ? <Head
+            pageTitle={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
+          />
+        : <Head
+            pageTitle = {`Faculty Profiles - Stevens Institute of Technology`}
+          />
+      } 
       {data &&
         <Body
           bodyContent={<Fields facultyData={sanitizedData} />}
         />
       }
-
 
     </>
   )
