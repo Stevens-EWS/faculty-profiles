@@ -91,7 +91,7 @@ export default function GenInfoTable({
                               <td
                                 valign="top"
                                 dangerouslySetInnerHTML={{
-                                  __html: `Phone: ${phone}`,
+                                  __html: `<a href="${phone[0].url}">${phone[0].human_readable}</a>`,
                                 }}
                               ></td>
                             </tr>

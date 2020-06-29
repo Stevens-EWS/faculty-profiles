@@ -65,7 +65,10 @@ export const facultyData = graphql`
       pf_work_fax
       pf_first_name
       pf_last_name
-      pf_work_phone
+      pf_work_phone {
+        human_readable
+        url
+      }
       pf_title
       pf_username
       website
