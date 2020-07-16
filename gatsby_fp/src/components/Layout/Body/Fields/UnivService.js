@@ -1,29 +1,27 @@
 import React from "react"
 const shortid = require("shortid")
 
-export default function ProfSocieties({ profSocietiesList }) {
+export default function UnivService({ univServiceList }) {
   return (
     <>
-      <div className="sectiontitle">Professional Societies</div>
+      <div className="sectiontitle">Institutional Service</div>
       <div>
         <ul>
-          {profSocietiesList.map(element => (
+          {univServiceList.map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{
                 __html: ` 
               ${
                 element.org
-                  ? `
-                org: ${element.org}<br> `
+                  ? `${element.org}`
                   : ``
               } 
               ${
-                element.status
-                  ? `
-                orgabbr: ${element.orgabbr}<br> `
+                element.member_type
+                  ? `${element.member_type}`
                   : ``
-              }               
+              } 
           `,
               }}
             ></li>

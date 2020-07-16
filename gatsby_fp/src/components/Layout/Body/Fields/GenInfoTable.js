@@ -2,6 +2,7 @@ import React from "react"
 
 export default function GenInfoTable({
   school,
+  department,
   title,
   imgsrc,
   building,
@@ -12,6 +13,7 @@ export default function GenInfoTable({
   website,
   firstName,
   lastName,
+  email
 }) {
   return (
     <>
@@ -30,7 +32,7 @@ export default function GenInfoTable({
                   <img
                     src={`data:image/jpeg;base64,${imgsrc}`}
                     className="bioimage"
-                    alt={`Photo of ${firstName} ${lastName}`}
+                    alt={`${firstName} ${lastName}`}
                   />
                 </td>
                 <td valign="top" align="left">
@@ -44,10 +46,26 @@ export default function GenInfoTable({
                               dangerouslySetInnerHTML={{ __html: title }}
                             ></td>
                           </tr>
-
-                          <tr>
-                            <td valign="top">School: (Needs to be filled)</td>
-                          </tr>
+                          {school ? (
+                            <tr>
+                              <td
+                                valign="top"
+                                dangerouslySetInnerHTML={{
+                                  __html: `School: ${school}`,
+                                }}
+                              ></td>
+                            </tr>
+                          ) : null}
+                          {department ? (
+                            <tr>
+                              <td
+                                valign="top"
+                                dangerouslySetInnerHTML={{
+                                  __html: `Department: ${department}`,
+                                }}
+                              ></td>
+                            </tr>
+                          ) : null}
                           {building ? (
                             <tr>
                               <td
@@ -88,12 +106,12 @@ export default function GenInfoTable({
                               ></td>
                             </tr>
                           ) : null}
-                          {username ? (
+                          {email ? (
                             <tr>
                               <td
                                 valign="top"
                                 dangerouslySetInnerHTML={{
-                                  __html: `Email: ${username}@stevens.edu`,
+                                  __html: `Email: ${email}`,
                                 }}
                               ></td>
                             </tr>
@@ -101,7 +119,7 @@ export default function GenInfoTable({
                           {website ? (
                             <tr>
                               <td>
-                                <a href={website} target="_blank">
+                                <a href={website} target="_blank" rel="noreferrer">
                                   Website
                                 </a>
                               </td>

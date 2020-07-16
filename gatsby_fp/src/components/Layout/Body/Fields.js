@@ -1,11 +1,11 @@
 import React from "react"
-import GenInfoTable from "./fieldComponents/GenInfoTable"
-import Education from "./fieldComponents/Education"
-import ProfService from "./fieldComponents/ProfService"
-import UnivService from "./fieldComponents/UnivService"
-import ProfSocieties from "./fieldComponents/ProfSocieties"
-import IntellCont from "./fieldComponents/IntellCont"
-import GeneralSection from "./fieldComponents/GeneralSection"
+import GenInfoTable from "./Fields/GenInfoTable"
+import Education from "./Fields/Education"
+import ProfService from "./Fields/ProfService"
+import UnivService from "./Fields/UnivService"
+import ProfSocieties from "./Fields/ProfSocieties"
+import IntellCont from "./Fields/IntellCont"
+import GeneralSection from "./Fields/GeneralSection"
 
 export default function Fields({ facultyData }) {
   return (
@@ -24,6 +24,9 @@ export default function Fields({ facultyData }) {
         website={facultyData.website}
         firstName={facultyData.pf_first_name}
         lastName={facultyData.pf_last_name}
+        school={facultyData.school}
+        department={facultyData.ses_department}
+        email={facultyData.pf_email}
       />
       {facultyData.education && (
         <Education educationList={facultyData.education} />
