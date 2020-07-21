@@ -58,21 +58,30 @@ export default function IntellCont({ intellContList, publicationType }) {
                       ? `${element.contypeother} -`
                       : ``
                   }
-                  ${
-                    element.intellcont_auth.lname
-                      ? `${element.intellcont_auth.lname},`
-                      : ``
-                  }
-                  ${
-                    element.intellcont_auth.mname
-                      ? `${element.intellcont_auth.lname},`
-                      : ``
-                  }
-                  ${
-                    element.intellcont_auth.fname
-                      ? `${element.intellcont_auth.fname}.`
-                      : ``
-                  }
+                  ${element.intellcont_auth.map(elem => (
+                    `
+                      ${
+                        elem.lname
+                          ? `${elem.lname},`
+                          : ``
+                      }
+                      ${
+                        elem.fname && !elem.mname
+                          ? `${elem.fname}.;`
+                          : ``
+                      }
+                      ${
+                        elem.mname && !elem.fname
+                          ? `${elem.mname}.;`
+                          : ``
+                      }
+                      ${
+                        elem.fname && elem.mname
+                          ? `${elem.fname}. ${elem.mname}.;`
+                          : ``
+                      }
+                    `
+                  )).join('')}
                   ${
                     element.status === "Published" && element.dty_pub
                       ? `(${element.dty_pub}).`
