@@ -31,7 +31,7 @@
     "gatsby-plugin-react-helmet": "^3.3.3",
     "gatsby-plugin-sharp": "^2.6.10",
     "gatsby-source-filesystem": "^2.3.10",
-    "gatsby-source-multi-api-FORKED": "git+https://github.com/Stevens-EWS/gatsby-source-multi-api.git#8166ab2632dfb16bcfef95d9de244866141de6b2",
+    "gatsby-source-multi-api-FORKED": "git+https://github.com/Stevens-EWS/gatsby-source-multi-api.git#4e90735c1fb505304920eb92b57837a8544ae55e",
     "gatsby-source-rest-api": "^0.2.3",
     "gatsby-transformer-sharp": "^2.5.4",
     "prop-types": "^15.7.2",
