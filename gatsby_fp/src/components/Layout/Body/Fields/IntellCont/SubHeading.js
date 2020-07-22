@@ -50,7 +50,7 @@ export default function IntellCont({ intellContList, publicationType }) {
           liString += `${elem.lname}, `
         }
         if (elem.fname && !elem.mname) {
-          liString += `${elem.fname}; `
+          liString += `${elem.fname};. `
         }
         if (elem.mname && !elem.fname) {
           liString += `${elem.mname}.; `
