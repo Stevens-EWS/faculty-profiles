@@ -34,92 +34,92 @@ export default function IntellCont({ intellContList, publicationType }) {
 
   const sortedIntellContList = sortStatusAndYear(intellContList)
   const liInnerHTMLList =
-  sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => { 
-    let liString = '';
-    if(element.status){
-      liString += `${element.status} `
-    }
-    if(element.contype && !element.contypeother){
-      liString += `${element.contype} - `
-    }
-    if(element.contypeother){
-      liString += `${element.contypeother} - `
-    }
-    element.intellcont_auth.forEach(elem => {
-      if(elem.lname){
-        liString += `${elem.lname}, `
+    sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => {
+      let liString = '';
+      if (element.status) {
+        liString += `${element.status} `
       }
-      if(elem.fname && !elem.mname){
-        liString += `${elem.fname}; `
+      if (element.contype && !element.contypeother) {
+        liString += `${element.contype} - `
       }
-      if(elem.mname && !elem.fname){
-        liString += `${elem.mname}.; `
+      if (element.contypeother) {
+        liString += `${element.contypeother} - `
       }
-      if(elem.fname && elem.mname){
-        liString += `${elem.fname}. ${elem.mname}.; `
+      element.intellcont_auth.forEach(elem => {
+        if (elem.lname) {
+          liString += `${elem.lname}, `
+        }
+        if (elem.fname && !elem.mname) {
+          liString += `${elem.fname}; `
+        }
+        if (elem.mname && !elem.fname) {
+          liString += `${elem.mname}.; `
+        }
+        if (elem.fname && elem.mname) {
+          liString += `${elem.fname}. ${elem.mname}.; `
+        }
+      })
+      if (element.status === "Published" && element.dty_pub) {
+        liString += `(${element.dty_pub}). `
       }
-    })
-    if(element.status === "Published" && element.dty_pub){
-      liString += `(${element.dty_pub}). `
-    }
-    if(element.status === "Accepted" && element.dty_acc){
-      liString += `(${element.dty_acc}). `
-    }
-    if(element.status === "Submitted" && element.dty_sub){
-      liString += `(${element.dty_sub}). `
-    }
-    if(element.title){
-      liString += `${element.title}. `
-    }
-    if(element.title_secondary){
-      liString += `${element.title_secondary} `
-    }
-    if(element.issue && !element.pagenum && !element.volume){
-      liString += `(${element.issue} ed.). `
-    }
-    if(!element.issue && element.pagenum && !element.volume){
-      liString += `(pp. ${element.pagenum}). `
-    }
-    if(!element.issue && !element.pagenum && element.volume){
-      liString += `(vol. ${element.volume}). `
-    }
-    if(!element.issue && element.pagenum && element.volume){
-      liString += `(vol. ${element.volume}, pp. ${element.pagenum}). `
-    }
-    if(element.issue && !element.pagenum && element.volume){
-      liString += `(${element.issue} ed., vol. ${element.volume}). `
-    }
-    if(element.issue && element.pagenum && !element.volume){
-      liString += `(${element.issue} ed., pp. ${element.pagenum}). `
-    }
-    if(element.issue && element.pagenum && element.volume){
-      liString += `(${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}). `
-    }
-    if(element.pubctyst){
-      liString += `${element.pubctyst}: `
-    }
-    if(element.publisher){
-      liString += `${element.publisher}. `
-    }
-    if(element.web_address){
-      liString += `<br>${element.web_address}.`
-    }
+      if (element.status === "Accepted" && element.dty_acc) {
+        liString += `(${element.dty_acc}). `
+      }
+      if (element.status === "Submitted" && element.dty_sub) {
+        liString += `(${element.dty_sub}). `
+      }
+      if (element.title) {
+        liString += `${element.title}. `
+      }
+      if (element.title_secondary) {
+        liString += `${element.title_secondary} `
+      }
+      if (element.issue && !element.pagenum && !element.volume) {
+        liString += `(${element.issue} ed.). `
+      }
+      if (!element.issue && element.pagenum && !element.volume) {
+        liString += `(pp. ${element.pagenum}). `
+      }
+      if (!element.issue && !element.pagenum && element.volume) {
+        liString += `(vol. ${element.volume}). `
+      }
+      if (!element.issue && element.pagenum && element.volume) {
+        liString += `(vol. ${element.volume}, pp. ${element.pagenum}). `
+      }
+      if (element.issue && !element.pagenum && element.volume) {
+        liString += `(${element.issue} ed., vol. ${element.volume}). `
+      }
+      if (element.issue && element.pagenum && !element.volume) {
+        liString += `(${element.issue} ed., pp. ${element.pagenum}). `
+      }
+      if (element.issue && element.pagenum && element.volume) {
+        liString += `(${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}). `
+      }
+      if (element.pubctyst) {
+        liString += `${element.pubctyst}: `
+      }
+      if (element.publisher) {
+        liString += `${element.publisher}. `
+      }
+      if (element.web_address) {
+        liString += `<br>${element.web_address}.`
+      }
 
-    return liString
-  })
-    return (
+      return liString
+    })
+  return (
     <>
       <div className="publicationtitle">{publicationType}</div>
-        <ol>
+      <ol>
         {liInnerHTMLList.map(element => (
-            <li
-              key={shortid.generate()}
-              dangerouslySetInnerHTML={{
-                __html: element
-              }}
-            ></li>
-          ))}
-        </ol>
+          <li
+            key={shortid.generate()}
+            dangerouslySetInnerHTML={{
+              __html: element
+            }}
+          ></li>
+        ))}
+      </ol>
     </>
   )
 }

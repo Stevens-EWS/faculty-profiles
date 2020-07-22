@@ -27,7 +27,7 @@ export default function IntellCont({ intellContList }) {
       <div className="sectiontitle">Selected Publications</div>
       <div>
         {contypeList.map(element => (
-          <SubHeading 
+          <SubHeading
             key={shortid.generate()}
             intellContList={intellContList}
             publicationType={element}

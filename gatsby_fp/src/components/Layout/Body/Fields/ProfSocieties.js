@@ -4,19 +4,19 @@ const shortid = require("shortid")
 export default function ProfSocieties({ profSocietiesList }) {
 
   const liInnerHTMLList =
-  profSocietiesList.map(element => { 
-    let liString = '';
-    if(element.orgabbr){
-      liString += `${element.orgabbr} `
-    }
-    if(element.org){
-      liString += `${element.org} `
-    }
-    if(element.status){
-      liString += `${element.status}`
-    }
-    return liString
-  })
+    profSocietiesList.map(element => {
+      let liString = '';
+      if (element.orgabbr) {
+        liString += `${element.orgabbr} `
+      }
+      if (element.org) {
+        liString += `${element.org} `
+      }
+      if (element.status) {
+        liString += `${element.status}`
+      }
+      return liString
+    })
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function ProfSocieties({ profSocietiesList }) {
                 __html: element
               }}
             ></li>
-            ))}
+          ))}
         </ul>
       </div>
     </>
