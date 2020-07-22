@@ -3,7 +3,7 @@ const shortid = require("shortid")
 
 export default function UnivService({ univServiceList }) {
 
-  const liInnerHTMLList =
+  const liInnerHtmlList =
     univServiceList.map(element => {
       let liString = '';
       if (element.org) {
@@ -21,7 +21,7 @@ export default function UnivService({ univServiceList }) {
       <div className="sectiontitle">Institutional Service</div>
       <div>
         <ul>
-          {liInnerHTMLList.map(element => (
+          {liInnerHtmlList.map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{

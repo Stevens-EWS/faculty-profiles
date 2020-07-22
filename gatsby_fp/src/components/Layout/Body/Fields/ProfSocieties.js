@@ -3,7 +3,7 @@ const shortid = require("shortid")
 
 export default function ProfSocieties({ profSocietiesList }) {
 
-  const liInnerHTMLList =
+  const liInnerHtmlList =
     profSocietiesList.map(element => {
       let liString = '';
       if (element.orgabbr) {
@@ -23,7 +23,7 @@ export default function ProfSocieties({ profSocietiesList }) {
       <div className="sectiontitle">Professional Societies</div>
       <div>
         <ul>
-          {liInnerHTMLList.map(element => (
+          {liInnerHtmlList.map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{

@@ -33,7 +33,7 @@ export default function IntellCont({ intellContList, publicationType }) {
   }
 
   const sortedIntellContList = sortStatusAndYear(intellContList)
-  const liInnerHTMLList =
+  const liInnerHtmlList =
     sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => {
       let liString = '';
       if (element.status) {
@@ -111,7 +111,7 @@ export default function IntellCont({ intellContList, publicationType }) {
     <>
       <div className="publicationtitle">{publicationType}</div>
       <ol>
-        {liInnerHTMLList.map(element => (
+        {liInnerHtmlList.map(element => (
           <li
             key={shortid.generate()}
             dangerouslySetInnerHTML={{

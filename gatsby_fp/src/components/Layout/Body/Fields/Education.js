@@ -3,7 +3,7 @@ const shortid = require("shortid")
 
 export default function Education({ educationList }) {
 
-  const liInnerHTMLList =
+  const liInnerHtmlList =
     educationList.map(element => {
       let liString = '';
       if (element.deg && !element.degother) {
@@ -30,7 +30,7 @@ export default function Education({ educationList }) {
       <div className="sectiontitle">Education</div>
       <div>
         <ul>
-          {liInnerHTMLList.map(element => (
+          {liInnerHtmlList.map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{
