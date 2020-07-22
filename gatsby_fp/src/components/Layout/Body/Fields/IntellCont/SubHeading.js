@@ -32,133 +32,90 @@ export default function IntellCont({ intellContList, publicationType }) {
     return sortedIntellContList
   }
 
-    const sortedIntellContList = sortStatusAndYear(intellContList)
+  const sortedIntellContList = sortStatusAndYear(intellContList)
+  const liInnerHTMLList =
+  sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => { 
+    let liString = '';
+    if(element.status){
+      liString += `${element.status} `
+    }
+    if(element.contype && !element.contypeother){
+      liString += `${element.contype} - `
+    }
+    if(element.contypeother){
+      liString += `${element.contypeother} - `
+    }
+    element.intellcont_auth.forEach(elem => {
+      if(elem.lname){
+        liString += `${elem.lname}, `
+      }
+      if(elem.fname && !elem.mname){
+        liString += `${elem.fname}; `
+      }
+      if(elem.mname && !elem.fname){
+        liString += `${elem.mname}.; `
+      }
+      if(elem.fname && elem.mname){
+        liString += `${elem.fname}. ${elem.mname}.; `
+      }
+    })
+    if(element.status === "Published" && element.dty_pub){
+      liString += `(${element.dty_pub}). `
+    }
+    if(element.status === "Accepted" && element.dty_acc){
+      liString += `(${element.dty_acc}). `
+    }
+    if(element.status === "Submitted" && element.dty_sub){
+      liString += `(${element.dty_sub}). `
+    }
+    if(element.title){
+      liString += `${element.title}. `
+    }
+    if(element.title_secondary){
+      liString += `${element.title_secondary} `
+    }
+    if(element.issue && !element.pagenum && !element.volume){
+      liString += `(${element.issue} ed.). `
+    }
+    if(!element.issue && element.pagenum && !element.volume){
+      liString += `(pp. ${element.pagenum}). `
+    }
+    if(!element.issue && !element.pagenum && element.volume){
+      liString += `(vol. ${element.volume}). `
+    }
+    if(!element.issue && element.pagenum && element.volume){
+      liString += `(vol. ${element.volume}, pp. ${element.pagenum}). `
+    }
+    if(element.issue && !element.pagenum && element.volume){
+      liString += `(${element.issue} ed., vol. ${element.volume}). `
+    }
+    if(element.issue && element.pagenum && !element.volume){
+      liString += `(${element.issue} ed., pp. ${element.pagenum}). `
+    }
+    if(element.issue && element.pagenum && element.volume){
+      liString += `(${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}). `
+    }
+    if(element.pubctyst){
+      liString += `${element.pubctyst}: `
+    }
+    if(element.publisher){
+      liString += `${element.publisher}. `
+    }
+    if(element.web_address){
+      liString += `<br>${element.web_address}.`
+    }
 
+    return liString
+  })
     return (
     <>
       <div className="publicationtitle">{publicationType}</div>
         <ol>
-          {sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => (
+        {liInnerHTMLList.map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{
-                __html: ` 
-                 ${
-                    element.status
-                      ? `${element.status}`
-                      : ``
-                  }
-                  ${
-                    element.contype && !element.contypeother
-                      ? `${element.contype} -`
-                      : ``
-                  }
-                  ${
-                    element.contypeother
-                      ? `${element.contypeother} -`
-                      : ``
-                  }
-                  ${element.intellcont_auth.map(elem => (
-                    `
-                      ${
-                        elem.lname
-                          ? `${elem.lname},`
-                          : ``
-                      }
-                      ${
-                        elem.fname && !elem.mname
-                          ? `${elem.fname}.;`
-                          : ``
-                      }
-                      ${
-                        elem.mname && !elem.fname
-                          ? `${elem.mname}.;`
-                          : ``
-                      }
-                      ${
-                        elem.fname && elem.mname
-                          ? `${elem.fname}. ${elem.mname}.;`
-                          : ``
-                      }
-                    `
-                  )).join('')}
-                  ${
-                    element.status === "Published" && element.dty_pub
-                      ? `(${element.dty_pub}).`
-                      : ``
-                  }
-                  ${
-                    element.status === "Accepted" && element.dty_acc
-                      ? `(${element.dty_acc}).`
-                      : ``
-                  }
-                  ${
-                    element.status === "Submitted" && element.dty_sub
-                      ? `(${element.dty_sub}).`
-                      : ``
-                  }
-                  ${
-                    element.title
-                      ? `${element.title}.`
-                      : ``
-                  }
-                  ${
-                    element.title_secondary
-                      ? `${element.title_secondary}`
-                      : ``
-                  }
-                  ${
-                    (element.issue && !element.pagenum && !element.volume)
-                      ? `(${element.issue} ed.).`
-                      : ``
-                  }
-                  ${
-                    (!element.issue && element.pagenum && !element.volume)
-                      ? `(pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    (!element.issue && !element.pagenum && element.volume)
-                      ? `(vol. ${element.volume}).`
-                      : ``
-                  }
-                  ${
-                    (!element.issue && element.pagenum && element.volume)
-                      ? `(vol. ${element.volume}, pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    (element.issue && !element.pagenum && element.volume)
-                      ? `(${element.issue} ed., vol. ${element.volume}).`
-                      : ``
-                  }
-                  ${
-                    (element.issue && element.pagenum && !element.volume)
-                      ? `(${element.issue} ed., pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    (element.issue && element.pagenum && element.volume)
-                      ? `(${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    element.pubctyst
-                      ? `${element.pubctyst}:`
-                      : ``
-                  }
-                  ${
-                    element.publisher
-                      ? `${element.publisher}.`
-                      : ``
-                  }
-                  <br>
-                  ${
-                    element.web_address
-                      ? `${element.web_address}`
-                      : ``
-                  }                
-              `,
+                __html: element
               }}
             ></li>
           ))}
