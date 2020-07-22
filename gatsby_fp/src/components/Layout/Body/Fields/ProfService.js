@@ -21,14 +21,14 @@ export default function ProfService({ profServiceList }) {
       <div className="sectiontitle">Professional Service</div>
       <div>
         <ul>
-        {liInnerHTMLList.map(element => (
-            <li
-              key={shortid.generate()}
-              dangerouslySetInnerHTML={{
-                __html: element
-              }}
-            ></li>
-          ))}
+          {liInnerHTMLList.map(element => (
+              <li
+                key={shortid.generate()}
+                dangerouslySetInnerHTML={{
+                  __html: element
+                }}
+              ></li>
+            ))}
         </ul>
       </div>
     </>
