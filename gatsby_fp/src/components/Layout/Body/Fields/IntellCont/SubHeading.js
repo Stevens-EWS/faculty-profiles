@@ -95,11 +95,14 @@ export default function IntellCont({ intellContList, publicationType }) {
       if (element.issue && element.pagenum && element.volume) {
         liString += `(${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}). `
       }
-      if (element.pubctyst) {
-        liString += `${element.pubctyst}: `
+      if (element.pubctyst && element.publisher) {
+        liString += `${element.pubctyst}: ${element.publisher}.`
       }
-      if (element.publisher) {
-        liString += `${element.publisher}. `
+      if (!element.pubctyst && element.publisher) {
+        liString += `${element.publisher}.`
+      }
+      if (element.pubctyst && !element.publisher) {
+        liString += `${element.pubctyst}.`
       }
       if (element.web_address) {
         liString += `<br>${element.web_address}.`
