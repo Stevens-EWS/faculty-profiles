@@ -12,7 +12,7 @@ export default function Layout({ children, data }) {
     })
   }
   if (data) {
-    var sanitizedData = data.multiApiSourcePeopleFaculty
+    var sanitizedData = data.profiles
   }
   function traverse(parent) {
     for (let child in parent) {
@@ -33,12 +33,12 @@ export default function Layout({ children, data }) {
     <>
       {data
         ? <Head
-            pageTitle={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
-          />
+          pageTitle={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
+        />
         : <Head
-            pageTitle = {`Faculty Profiles - Stevens Institute of Technology`}
-          />
-      } 
+          pageTitle={`Faculty Profiles - Stevens Institute of Technology`}
+        />
+      }
       {data &&
         <Body
           bodyContent={<Fields facultyData={sanitizedData} />}
@@ -51,7 +51,7 @@ export default function Layout({ children, data }) {
 
 export const facultyData = graphql`
   query dataByPath($pagePath: String!) {
-    multiApiSourcePeopleFaculty(pf_username: { eq: $pagePath }) {
+    profiles(pf_username: { eq: $pagePath }) {
       appointment
       bio
       building
