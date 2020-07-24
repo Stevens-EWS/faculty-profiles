@@ -12,7 +12,7 @@ export default function Layout({ children, data }) {
     })
   }
   if (data) {
-    var sanitizedData = data.multiApiSourcePeopleFaculty
+    var sanitizedData = data.profiles
   }
   function traverse(parent) {
     for (let child in parent) {
@@ -51,7 +51,7 @@ export default function Layout({ children, data }) {
 
 export const facultyData = graphql`
   query dataByPath($pagePath: String!) {
-    multiApiSourcePeopleFaculty(pf_username: { eq: $pagePath }) {
+    profiles(pf_username: { eq: $pagePath }) {
       appointment
       bio
       building
