@@ -9,6 +9,9 @@ export default function ProfSocieties({ profSocietiesList }) {
       if (element.orgabbr) {
         liString += `${element.orgabbr} `
       }
+      if (element.orgabbr && element.org) {
+        liString += `- `
+      }
       if (element.org) {
         liString += `${element.org} `
       }
