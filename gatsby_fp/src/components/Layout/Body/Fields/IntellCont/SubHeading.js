@@ -35,7 +35,7 @@ export default function IntellCont({ intellContList, publicationType }) {
   const sortedIntellContList = sortStatusAndYear(intellContList)
   const liInnerHtmlList =
     sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => {
-      let liString = '';
+      let liString = ''
       if (element.status) {
         liString += `${element.status} `
       }

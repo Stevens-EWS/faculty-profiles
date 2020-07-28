@@ -5,7 +5,7 @@ export default function ProfSocieties({ profSocietiesList }) {
 
   const liInnerHtmlList =
     profSocietiesList.map(element => {
-      let liString = '';
+      let liString = ''
       if (element.orgabbr) {
         liString += `${element.orgabbr} `
       }

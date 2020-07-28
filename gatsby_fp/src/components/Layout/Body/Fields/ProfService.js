@@ -5,7 +5,7 @@ export default function ProfService({ profServiceList }) {
 
   const liInnerHtmlList =
     profServiceList.map(element => {
-      let liString = '';
+      let liString = ''
       if (element.org) {
         liString += `${element.org} `
       }

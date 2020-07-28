@@ -5,7 +5,7 @@ export default function UnivService({ univServiceList }) {
 
   const liInnerHtmlList =
     univServiceList.map(element => {
-      let liString = '';
+      let liString = ''
       if (element.org) {
         liString += `${element.org} `
       }

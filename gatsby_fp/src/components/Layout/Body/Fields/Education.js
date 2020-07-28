@@ -5,7 +5,7 @@ export default function Education({ educationList }) {
 
   const liInnerHtmlList =
     educationList.map(element => {
-      let liString = '';
+      let liString = ''
       if (element.deg && !element.degother) {
         liString += `${element.deg} `
       }
