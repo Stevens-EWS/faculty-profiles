@@ -47,16 +47,16 @@ export default function IntellCont({ intellContList, publicationType }) {
       }
       element.intellcont_auth.forEach((elem, index) => {
         if (elem.lname) {
-          liString += `${elem.lname}, `
+          liString += `${elem.lname}`
         }
         if (elem.fname && !elem.mname) {
-          liString += `${elem.fname.substr(0,1)}.`
+          liString += `, ${elem.fname.substr(0,1)}.`
         }
         if (elem.mname && !elem.fname) {
-          liString += `${elem.mname.substr(0,1)}.`
+          liString += `, ${elem.mname.substr(0,1)}.`
         }
         if (elem.fname && elem.mname) {
-          liString += `${elem.fname.substr(0,1)}. ${elem.mname.substr(0,1)}.`
+          liString += `, ${elem.fname.substr(0,1)}. ${elem.mname.substr(0,1)}.`
         }
         if(index !== element.intellcont_auth.length - 1){
           liString += `; `
