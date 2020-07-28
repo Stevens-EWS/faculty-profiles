@@ -10,7 +10,7 @@ export default function ProfSocieties({ profSocietiesList }) {
         liString += `${element.orgabbr} `
       }
       if (element.orgabbr && element.org) {
-        liString += `- `
+        liString += `– `
       }
       if (element.org) {
         liString += `${element.org} `
