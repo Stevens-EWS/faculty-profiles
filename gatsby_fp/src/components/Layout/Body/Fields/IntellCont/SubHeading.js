@@ -61,15 +61,18 @@ export default function IntellCont({ intellContList, publicationType }) {
         if(index !== element.intellcont_auth.length - 1){
           liString += `; `
         }
-      })
+     })
       if (element.status === "Published" && element.dty_pub) {
-        liString += `(${element.dty_pub}). `
+        liString += ` (${element.dty_pub})`
       }
       if (element.status === "Accepted" && element.dty_acc) {
-        liString += `(${element.dty_acc}). `
+        liString += ` (${element.dty_acc})`
       }
       if (element.status === "Submitted" && element.dty_sub) {
-        liString += `(${element.dty_sub}). `
+        liString += ` (${element.dty_sub})`
+      }
+      if(element.dty_pub || element.dty_acc || element.dty_sub || element.intellcont_auth){
+        liString += `. `
       }
       if (element.title) {
         liString += `${element.title}. `
