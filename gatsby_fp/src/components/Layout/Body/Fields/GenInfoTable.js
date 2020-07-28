@@ -46,7 +46,7 @@ export default function GenInfoTable({
                               dangerouslySetInnerHTML={{ __html: title }}
                             ></td>
                           </tr>
-                          {school ? (
+                          {school && (
                             <tr>
                               <td
                                 valign="top"
@@ -55,8 +55,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          ) : null}
-                          {department ? (
+                          )}
+                          {department && (
                             <tr>
                               <td
                                 valign="top"
@@ -65,8 +65,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          ) : null}
-                          {building ? (
+                          )}
+                          {building && (
                             <tr>
                               <td
                                 valign="top"
@@ -75,8 +75,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          ) : null}
-                          {room ? (
+                          )}
+                          {room && (
                             <tr>
                               <td
                                 valign="top"
@@ -85,8 +85,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          ) : null}
-                          {phone ? (
+                          )}
+                          {phone && (
                             <tr>
                               <td
                                 valign="top"
@@ -95,8 +95,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          ) : null}
-                          {fax ? (
+                          )}
+                          {fax && (
                             <tr>
                               <td
                                 valign="top"
@@ -105,8 +105,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          ) : null}
-                          {email ? (
+                          )}
+                          {email && (
                             <tr>
                               <td
                                 valign="top"
@@ -115,8 +115,8 @@ export default function GenInfoTable({
                                 }}
                               ></td>
                             </tr>
-                          ) : null}
-                          {website ? (
+                          )}
+                          {website && (
                             <tr>
                               <td>
                                 <a href={website} target="_blank" rel="noreferrer">
@@ -124,7 +124,7 @@ export default function GenInfoTable({
                                 </a>
                               </td>
                             </tr>
-                          ) : null}
+                          )}
                         </tbody>
                       </table>
                     </div>
