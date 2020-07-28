@@ -75,31 +75,31 @@ export default function IntellCont({ intellContList, publicationType }) {
         liString += `. `
       }
       if (element.title) {
-        liString += `${element.title}. `
+        liString += `${element.title}`
       }
       if (element.title_secondary) {
-        liString += `${element.title_secondary}. `
+        liString += `. ${element.title_secondary}`
       }
       if (element.issue && !element.pagenum && !element.volume) {
-        liString += `(${element.issue} ed.). `
+        liString += ` (${element.issue} ed.). `
       }
       if (!element.issue && element.pagenum && !element.volume) {
-        liString += `(pp. ${element.pagenum}). `
+        liString += ` (pp. ${element.pagenum}). `
       }
       if (!element.issue && !element.pagenum && element.volume) {
-        liString += `(vol. ${element.volume}). `
+        liString += ` (vol. ${element.volume}). `
       }
       if (!element.issue && element.pagenum && element.volume) {
-        liString += `(vol. ${element.volume}, pp. ${element.pagenum}). `
+        liString += ` (vol. ${element.volume}, pp. ${element.pagenum}). `
       }
       if (element.issue && !element.pagenum && element.volume) {
-        liString += `(${element.issue} ed., vol. ${element.volume}). `
+        liString += ` (${element.issue} ed., vol. ${element.volume}). `
       }
       if (element.issue && element.pagenum && !element.volume) {
-        liString += `(${element.issue} ed., pp. ${element.pagenum}). `
+        liString += ` (${element.issue} ed., pp. ${element.pagenum}). `
       }
       if (element.issue && element.pagenum && element.volume) {
-        liString += `(${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}). `
+        liString += ` (${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}). `
       }
       if (element.pubctyst && element.publisher) {
         liString += `${element.pubctyst}: ${element.publisher}.`
