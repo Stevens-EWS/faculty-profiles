@@ -114,7 +114,7 @@ export default function IntellCont({ intellContList, publicationType }) {
         liString += `${element.pubctyst}.`
       }
       if (element.web_address) {
-        liString += `<br>${element.web_address}.`
+        liString += `<br><a href="${element.web_address}" target="_blank" rel="noreferrer">${element.web_address}</a>.`
       }
 
       return liString
