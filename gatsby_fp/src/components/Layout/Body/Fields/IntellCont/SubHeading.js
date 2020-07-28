@@ -40,10 +40,10 @@ export default function IntellCont({ intellContList, publicationType }) {
         liString += `${element.status} `
       }
       if (element.contype && !element.contypeother) {
-        liString += `${element.contype} - `
+        liString += `${element.contype} – `
       }
       if (element.contypeother) {
-        liString += `${element.contypeother} - `
+        liString += `${element.contypeother} – `
       }
       element.intellcont_auth.forEach((elem, index) => {
         if (elem.lname) {
