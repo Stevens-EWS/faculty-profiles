@@ -18,7 +18,15 @@ body {
   margin: 24px 0 12px;
   text-transform: none;
 }
-
+.img_container{
+  float: left;
+  padding-right: 3em;
+}
+@media (min-width: 740px){
+  .field_wrapper_main{
+    padding-top: 3em;
+  }
+}
 .publicationtitle {
   font-size: 1.1em;
   font-weight: bold;
@@ -96,6 +104,13 @@ hr.top-bar{
   clear: both;
   margin: 0.5em 0 0.5em 0;
   padding: 0;
+}
+
+.title{
+  font-family: "Chaparral W01",Georgia,Times,"Times New Roman",serif;
+  padding: 0 0 15px;
+  border-bottom: 1px solid #E0E0E0;
+  font-size: 1.3em; 
 }
 
 @media (max-width: 980px) {
