@@ -20,13 +20,15 @@ body {
 }
 .img_container{
   float: left;
-  padding-right: 3em;
+  padding-right: 2em;
 }
-@media (min-width: 740px){
+.pf_field_wrapper{
+  display: inline-block;
+}
   .field_wrapper_main{
-    padding-top: 3em;
+    display: inline-block;
   }
-}
+
 .publicationtitle {
   font-size: 1.1em;
   font-weight: bold;
