@@ -21,9 +21,7 @@ body {
 .img_container{
   margin-right: 2%;
 }
-.field_wrapper_main{
-  display: inline-block;
-}
+
 .flex_box{
   display: flex;
   flex-wrap: wrap;
