@@ -19,16 +19,23 @@ body {
   text-transform: none;
 }
 .img_container{
-  float: left;
-  padding-right: 2em;
+  margin-right: 2%;
 }
-.pf_field_wrapper{
+.field_wrapper_main{
   display: inline-block;
 }
-  .field_wrapper_main{
-    display: inline-block;
-  }
+.flex_box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.pf_field_wrapper > p{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Trade Gothic W01", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #383838;
 
+}
 .publicationtitle {
   font-size: 1.1em;
   font-weight: bold;
