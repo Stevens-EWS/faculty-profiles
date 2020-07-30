@@ -26,13 +26,13 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
 .pf_field_wrapper > p{
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Trade Gothic W01", Arial, Helvetica, sans-serif;
   font-style: normal;
   color: #383838;
-
 }
 .publicationtitle {
   font-size: 1.1em;
@@ -129,5 +129,20 @@ hr.top-bar{
     clear: both;
     margin: 3em 0 0.5em 0;
     padding: 0;
+  }
+}
+
+@media (min-width: 740px){
+  .img_container{
+    margin-right: 2%;
+    width: 13em;
+  }
+  .flex_box{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .pf_field_wrapper{
+    flex-grow: 1;
   }
 }
