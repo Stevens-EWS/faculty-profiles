@@ -1,5 +1,4 @@
 /* Styles for Faculty Profile */
-
 body {
   font-family: "Chaparral W01", Georgia, Times, "Times New Roman", serif;
   font-style: normal;
@@ -19,8 +18,8 @@ body {
   margin: 24px 0 12px;
   text-transform: none;
 }
-.img_container{
-  margin-right: 2%;
+.bioimage{
+  margin-right: 1.5em;
 }
 
 .flex_box{
@@ -45,11 +44,6 @@ body {
 .biotitle {
   color: #9D1535;
   padding-bottom: 0.5em;
-}
-
-.bioimage {
-  margin-bottom: .9em;
-  max-height: 210px;
 }
 
 a {
@@ -114,11 +108,11 @@ hr.top-bar{
   padding: 0;
 }
 
-.title{
+.title > p{
   font-family: "Chaparral W01",Georgia,Times,"Times New Roman",serif;
   padding: 0 0 15px;
-  border-bottom: 1px solid #E0E0E0;
   font-size: 1.3em; 
+  margin: 0 0 0 0;
 }
 
 @media (max-width: 980px) {
@@ -134,7 +128,7 @@ hr.top-bar{
 }
 
 @media (min-width: 550px){
-  .img_container{
+  .bioimage{
     margin-right: 2%;
     width: 13em;
   }
@@ -145,5 +139,12 @@ hr.top-bar{
   }
   .pf_field_wrapper{
     flex-grow: 1;
+  }
+}
+
+@media (max-width: 550px){
+  .bioimage{
+    margin-right: 1.5em;
+    margin-bottom: .9em;
   }
 }

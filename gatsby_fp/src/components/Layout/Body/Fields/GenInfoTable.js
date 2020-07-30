@@ -17,22 +17,21 @@ export default function GenInfoTable({
 }) {
   return (
     <>
+      {title && (
+        <div className="title">
+          <p
+            valign="top"
+            dangerouslySetInnerHTML={{ __html: title }}
+          ></p>
+        </div>
+      )} 
       <div className="flex_box">
-        <div className="img_container">
           <img
             src={`data:image/jpeg;base64,${imgsrc}`}
             className="bioimage"
             alt={`${firstName} ${lastName}`}
           />
-        </div>
         <div className = "pf_field_wrapper">
-          {title && (
-            <p
-              className="title"
-              valign="top"
-              dangerouslySetInnerHTML={{ __html: title }}
-            ></p>
-          )} 
           {school && (
             <p
               valign="top"
