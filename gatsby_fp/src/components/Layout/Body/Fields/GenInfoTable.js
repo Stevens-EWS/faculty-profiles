@@ -1,4 +1,5 @@
 import React from "react"
+import { element } from "prop-types"
 
 export default function GenInfoTable({
   school,
@@ -26,11 +27,13 @@ export default function GenInfoTable({
         </div>
       )} 
       <div className="flex_box">
+        <div className="img_wrapper">
           <img
             src={`data:image/jpeg;base64,${imgsrc}`}
             className="bioimage"
             alt={`${firstName} ${lastName}`}
           />
+        </div>
         <div className = "pf_field_wrapper">
           {school && (
             <p

@@ -8,6 +8,11 @@ body {
   overflow-wrap: break-word;
 }
 
+.img_wrapper {
+  width: 13rem;
+  margin-right: 1.5em;
+}
+
 .sectiontitle {
   font-family: "Trade Gothic W01", Arial, Helvetica, sans-serif;
   font-style: normal;
@@ -20,6 +25,7 @@ body {
 }
 .bioimage{
   margin-right: 1.5em;
+  width: 208px;
 }
 
 .flex_box{
