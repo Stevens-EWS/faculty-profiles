@@ -84,12 +84,9 @@ export default function GenInfoTable({
             ></p>
           )}
           {email && (
-            <p
-              valign="top"
-              dangerouslySetInnerHTML={{
-                __html: `Email: ${email}`,
-              }}
-            ></p>
+            <p valign="top">
+              Email: <a href={`mailto:${email}`}>{email}</a>
+            </p>
           )}
           {website && (
             <p>
