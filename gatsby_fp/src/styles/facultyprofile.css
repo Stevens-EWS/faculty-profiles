@@ -25,7 +25,8 @@ body {
 }
 .bioimage{
   margin-right: 1.5em;
-  width: 208px;
+  height: auto;
+  width: 100%;
 }
 
 .flex_box{
