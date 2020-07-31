@@ -28,9 +28,6 @@ body {
   height: auto;
   width: 100%;
 }
-.main_field_wrapper{
-  font-size: 1.25em;
-} 
 
 .flex_box{
   display: flex;
