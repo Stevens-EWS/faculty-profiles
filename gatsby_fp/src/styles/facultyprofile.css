@@ -119,7 +119,6 @@ hr.top-bar {
 
 @media (max-width: 549px) {
   .bioimage{
-    margin-right: 1.5em;
     margin-bottom: .9em;
   }
 }
