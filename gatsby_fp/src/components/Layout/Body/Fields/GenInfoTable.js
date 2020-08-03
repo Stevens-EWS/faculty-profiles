@@ -1,5 +1,4 @@
 import React from "react"
-import { element } from "prop-types"
 
 export default function GenInfoTable({
   school,
