@@ -102,7 +102,7 @@ hr.top-bar {
   }
 }
 
-@media (min-width: 550px) {
+@media (min-width: 551px) {
   .bioimage {
     margin-right: 2%;
     width: 13em;
@@ -117,7 +117,7 @@ hr.top-bar {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 549px) {
   .bioimage{
     margin-right: 1.5em;
     margin-bottom: .9em;
