@@ -23,10 +23,12 @@ body {
   margin: 24px 0 12px;
   text-transform: none;
 }
+
 .bioimage {
   height: auto;
   width: 100%;
 }
+
 .main_field_wrapper {
   font-size: 1.25em;
 } 
