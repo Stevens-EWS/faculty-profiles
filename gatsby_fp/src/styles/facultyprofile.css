@@ -104,7 +104,7 @@ hr.top-bar {
 
 @media (min-width: 551px) {
   .bioimage {
-    margin-right: 2%;
+    margin-right: 1.5em;
     width: 13em;
   }
   .flex_box {
