@@ -23,21 +23,21 @@ body {
   margin: 24px 0 12px;
   text-transform: none;
 }
-.bioimage{
+.bioimage {
   margin-right: 1.5em;
   height: auto;
   width: 100%;
 }
-.main_field_wrapper{
+.main_field_wrapper {
   font-size: 1.25em;
 } 
 
-.flex_box{
+.flex_box {
   display: flex;
   flex-wrap: wrap;
 }
 
-.pf_field_wrapper > p{
+.pf_field_wrapper > p {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Trade Gothic W01", Arial, Helvetica, sans-serif;
@@ -73,7 +73,7 @@ p {
   line-height: 25px;
 }
 
-hr.top-bar{
+hr.top-bar {
   width: 100%;
   height: 3px;
   background: #9D1535;
@@ -83,7 +83,7 @@ hr.top-bar{
   padding: 0;
 }
 
-.title > p{
+.title > p {
   font-family: "Chaparral W01",Georgia,Times,"Times New Roman",serif;
   padding: 0 0 15px;
   font-size: 1.3em; 
@@ -102,22 +102,22 @@ hr.top-bar{
   }
 }
 
-@media (min-width: 550px){
-  .bioimage{
+@media (min-width: 550px) {
+  .bioimage {
     margin-right: 2%;
     width: 13em;
   }
-  .flex_box{
+  .flex_box {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
   }
-  .pf_field_wrapper{
+  .pf_field_wrapper {
     flex-grow: 1;
   }
 }
 
-@media (max-width: 550px){
+@media (max-width: 550px) {
   .bioimage{
     margin-right: 1.5em;
     margin-bottom: .9em;
