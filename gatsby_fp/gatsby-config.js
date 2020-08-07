@@ -27,7 +27,7 @@ module.exports = {
             pf_work_fax: String
             pf_first_name: String
             pf_last_name: String
-            pf_work_phone: String
+            pf_work_phone: [pf_work_phone]
             pf_title: String
             pf_username: String
             website: String
@@ -86,6 +86,10 @@ module.exports = {
             mname: String
             fname: String
             lname: String
+          `,
+          pf_work_phone: `
+            human_readable: String
+            url: String
           `,
         }
       },
