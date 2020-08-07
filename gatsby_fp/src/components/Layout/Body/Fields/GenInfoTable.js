@@ -67,7 +67,12 @@ export default function GenInfoTable({
             ></p>
           )}
           {phone && (
-            <p valign="top"><a href={phone[0].url}>{phone[0].human_readable}</a></p>
+            <p
+              valign="top"
+              dangerouslySetInnerHTML={{
+                __html: `Phone: ${phone}`,
+              }}
+            ></p>
           )}
           {fax && (
             <p
