@@ -11,7 +11,7 @@ export default function Body({ bodyContent }) {
       <div className="header_push_mobile"></div>
       <div className="page_wrapper js-navigation_push">
         {/* Page : Main Content */}
-        <main id="page" className="page" role="main" tabIndex="-1">
+        <main id="page" className="page" role="main">
           {/* Page Content */}
           <section className="page_content_area">
             <hr className="top-bar" />
