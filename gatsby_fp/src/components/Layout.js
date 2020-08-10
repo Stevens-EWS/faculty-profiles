@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Fields from "./Layout/Body/Fields"
 import Body from "./Layout/Body"
-import Head from "./Layout/Head"
+import Seo from "./Seo.js"
 
 export default function Layout({ children, data }) {
   const sanitizeHtml = require("sanitize-html-react")
@@ -32,11 +32,11 @@ export default function Layout({ children, data }) {
   return (
     <>
       {data
-        ? <Head
-          pageTitle={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
+        ? <Seo
+          title={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
         />
-        : <Head
-          pageTitle={`Faculty Profiles - Stevens Institute of Technology`}
+        : <Seo
+          title={`Faculty Profiles - Stevens Institute of Technology`}
         />
       }
       {data &&
