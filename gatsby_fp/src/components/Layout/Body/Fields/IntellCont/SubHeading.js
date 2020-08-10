@@ -2,7 +2,9 @@ import React from "react"
 const shortid = require("shortid")
 
 export default function IntellCont({ intellContList, publicationType }) {
-
+  // Component used for the subheadings under selected publications
+  
+  // Sorts publications first by status, then by year published
   function sortStatusAndYear(intellContList) {
     var pubIntellContList = []
     var accIntellContList = []
@@ -33,6 +35,11 @@ export default function IntellCont({ intellContList, publicationType }) {
   }
 
   const sortedIntellContList = sortStatusAndYear(intellContList)
+
+  /* Creates a list that is ready to be mapped into <li> tags that
+     omits elements without a contype/contypeother that don't equal 
+     the publicationType which is the title of the subheading.
+     Elements without a contype/contypeother get omitted entirely! */
   const liInnerHtmlList =
     sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => {
       let liString = ''

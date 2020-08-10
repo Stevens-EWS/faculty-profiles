@@ -23,6 +23,7 @@ export default function IntellCont({ intellContList }) {
   const contypeList = findExistingContypes(intellContList);
   contypeList.sort(); // Puts list into alphabetical order
 
+  // Return list of Subheadings (contypes)
   return (
     <>
       <div className="sectiontitle">Selected Publications</div>
