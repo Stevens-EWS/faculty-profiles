@@ -1,8 +1,8 @@
 import React from "react"
 const shortid = require("shortid")
 
+// Component used for the subheadings under selected publications
 export default function IntellCont({ intellContList, publicationType }) {
-  // Component used for the subheadings under selected publications
   
   // Sorts publications first by status, then by year published
   function sortStatusAndYear(intellContList) {
