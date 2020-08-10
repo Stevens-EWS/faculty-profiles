@@ -1,5 +1,6 @@
 const path = require("path")
 exports.createPages = async ({ graphql, actions }) => {
+  // Query for markdown nodes to use when creating pages during build
   const { createPage } = actions
   const result = await graphql(`
         {
