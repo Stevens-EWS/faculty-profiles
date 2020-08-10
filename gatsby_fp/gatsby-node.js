@@ -1,6 +1,6 @@
 const path = require("path")
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
   const result = await graphql(`
         {
             allProfiles {
@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
             }
         }
-    `);
+    `)
   return Promise.all(
     result.data.allProfiles.nodes.map(async node => {
       await createPage({
@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           pagePath: node.pf_username
         }
-      });
+      })
     })
-  );
-};
+  )
+}
