@@ -50,6 +50,7 @@ export default function Layout({ children, data }) {
   )
 }
 
+// Template Query
 export const facultyData = graphql`
   query dataByPath($pagePath: String!) {
     profiles(pf_username: { eq: $pagePath }) {
