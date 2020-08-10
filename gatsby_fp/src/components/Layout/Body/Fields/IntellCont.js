@@ -4,6 +4,7 @@ const shortid = require("shortid")
 
 export default function IntellCont({ intellContList }) {
 
+  // Creates a list with all existing contypes a faculty member has
   function findExistingContypes(intellContList) {
     var contypeList = []
     intellContList.forEach(element => {
@@ -20,7 +21,7 @@ export default function IntellCont({ intellContList }) {
   }
 
   const contypeList = findExistingContypes(intellContList);
-  contypeList.sort();
+  contypeList.sort(); // Puts list into alphabetical order
 
   return (
     <>
