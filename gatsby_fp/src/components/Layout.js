@@ -24,7 +24,7 @@ export default function Layout({ children, data }) {
     }
   }
 
-  //Conditionally declare sanitizedData in case API returns no content
+  // Conditionally declare sanitizedData in case API returns no content
   if (data) {
     var sanitizedData = data.profiles
   }
