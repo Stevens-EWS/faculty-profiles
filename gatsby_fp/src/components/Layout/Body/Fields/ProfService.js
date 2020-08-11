@@ -3,6 +3,7 @@ const shortid = require("shortid")
 
 export default function ProfService({ profServiceList }) {
 
+  // Creates a list that is ready to be mapped into <li> tags
   const liInnerHtmlList =
     profServiceList.map(element => {
       let liString = ''

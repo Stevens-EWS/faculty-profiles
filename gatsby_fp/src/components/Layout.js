@@ -11,9 +11,6 @@ export default function Layout({ children, data }) {
       allowedTags: ["p", "b", "i", "u", "sup", "sub", "br"],
     })
   }
-  if (data) {
-    var sanitizedData = data.profiles
-  }
   function traverse(parent) {
     for (let child in parent) {
       if (parent[child] !== null && typeof parent[child] == "object") {
@@ -27,6 +24,10 @@ export default function Layout({ children, data }) {
     }
   }
 
+  // Conditionally declare sanitizedData in case API returns no content
+  if (data) {
+    var sanitizedData = data.profiles
+  }
   traverse(sanitizedData)
 
   return (
@@ -49,6 +50,7 @@ export default function Layout({ children, data }) {
   )
 }
 
+// Template Query
 export const facultyData = graphql`
   query dataByPath($pagePath: String!) {
     profiles(pf_username: { eq: $pagePath }) {

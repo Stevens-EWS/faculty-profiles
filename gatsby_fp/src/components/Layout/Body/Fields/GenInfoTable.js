@@ -9,7 +9,6 @@ export default function GenInfoTable({
   room,
   phone,
   fax,
-  username,
   website,
   firstName,
   lastName,

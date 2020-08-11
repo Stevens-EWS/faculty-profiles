@@ -3,6 +3,7 @@ const shortid = require("shortid")
 
 export default function Education({ educationList }) {
 
+  // Creates a list that is ready to be mapped into <li> tags
   const liInnerHtmlList =
     educationList.map(element => {
       let liString = ''
