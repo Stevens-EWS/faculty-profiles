@@ -53,7 +53,6 @@ body {
 
 .biotitle {
   color: #9D1535;
-  padding-bottom: 0.5em;
 }
 
 a {
@@ -84,7 +83,7 @@ hr.top-bar {
 }
 
 .title > p {
-  padding: 0 0 15px;
+  padding: 0 0 40px;
   font-size: 1.3em; 
   margin: 0 0 0 0;
 }
