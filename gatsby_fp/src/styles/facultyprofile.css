@@ -1,16 +1,49 @@
 /* Styles for Faculty Profile */
-
 body {
-  font-size: 1.1em;
+  font-family: "Chaparral W01", Georgia, Times, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 300;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+.img_wrapper {
+  width: 13rem;
+  margin-right: 1.5em;
 }
 
 .sectiontitle {
-  font-size: 1.4em;
-  font-weight: bold;
-  padding-top: 0.4em;
-  margin-bottom:-0.2em;
+  font-family: "Trade Gothic W01", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.875rem;
+  color: #666666;
+  padding-top: .4em;
+  margin: 24px 0 12px;
 }
 
+.bioimage {
+  height: auto;
+  width: 100%;
+}
+
+.main_field_wrapper {
+  font-size: 1.25em;
+} 
+
+.flex_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pf_field_wrapper > p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Trade Gothic W01", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #383838;
+}
 .publicationtitle {
   font-size: 1.1em;
   font-weight: bold;
@@ -20,12 +53,6 @@ body {
 
 .biotitle {
   color: #9D1535;
-  padding-bottom: 0.5em;
-}
-
-.bioimage {
-  margin-bottom:0.5em;
-  max-width: 150px;
 }
 
 a {
@@ -45,40 +72,7 @@ p {
   line-height: 25px;
 }
 
-.table_wrapper > .table_wrapper_inner > table > tbody > tr > td > .table_wrapper > .table_wrapper_inner > table > tbody > tr:first-child > td {
-  font-family: "Chaparral W01",Georgia,Times,"Times New Roman",serif;
-  padding-top: 0;
-  padding-bottom: 20px;
-  padding-left: 0;
-  padding-right: 0;
-  border-bottom: 1px solid #E0E0E0;
-  font-size: 1.3em; 
-}
-
-.table_wrapper > .table_wrapper_inner > table > tbody > tr > td > .table_wrapper > .table_wrapper_inner > table > tbody > tr:nth-child(2) > td {
-  padding-top: 20px;
-}
-
-.table_wrapper{
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.table_wrapper:after {
-  display: none;
-}
-
-table td {
-  border-left: 0 solid white;
-  border-right: 0 solid white;
-  background: white; 
-  padding-left: 0;
-  padding-top: 5px;
-  padding-bottom: 2px;
-  font-size: 0.9em;
-}
-
-hr.top-bar{
+hr.top-bar {
   width: 100%;
   height: 3px;
   background: #9D1535;
@@ -88,7 +82,13 @@ hr.top-bar{
   padding: 0;
 }
 
-@media (max-width: 980px) {
+.title > p {
+  padding: 0 0 40px;
+  font-size: 1.3em; 
+  margin: 0 0 0 0;
+}
+
+@media (max-width: 979px) {
   hr.top-bar {
     width: 100%;
     height: 3px;
@@ -97,5 +97,26 @@ hr.top-bar{
     clear: both;
     margin: 3em 0 0.5em 0;
     padding: 0;
+  }
+}
+
+@media (min-width: 551px) {
+  .bioimage {
+    margin-right: 1.5em;
+    width: 13em;
+  }
+  .flex_box {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .pf_field_wrapper {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 549px) {
+  .bioimage{
+    margin-bottom: .9em;
   }
 }

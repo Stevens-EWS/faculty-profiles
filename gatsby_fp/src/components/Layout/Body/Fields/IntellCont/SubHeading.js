@@ -1,8 +1,10 @@
 import React from "react"
 const shortid = require("shortid")
 
+// Component used for the subheadings under selected publications
 export default function IntellCont({ intellContList, publicationType }) {
-
+  
+  // Sorts publications first by status, then by year published
   function sortStatusAndYear(intellContList) {
     var pubIntellContList = []
     var accIntellContList = []
@@ -32,128 +34,111 @@ export default function IntellCont({ intellContList, publicationType }) {
     return sortedIntellContList
   }
 
-    const sortedIntellContList = sortStatusAndYear(intellContList)
+  const sortedIntellContList = sortStatusAndYear(intellContList)
 
-    return (
+  /* Creates a list that is ready to be mapped into <li> tags that
+     omits elements without a contype/contypeother that don't equal 
+     the publicationType which is the title of the subheading.
+     Elements without a contype/contypeother get omitted entirely! */
+  const liInnerHtmlList =
+    sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => {
+      let liString = ''
+      if (element.status) {
+        liString += `${element.status} `
+      }
+      if (element.contype && !element.contypeother) {
+        liString += `${element.contype} – `
+      }
+      if (element.contypeother) {
+        liString += `${element.contypeother} – `
+      }
+      element.intellcont_auth.forEach((elem, index) => {
+        if (elem.lname) {
+          liString += `${elem.lname}`
+        }
+        if (elem.fname && !elem.mname) {
+          liString += `, ${elem.fname.substr(0,1)}.`
+        }
+        if (elem.mname && !elem.fname) {
+          liString += `, ${elem.mname.substr(0,1)}.`
+        }
+        if (elem.fname && elem.mname) {
+          liString += `, ${elem.fname.substr(0,1)}. ${elem.mname.substr(0,1)}.`
+        }
+        if(index !== element.intellcont_auth.length - 1){
+          liString += `; `
+        }
+     })
+      if (element.status === "Published" && element.dty_pub) {
+        liString += ` (${element.dty_pub})`
+      }
+      if (element.status === "Accepted" && element.dty_acc) {
+        liString += ` (${element.dty_acc})`
+      }
+      if (element.status === "Submitted" && element.dty_sub) {
+        liString += ` (${element.dty_sub})`
+      }
+      if(element.dty_pub || element.dty_acc || element.dty_sub || element.intellcont_auth){
+        liString += `. `
+      }
+      if (element.title) {
+        liString += `${element.title}`
+      }
+      if (element.title_secondary) {
+        liString += `. ${element.title_secondary}`
+      }
+      if (element.issue && !element.pagenum && !element.volume) {
+        liString += ` (${element.issue} ed.)`
+      }
+      if (!element.issue && element.pagenum && !element.volume) {
+        liString += ` (pp. ${element.pagenum})`
+      }
+      if (!element.issue && !element.pagenum && element.volume) {
+        liString += ` (vol. ${element.volume})`
+      }
+      if (!element.issue && element.pagenum && element.volume) {
+        liString += ` (vol. ${element.volume}, pp. ${element.pagenum})`
+      }
+      if (element.issue && !element.pagenum && element.volume) {
+        liString += ` (${element.issue} ed., vol. ${element.volume})`
+      }
+      if (element.issue && element.pagenum && !element.volume) {
+        liString += ` (${element.issue} ed., pp. ${element.pagenum})`
+      }
+      if (element.issue && element.pagenum && element.volume) {
+        liString += ` (${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum})`
+      }
+      if (element.title || element.title_secondary || element.issue || element.volume || element.pagenum) {
+        liString += '. '
+      }
+      if (element.pubctyst && element.publisher) {
+        liString += `${element.pubctyst}: ${element.publisher}.`
+      }
+      if (!element.pubctyst && element.publisher) {
+        liString += `${element.publisher}.`
+      }
+      if (element.pubctyst && !element.publisher) {
+        liString += `${element.pubctyst}.`
+      }
+      if (element.web_address) {
+        liString += `<br><a href="${element.web_address}" target="_blank" rel="noreferrer">${element.web_address}</a>.`
+      }
+
+      return liString
+    })
+  return (
     <>
       <div className="publicationtitle">{publicationType}</div>
-        <ol>
-          {sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => (
-            <li
-              key={shortid.generate()}
-              dangerouslySetInnerHTML={{
-                __html: ` 
-                 ${
-                    element.status
-                      ? `${element.status}`
-                      : ``
-                  }
-                  ${
-                    element.contype && !element.contypeother
-                      ? `${element.contype} -`
-                      : ``
-                  }
-                  ${
-                    element.contypeother
-                      ? `${element.contypeother} -`
-                      : ``
-                  }
-                  ${
-                    element.intellcont_auth.lname
-                      ? `${element.intellcont_auth.lname},`
-                      : ``
-                  }
-                  ${
-                    element.intellcont_auth.mname
-                      ? `${element.intellcont_auth.lname},`
-                      : ``
-                  }
-                  ${
-                    element.intellcont_auth.fname
-                      ? `${element.intellcont_auth.fname}.`
-                      : ``
-                  }
-                  ${
-                    element.status === "Published" && element.dty_pub
-                      ? `(${element.dty_pub}).`
-                      : ``
-                  }
-                  ${
-                    element.status === "Accepted" && element.dty_acc
-                      ? `(${element.dty_acc}).`
-                      : ``
-                  }
-                  ${
-                    element.status === "Submitted" && element.dty_sub
-                      ? `(${element.dty_sub}).`
-                      : ``
-                  }
-                  ${
-                    element.title
-                      ? `${element.title}.`
-                      : ``
-                  }
-                  ${
-                    element.title_secondary
-                      ? `${element.title_secondary}`
-                      : ``
-                  }
-                  ${
-                    (element.issue && !element.pagenum && !element.volume)
-                      ? `(${element.issue} ed.).`
-                      : ``
-                  }
-                  ${
-                    (!element.issue && element.pagenum && !element.volume)
-                      ? `(pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    (!element.issue && !element.pagenum && element.volume)
-                      ? `(vol. ${element.volume}).`
-                      : ``
-                  }
-                  ${
-                    (!element.issue && element.pagenum && element.volume)
-                      ? `(vol. ${element.volume}, pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    (element.issue && !element.pagenum && element.volume)
-                      ? `(${element.issue} ed., vol. ${element.volume}).`
-                      : ``
-                  }
-                  ${
-                    (element.issue && element.pagenum && !element.volume)
-                      ? `(${element.issue} ed., pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    (element.issue && element.pagenum && element.volume)
-                      ? `(${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum}).`
-                      : ``
-                  }
-                  ${
-                    element.pubctyst
-                      ? `${element.pubctyst}:`
-                      : ``
-                  }
-                  ${
-                    element.publisher
-                      ? `${element.publisher}.`
-                      : ``
-                  }
-                  <br>
-                  ${
-                    element.web_address
-                      ? `${element.web_address}`
-                      : ``
-                  }                
-              `,
-              }}
-            ></li>
-          ))}
-        </ol>
+      <ol>
+        {liInnerHtmlList.map(element => (
+          <li
+            key={shortid.generate()}
+            dangerouslySetInnerHTML={{
+              __html: element
+            }}
+          ></li>
+        ))}
+      </ol>
     </>
   )
 }

@@ -2,27 +2,31 @@ import React from "react"
 const shortid = require("shortid")
 
 export default function ProfService({ profServiceList }) {
+
+  // Creates a list that is ready to be mapped into <li> tags
+  const liInnerHtmlList =
+    profServiceList.map(element => {
+      let liString = ''
+      if (element.org) {
+        liString += `${element.org} `
+      }
+      if (element.title) {
+        liString += `${element.title}`
+      }
+
+      return liString
+    })
+
   return (
     <>
       <div className="sectiontitle">Professional Service</div>
       <div>
         <ul>
-          {profServiceList.map(element => (
+          {liInnerHtmlList.map(element => (
             <li
               key={shortid.generate()}
               dangerouslySetInnerHTML={{
-                __html: ` 
-                ${
-                  element.org
-                    ? `${element.org}`
-                    : ``
-                } 
-                ${
-                  element.title
-                    ? `${element.title}`
-                    : ``
-                }
-            `,
+                __html: element
               }}
             ></li>
           ))}

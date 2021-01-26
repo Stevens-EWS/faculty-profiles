@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Fields from "./Layout/Body/Fields"
 import Body from "./Layout/Body"
-import Head from "./Layout/Head"
+import Seo from "./Seo.js"
 
 export default function Layout({ children, data }) {
   const sanitizeHtml = require("sanitize-html-react")
@@ -10,9 +10,6 @@ export default function Layout({ children, data }) {
     return sanitizeHtml(child, {
       allowedTags: ["p", "b", "i", "u", "sup", "sub", "br"],
     })
-  }
-  if (data) {
-    var sanitizedData = data.multiApiSourcePeopleFaculty
   }
   function traverse(parent) {
     for (let child in parent) {
@@ -27,18 +24,22 @@ export default function Layout({ children, data }) {
     }
   }
 
+  // Conditionally declare sanitizedData in case API returns no content
+  if (data) {
+    var sanitizedData = data.profiles
+  }
   traverse(sanitizedData)
 
   return (
     <>
       {data
-        ? <Head
-            pageTitle={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
-          />
-        : <Head
-            pageTitle = {`Faculty Profiles - Stevens Institute of Technology`}
-          />
-      } 
+        ? <Seo
+          title={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
+        />
+        : <Seo
+          title={`Faculty Profiles - Stevens Institute of Technology`}
+        />
+      }
       {data &&
         <Body
           bodyContent={<Fields facultyData={sanitizedData} />}
@@ -49,9 +50,10 @@ export default function Layout({ children, data }) {
   )
 }
 
+// Template Query
 export const facultyData = graphql`
   query dataByPath($pagePath: String!) {
-    multiApiSourcePeopleFaculty(pf_username: { eq: $pagePath }) {
+    profiles(pf_username: { eq: $pagePath }) {
       appointment
       bio
       building
@@ -65,7 +67,10 @@ export const facultyData = graphql`
       pf_work_fax
       pf_first_name
       pf_last_name
-      pf_work_phone
+      pf_work_phone {
+        human_readable
+        url
+      }
       pf_title
       pf_username
       website
@@ -103,6 +108,7 @@ export const facultyData = graphql`
         pagenum
         status
         title
+        title_secondary
         volume
         publisher
         pubctyst
