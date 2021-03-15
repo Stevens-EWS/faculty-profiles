@@ -29,7 +29,7 @@ export default function Layout({ children, data }) {
     var sanitizedData = data.profiles
   }
   traverse(sanitizedData)
-
+  console.log(sanitizedData.education)
   return (
     <>
       {data
@@ -49,6 +49,7 @@ export default function Layout({ children, data }) {
     </>
   )
 }
+
 
 // Template Query
 export const facultyData = graphql`
