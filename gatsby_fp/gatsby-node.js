@@ -1,4 +1,42 @@
+require("dotenv").config()
 const path = require("path")
+const { createRemoteFileNode } = require("gatsby-source-filesystem")
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type MarkdownRemark implements Node {
+      featuredImg: File @link(from: "featuredImg___NODE")
+    }
+  `)
+}
+
+exports.onCreateNode = async ({
+  node,
+  actions: { createNode },
+  store,
+  cache, 
+  createNodeId
+}) => {
+
+  if (node.internal.type === "profiles") {
+    let fileNode = await createRemoteFileNode({
+      url: node.photo_url,
+      parentNodeId: node.id,
+      createNode, // helper function in gatsby-node to generate the node
+      createNodeId,
+      cache, // Gatsby's cache
+      store, // Gatsby's Redux store
+      auth: {htaccess_user: process.env.PEOPLEAPI_USER, htaccess_pass: process.env.PEOPLEAPI_PASS}
+    })
+
+    if (fileNode) {
+      node.featuredImg___NODE = fileNode.id
+    }
+  }
+  
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   // Query for markdown nodes to use when creating pages during build
   const { createPage } = actions

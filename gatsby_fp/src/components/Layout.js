@@ -29,6 +29,7 @@ export default function Layout({ children, data }) {
     var sanitizedData = data.profiles
   }
   traverse(sanitizedData)
+  console.log(sanitizedData.photo_url)
 
   return (
     <>
@@ -41,9 +42,12 @@ export default function Layout({ children, data }) {
         />
       }
       {data &&
+      <>
+        <p>{sanitizedData.photo_url}</p>
         <Body
           bodyContent={<Fields facultyData={sanitizedData} />}
         />
+        </>
       }
 
     </>
@@ -76,7 +80,7 @@ export const facultyData = graphql`
       website
       research
       room
-      photo_base64
+      photo_url
       notable_courses
       school
       ses_department
