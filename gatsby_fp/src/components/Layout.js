@@ -43,7 +43,6 @@ export default function Layout({ children, data }) {
       }
       {data &&
       <>
-        <p>{sanitizedData.photo_url}</p>
         <Body
           bodyContent={<Fields facultyData={sanitizedData} />}
         />
