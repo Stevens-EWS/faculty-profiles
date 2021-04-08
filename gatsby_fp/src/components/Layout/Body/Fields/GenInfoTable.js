@@ -15,6 +15,8 @@ export default function GenInfoTable({
   lastName,
   email
 }) {
+
+  console.log(imgsrc)
   return (
     <>
       {title && (
@@ -29,15 +31,14 @@ export default function GenInfoTable({
         {imgsrc && (
           <div className="img_wrapper">
             <Img
-              fixed={imgsrc}
+              fluid={imgsrc}
               alt={`${firstName} ${lastName}`}
               style={{
-                height: "13rem",
                 display: "block",
                 width: "100%"
               }}
               imgStyle={{
-                height: "100%",
+                height: "auto",
                 width: "100%"
               }}
             />

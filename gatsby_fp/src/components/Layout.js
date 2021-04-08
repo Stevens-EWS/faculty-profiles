@@ -84,8 +84,8 @@ export const facultyData = graphql`
       ses_department
       featuredImg {
         childImageSharp {
-          fixed(width: 600, height: 600) {
-            ...GatsbyImageSharpFixed
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }

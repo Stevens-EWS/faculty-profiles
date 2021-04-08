@@ -19,7 +19,7 @@ export default function Fields({ facultyData }) {
         room={facultyData.room}
         phone={facultyData.pf_work_phone}
         fax={facultyData.pf_work_fax}
-        imgsrc={facultyData.featuredImg.childImageSharp.fixed}
+        imgsrc={facultyData.featuredImg.childImageSharp.fluid}
         username={facultyData.pf_username}
         website={facultyData.website}
         firstName={facultyData.pf_first_name}
