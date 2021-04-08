@@ -82,7 +82,7 @@ export const facultyData = graphql`
       notable_courses
       school
       ses_department
-      featuredImg {
+      facultyImg {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid

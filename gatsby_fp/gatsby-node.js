@@ -6,7 +6,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   createTypes(`
     type MarkdownRemark implements Node {
-      featuredImg: File @link(from: "featuredImg___NODE")
+      facultyImg: File @link(from: "facultyImg___NODE")
     }
   `)
 }
@@ -31,7 +31,7 @@ exports.onCreateNode = async ({
     })
 
     if (fileNode) {
-      node.featuredImg___NODE = fileNode.id
+      node.facultyImg___NODE = fileNode.id
     }
   }
   
