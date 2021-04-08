@@ -29,7 +29,6 @@ export default function Layout({ children, data }) {
     var sanitizedData = data.profiles
   }
   traverse(sanitizedData)
-  console.log(sanitizedData.photo_url)
 
   return (
     <>
@@ -83,6 +82,13 @@ export const facultyData = graphql`
       notable_courses
       school
       ses_department
+      featuredImg {
+        childImageSharp {
+          fixed(width: 600, height: 600) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       service_university {
         org
         member_type

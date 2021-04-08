@@ -19,7 +19,7 @@ exports.onCreateNode = async ({
   createNodeId
 }) => {
 
-  if (node.internal.type === "profiles") {
+  if (node.internal.type === "profiles" && node.photo_url) {
     let fileNode = await createRemoteFileNode({
       url: node.photo_url,
       parentNodeId: node.id,
