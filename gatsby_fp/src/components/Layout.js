@@ -41,11 +41,9 @@ export default function Layout({ children, data }) {
         />
       }
       {data &&
-      <>
         <Body
           bodyContent={<Fields facultyData={sanitizedData} />}
         />
-        </>
       }
 
     </>
