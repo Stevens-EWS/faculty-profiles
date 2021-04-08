@@ -16,7 +16,6 @@ export default function GenInfoTable({
   email
 }) {
 
-  console.log(imgsrc)
   return (
     <>
       {title && (
