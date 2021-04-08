@@ -5,7 +5,7 @@ export default function GenInfoTable({
   school,
   department,
   title,
-  imgsrc,
+  fluidData,
   building,
   room,
   phone,
@@ -26,10 +26,10 @@ export default function GenInfoTable({
         </div>
       )} 
       <div className="flex_box">
-        {imgsrc && (
+        {fluidData && (
           <div className="img_wrapper">
             <Img
-              fluid={imgsrc}
+              fluid={fluidData}
               alt={`${firstName} ${lastName}`}
               style={{
                 display: "block",
