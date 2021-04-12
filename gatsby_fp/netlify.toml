@@ -1,7 +1,3 @@
-[[plugins]]
-    package = 'netlify-plugin-contextual-env'
-    [plugins.inputs]
-        mode = 'prefix'
 [context.production.environment]
     PEOPLEAPI_HOST = 'api.stevens.edu/people/faculty'
 [context.deploy-preview.environment]
