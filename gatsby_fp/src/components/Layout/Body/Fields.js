@@ -19,7 +19,12 @@ export default function Fields({ facultyData }) {
         room={facultyData.room}
         phone={facultyData.pf_work_phone}
         fax={facultyData.pf_work_fax}
-        fluidData={facultyData.facultyImg ? facultyData.facultyImg.childImageSharp.fluid : null}
+        fluidData={
+          facultyData.facultyImg ? 
+            (facultyData.facultyImg.childImageSharp ? 
+              facultyData.facultyImg.childImageSharp.fluid : null) 
+          : null
+        }
         username={facultyData.pf_username}
         website={facultyData.website}
         firstName={facultyData.pf_first_name}
