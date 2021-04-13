@@ -33,6 +33,10 @@ exports.onCreateNode = async ({
     if (fileNode) {
       node.facultyImg___NODE = fileNode.id
     }
+    else {
+      node.facultyImg___NODE = null
+    }
+    
   }
   
 }
