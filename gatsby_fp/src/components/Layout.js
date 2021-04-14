@@ -35,9 +35,11 @@ export default function Layout({ children, data }) {
       {data
         ? <Seo
           title={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
+          description={`Faculty Profile for ${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name}`}
         />
         : <Seo
           title={`Faculty Profiles - Stevens Institute of Technology`}
+          description={`Faculty Profile`}
         />
       }
       {data &&
