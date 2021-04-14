@@ -39,6 +39,7 @@ export default function GenInfoTable({
                 height: "auto",
                 width: "100%"
               }}
+              fadeIn={false}
             />
           </div>
         )}
