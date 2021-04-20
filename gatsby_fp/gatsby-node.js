@@ -28,10 +28,8 @@ exports.onCreateNode = async ({
         createNodeId,
         cache, // Gatsby's cache
         store, // Gatsby's Redux store
-        auth: {htaccess_user: process.env.PEOPLEAPI_USER, htaccess_pass: process.env.PEOPLEAPI_PASS}
       })
 
-      auth: {htaccess_user: process.env.PEOPLEAPI_USER, htaccess_pass: process.env.PEOPLEAPI_PASS}
       if (fileNode) {
         node.facultyImg___NODE = fileNode.id
       }
