@@ -1,4 +1,3 @@
-require("dotenv").config()
 global.fetch = require("node-fetch")
 const path = require("path")
 const { createRemoteFileNode } = require("gatsby-source-filesystem")
