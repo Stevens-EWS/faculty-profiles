@@ -88,7 +88,7 @@ export default function IntellCont({ intellContList, publicationType }) {
         liString += `. ${element.title_secondary}`
       }
       if (element.journal_name) {
-        liString += `. ${element.journal_name}`
+        liString += `. <i>${element.journal_name}</i>`
       }
       if (element.issue && !element.pagenum && !element.volume) {
         liString += ` (${element.issue} ed.)`
