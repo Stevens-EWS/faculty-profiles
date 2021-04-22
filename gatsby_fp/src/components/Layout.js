@@ -35,9 +35,11 @@ export default function Layout({ children, data }) {
       {data
         ? <Seo
           title={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
+          description={`Faculty Profile for ${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name}`}
         />
         : <Seo
           title={`Faculty Profiles - Stevens Institute of Technology`}
+          description={`Faculty Profile`}
         />
       }
       {data &&
@@ -76,10 +78,17 @@ export const facultyData = graphql`
       website
       research
       room
-      photo_base64
+      photo_url
       notable_courses
       school
       ses_department
+      facultyImg {
+        childImageSharp {
+          fluid(maxWidth: 208) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       service_university {
         org
         member_type

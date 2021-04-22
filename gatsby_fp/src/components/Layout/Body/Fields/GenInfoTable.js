@@ -1,10 +1,11 @@
 import React from "react"
+import Img from "gatsby-image"
 
 export default function GenInfoTable({
   school,
   department,
   title,
-  imgsrc,
+  fluidData,
   building,
   room,
   phone,
@@ -25,12 +26,23 @@ export default function GenInfoTable({
         </div>
       )} 
       <div className="flex_box">
-        {imgsrc && (
+        {fluidData && (
           <div className="img_wrapper">
-            <img
-              src={`data:image/jpeg;base64,${imgsrc}`}
-              className="bioimage"
+            <Img
+              fluid={fluidData}
               alt={`${firstName} ${lastName}`}
+              style={{
+                display: "block",
+                width: "100%"
+              }}
+              imgStyle={{
+                height: "auto",
+                width: "100%"
+              }}
+              fadeIn={false}
+              placeholderStyle={{
+                visibility: "hidden"
+              }}
             />
           </div>
         )}
