@@ -87,6 +87,9 @@ export default function IntellCont({ intellContList, publicationType }) {
       if (element.title_secondary) {
         liString += `. ${element.title_secondary}`
       }
+      if (element.journal_name) {
+        liString += `. ${element.journal_name}`
+      }
       if (element.issue && !element.pagenum && !element.volume) {
         liString += ` (${element.issue} ed.)`
       }
@@ -108,7 +111,7 @@ export default function IntellCont({ intellContList, publicationType }) {
       if (element.issue && element.pagenum && element.volume) {
         liString += ` (${element.issue} ed., vol. ${element.volume}, pp. ${element.pagenum})`
       }
-      if (element.title || element.title_secondary || element.issue || element.volume || element.pagenum) {
+      if (element.title || element.title_secondary || element.journal_name || element.issue || element.volume || element.pagenum) {
         liString += '. '
       }
       if (element.pubctyst && element.publisher) {
