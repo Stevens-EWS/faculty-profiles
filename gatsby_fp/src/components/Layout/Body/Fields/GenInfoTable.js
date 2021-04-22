@@ -40,6 +40,9 @@ export default function GenInfoTable({
                 width: "100%"
               }}
               fadeIn={false}
+              placeholderStyle={{
+                visibility: "hidden"
+              }}
             />
           </div>
         )}
