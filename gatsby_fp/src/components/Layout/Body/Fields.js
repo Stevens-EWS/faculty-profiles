@@ -19,7 +19,7 @@ export default function Fields({ facultyData }) {
         room={facultyData.room}
         phone={facultyData.pf_work_phone}
         fax={facultyData.pf_work_fax}
-        fluidData={
+        imageFluidData={
           facultyData.facultyImg ? 
             (facultyData.facultyImg.childImageSharp ? 
               facultyData.facultyImg.childImageSharp.fluid : null) 
@@ -32,7 +32,7 @@ export default function Fields({ facultyData }) {
         school={facultyData.school}
         department={facultyData.ses_department}
         email={facultyData.pf_email}
-        publicURL={
+        imagePublicURL={
           facultyData.facultyImg ? 
             facultyData.facultyImg.publicURL
           : null
