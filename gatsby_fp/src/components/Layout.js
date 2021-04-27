@@ -88,6 +88,7 @@ export const facultyData = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+        publicURL
       }
       service_university {
         org

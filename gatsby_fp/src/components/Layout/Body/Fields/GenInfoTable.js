@@ -5,7 +5,7 @@ export default function GenInfoTable({
   school,
   department,
   title,
-  fluidData,
+  imageFluidData,
   building,
   room,
   phone,
@@ -13,7 +13,8 @@ export default function GenInfoTable({
   website,
   firstName,
   lastName,
-  email
+  email,
+  imagePublicURL, // for gifs and when imageFluidData (childImageSharp) is null
 }) {
   return (
     <>
@@ -26,10 +27,10 @@ export default function GenInfoTable({
         </div>
       )} 
       <div className="flex_box">
-        {fluidData && (
+        {imageFluidData && (
           <div className="img_wrapper">
             <Img
-              fluid={fluidData}
+              fluid={imageFluidData}
               alt={`${firstName} ${lastName}`}
               style={{
                 display: "block",
@@ -42,6 +43,18 @@ export default function GenInfoTable({
               fadeIn={false}
               placeholderStyle={{
                 visibility: "hidden"
+              }}
+            />
+          </div>
+        )}
+        {(!imageFluidData && imagePublicURL) && (
+          <div className="img_wrapper">
+            <img
+              src={imagePublicURL}
+              alt={`${firstName} ${lastName}`}
+              style={{
+                height: "auto",
+                width: "100%"
               }}
             />
           </div>
