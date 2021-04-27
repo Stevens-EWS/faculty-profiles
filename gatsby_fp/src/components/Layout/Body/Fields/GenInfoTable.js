@@ -13,7 +13,8 @@ export default function GenInfoTable({
   website,
   firstName,
   lastName,
-  email
+  email,
+  publicURL, // for gifs and when fluidData (childImageSharp) is null
 }) {
   return (
     <>
@@ -42,6 +43,18 @@ export default function GenInfoTable({
               fadeIn={false}
               placeholderStyle={{
                 visibility: "hidden"
+              }}
+            />
+          </div>
+        )}
+        {(!fluidData && publicURL) && (
+          <div className="img_wrapper">
+            <img
+              src={publicURL}
+              alt={`${firstName} ${lastName}`}
+              style={{
+                height: "auto",
+                width: "100%"
               }}
             />
           </div>
