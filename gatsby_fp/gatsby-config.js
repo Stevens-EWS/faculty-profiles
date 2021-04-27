@@ -72,6 +72,7 @@ module.exports = {
             status: String
             title: String
             title_secondary: String
+            journal_name: String
             volume: String
             publisher: String
             pubctyst: String

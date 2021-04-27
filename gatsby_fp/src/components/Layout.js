@@ -118,6 +118,7 @@ export const facultyData = graphql`
         status
         title
         title_secondary
+        journal_name
         volume
         publisher
         pubctyst
