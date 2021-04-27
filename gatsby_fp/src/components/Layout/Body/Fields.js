@@ -32,7 +32,11 @@ export default function Fields({ facultyData }) {
         school={facultyData.school}
         department={facultyData.ses_department}
         email={facultyData.pf_email}
-        publicURL={facultyData.facultyImg.publicURL}
+        publicURL={
+          facultyData.facultyImg ? 
+            facultyData.facultyImg.publicURL
+          : null
+        }
       />
       <div className="main_field_wrapper">
         {facultyData.education && (
