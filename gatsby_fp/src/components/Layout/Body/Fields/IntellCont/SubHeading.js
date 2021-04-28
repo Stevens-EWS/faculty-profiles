@@ -42,7 +42,10 @@ export default function IntellCont({ intellContList, publicationType }) {
         }
      })
       if (element.dty_pub) {
-        liString += ` (${element.dty_pub}). `
+        liString += ` (${element.dty_pub})`
+      }
+      if(element.dty_pub || element.intellcont_auth) {
+        liString += `. `
       }
       if (element.title) {
         liString += `${element.title}`
