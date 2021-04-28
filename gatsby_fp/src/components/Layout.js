@@ -125,8 +125,6 @@ export const facultyData = graphql`
         pubctyst
         issue
         dty_pub
-        dty_acc
-        dty_sub
         web_address
         intellcont_auth {
           mname

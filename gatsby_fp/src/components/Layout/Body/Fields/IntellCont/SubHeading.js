@@ -4,54 +4,26 @@ const shortid = require("shortid")
 // Component used for the subheadings under selected publications
 export default function IntellCont({ intellContList, publicationType }) {
   
-  // Sorts publications first by status, then by year published
-  function sortStatusAndYear(intellContList) {
+  // Omits any publications whose status is not "Published", and then sorts them by year published
+  function sortPublishedByYear(intellContList) {
     var pubIntellContList = []
-    var accIntellContList = []
-    var subIntellContList = []
-
     intellContList.forEach(element => {
-      switch (element.status) {
-        case "Published":
-          pubIntellContList.push(element)
-          break
-        case "Accepted":
-          accIntellContList.push(element)
-          break
-        case "Submitted":
-          subIntellContList.push(element)
-          break
-        default:
-          break
+      if(element.status === "Published") {
+        pubIntellContList.push(element)
       }
     })
-
-    pubIntellContList.sort(function (a, b) { return b.dty_pub - a.dty_pub })
-    accIntellContList.sort(function (a, b) { return b.dty_acc - a.dty_acc })
-    subIntellContList.sort(function (a, b) { return b.dty_sub - a.dty_sub })
-
-    const sortedIntellContList = pubIntellContList.concat(accIntellContList, subIntellContList)
-    return sortedIntellContList
+    return pubIntellContList.sort(function (a, b) { return b.dty_pub - a.dty_pub })
   }
 
-  const sortedIntellContList = sortStatusAndYear(intellContList)
+  const sortedPubIntellContList = sortPublishedByYear(intellContList)
 
   /* Creates a list that is ready to be mapped into <li> tags that
      omits elements without a contype/contypeother that don't equal 
      the publicationType which is the title of the subheading.
      Elements without a contype/contypeother get omitted entirely! */
   const liInnerHtmlList =
-    sortedIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => {
+    sortedPubIntellContList.filter(element => (element.contype === publicationType || element.contypeother === publicationType)).map(element => {
       let liString = ''
-      if (element.status) {
-        liString += `${element.status} `
-      }
-      if (element.contype && !element.contypeother) {
-        liString += `${element.contype} – `
-      }
-      if (element.contypeother) {
-        liString += `${element.contypeother} – `
-      }
       element.intellcont_auth.forEach((elem, index) => {
         if (elem.lname) {
           liString += `${elem.lname}`
@@ -69,16 +41,10 @@ export default function IntellCont({ intellContList, publicationType }) {
           liString += `; `
         }
      })
-      if (element.status === "Published" && element.dty_pub) {
+      if (element.dty_pub) {
         liString += ` (${element.dty_pub})`
       }
-      if (element.status === "Accepted" && element.dty_acc) {
-        liString += ` (${element.dty_acc})`
-      }
-      if (element.status === "Submitted" && element.dty_sub) {
-        liString += ` (${element.dty_sub})`
-      }
-      if(element.dty_pub || element.dty_acc || element.dty_sub || element.intellcont_auth){
+      if(element.dty_pub || element.intellcont_auth) {
         liString += `. `
       }
       if (element.title) {
