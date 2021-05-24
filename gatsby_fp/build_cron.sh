@@ -1,4 +1,4 @@
-git merge temp-master scheduled-builds
+git merge master scheduled-builds
 date +%s > deploy.current
 git add -A
 git commit -m "Scheduled build."
