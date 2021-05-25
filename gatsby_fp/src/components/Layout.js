@@ -132,6 +132,8 @@ export const facultyData = graphql`
           lname
         }
       }
+      alt_publications
+      notable_publications
     }
   }
 `

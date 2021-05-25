@@ -105,8 +105,14 @@ export default function Fields({ facultyData }) {
             fieldData={facultyData.patent_invention}
           />
         )}
-        {facultyData.intellcont && (
+        {(facultyData.intellcont && !facultyData.alt_publications) && (
           <IntellCont intellContList={facultyData.intellcont} />
+        )}
+        {(facultyData.alt_publications && facultyData.notable_publications) && (
+          <GeneralSection
+            fieldLabel="Selected Publications"
+            fieldData={facultyData.notable_publications}
+          />
         )}
         {facultyData.notable_courses && (
           <GeneralSection
