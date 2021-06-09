@@ -22,7 +22,7 @@ export default function Fields({ facultyData }) {
         imageFluidData={
           facultyData.facultyImg ? 
             (facultyData.facultyImg.childImageSharp ? 
-              facultyData.facultyImg.childImageSharp.fluid : null) 
+              facultyData.facultyImg.childImageSharp.gatsbyImageData : null) 
           : null
         }
         username={facultyData.pf_username}

@@ -84,9 +84,7 @@ export const facultyData = graphql`
       ses_department
       facultyImg {
         childImageSharp {
-          fluid(maxWidth: 208) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 208, layout: CONSTRAINED)
         }
         publicURL
       }

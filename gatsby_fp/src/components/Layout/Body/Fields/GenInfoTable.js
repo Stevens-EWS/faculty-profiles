@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function GenInfoTable({
   school,
@@ -29,8 +29,8 @@ export default function GenInfoTable({
       <div className="flex_box">
         {imageFluidData && (
           <div className="img_wrapper">
-            <Img
-              fluid={imageFluidData}
+            <GatsbyImage
+              image={imageFluidData}
               alt={`${firstName} ${lastName}`}
               style={{
                 display: "block",
