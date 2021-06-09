@@ -1,7 +1,6 @@
 global.fetch = require("node-fetch")
 const path = require("path")
 const { createRemoteFileNode } = require("gatsby-source-filesystem")
-process.env.GATSBY_CONCURRENT_DOWNLOAD = '50'
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
