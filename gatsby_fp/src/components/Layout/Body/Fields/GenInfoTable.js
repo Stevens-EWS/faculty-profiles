@@ -18,6 +18,7 @@ export default function GenInfoTable({
 }) {
   return (
     <>
+      <p>{process.env.GATSBY_CONCURRENT_DOWNLOAD}</p>
       {title && (
         <div className="title">
           <p
