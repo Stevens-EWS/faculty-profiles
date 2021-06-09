@@ -1,0 +1,2 @@
+[build]
+    GATSBY_CONCURRENT_DOWNLOAD=50
