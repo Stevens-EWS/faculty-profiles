@@ -8,7 +8,7 @@ export default function Layout({ children, data }) {
   const sanitizeHtml = require("sanitize-html-react")
   function sanitizeMarkup(child) {
     return sanitizeHtml(child, {
-      allowedTags: ["p", "b", "i", "u", "sup", "sub", "br"],
+      allowedTags: ["p", "b", "i", "u", "sup", "sub", "br", "a"],
     })
   }
   function traverse(parent) {
