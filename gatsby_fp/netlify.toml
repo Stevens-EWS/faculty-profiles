@@ -1,4 +1,4 @@
 [build.environment]
-    GATSBY_CONCURRENT_DOWNLOAD = 50
+    GATSBY_CONCURRENT_DOWNLOAD = '50'
 [context.deploy-preview.environment]
     PEOPLEAPI_HOST = 'api.stevens.edu/people/faculty'
