@@ -28,7 +28,7 @@ module.exports = {
             pf_work_fax: String
             pf_first_name: String
             pf_last_name: String
-            pf_work_phone: [pf_work_phone]
+            pf_work_phone: [pf_work_phone] @link(by: "id", from: "pf_work_phone___NODE")
             pf_title: String
             pf_username: String
             website: String
@@ -38,11 +38,11 @@ module.exports = {
             notable_courses: String
             school: String
             ses_department: String
-            service_university: [service_university]
-            service_professional: [service_professional]
-            education: [education]
-            member: [member]
-            intellcont: [intellcont]
+            service_university: [service_university] @link(by: "id", from: "service_university___NODE")
+            service_professional: [service_professional] @link(by: "id", from: "professional___NODE")
+            education: [education] @link(by: "id", from: "education___NODE")
+            member: [member] @link(by: "id", from: "member___NODE")
+            intellcont: [intellcont] @link(by: "id", from: "intellcont___NODE")
           `,
           service_university: `
             org: String
@@ -82,7 +82,7 @@ module.exports = {
             dty_acc: String
             dty_sub: String
             web_address: String
-            intellcont_auth: [intellcont_auth]
+            intellcont_auth: [intellcont_auth] @link(by: "id", from: "intellcont_auth___NODE")
           `,
           intellcont_auth: `
             mname: String
