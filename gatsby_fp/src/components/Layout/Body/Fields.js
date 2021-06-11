@@ -19,7 +19,7 @@ export default function Fields({ facultyData }) {
         room={facultyData.room}
         phone={facultyData.pf_work_phone}
         fax={facultyData.pf_work_fax}
-        imageFluidData={
+        imageData={
           facultyData.facultyImg ? 
             (facultyData.facultyImg.childImageSharp ? 
               facultyData.facultyImg.childImageSharp.gatsbyImageData : null) 
