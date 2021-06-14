@@ -15,17 +15,19 @@ exports.onCreateNode = async ({
   node,
   actions: { createNode },
   store,
-  cache, 
+  getCache, 
   createNodeId
 }) => {
   try {
     if (node.internal.type === "profiles" && node.photo_url) {
+      const urlObject = new URL(node.photo_url)
       let fileNode = await createRemoteFileNode({
-        url: node.photo_url,
+        url: `https://${urlObject.host}${urlObject.pathname}${urlObject.search}`,
         parentNodeId: node.id,
+        getCache, // Gatsby's cache
         createNode, // helper function in gatsby-node to generate the node
         createNodeId,
-        cache, // Gatsby's cache
+        auth: { htaccess_user: urlObject.username, htaccess_pass: urlObject.password },
         store, // Gatsby's Redux store
       })
 
