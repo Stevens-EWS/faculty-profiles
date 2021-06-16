@@ -32,7 +32,6 @@
     "gatsby-plugin-sharp": "3.6.0",
     "gatsby-source-custom-api": "^2.1.4",
     "gatsby-source-filesystem": "^3.7.1",
-    "gatsby-source-rest-api": "^0.2.3",
     "gatsby-transformer-sharp": "3.6.0",
     "got": "^9.6.0",
     "node-fetch": "^2.6.1",
