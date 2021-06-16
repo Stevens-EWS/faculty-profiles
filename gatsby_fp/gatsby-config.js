@@ -1,4 +1,5 @@
 require("dotenv").config()
+process.env.GATSBY_CONCURRENT_DOWNLOAD = '50'
 module.exports = {
   siteMetadata: {
     title: `Faculty Profile | Stevens Institute of Technology`,
