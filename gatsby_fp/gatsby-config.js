@@ -96,7 +96,6 @@ module.exports = {
         }
       },
     },
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
