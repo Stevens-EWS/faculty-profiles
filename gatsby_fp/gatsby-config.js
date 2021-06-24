@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-custom-api",
+      resolve: "stevens-gatsby-source-custom-api",
       options: {
         url: `https://${process.env.PEOPLEAPI_USER}:${process.env.PEOPLEAPI_PASS}@${process.env.PEOPLEAPI_HOST}`,
         rootKey: 'profiles',

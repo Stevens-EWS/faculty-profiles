@@ -41,7 +41,8 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "sanitize-html-react": "^1.13.0",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "stevens-gatsby-source-custom-api": "github:Stevens-EWS/stevens-gatsby-source-custom-api#8178ff0c39556082897b7a8e62c75ce2a61a8009"
   },
   "devDependencies": {
     "@netlify/plugin-gatsby": "^1.0.3",
