@@ -30,7 +30,7 @@
     "gatsby-plugin-offline": "4.6.0",
     "gatsby-plugin-react-helmet": "4.6.0",
     "gatsby-plugin-sharp": "3.6.0",
-    "gatsby-source-custom-api": "^2.1.4",
+    "gatsby-source-custom-api": "github:Stevens-EWS/stevens-gatsby-source-custom-api#142cbb36edee1d9d3759f46a656cd1251c3008e1",
     "gatsby-source-filesystem": "^3.7.1",
     "gatsby-transformer-sharp": "3.6.0",
     "got": "^9.6.0",
@@ -41,8 +41,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "sanitize-html-react": "^1.13.0",
-    "shortid": "^2.2.16",
-    "stevens-gatsby-source-custom-api": "github:Stevens-EWS/stevens-gatsby-source-custom-api#8178ff0c39556082897b7a8e62c75ce2a61a8009"
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "graphiql": "1.4.2",
