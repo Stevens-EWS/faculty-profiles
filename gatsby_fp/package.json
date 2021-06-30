@@ -30,7 +30,7 @@
     "gatsby-plugin-offline": "4.6.0",
     "gatsby-plugin-react-helmet": "4.6.0",
     "gatsby-plugin-sharp": "3.6.0",
-    "gatsby-source-custom-api": "github:Stevens-EWS/stevens-gatsby-source-custom-api#142cbb36edee1d9d3759f46a656cd1251c3008e1",
+    "gatsby-source-custom-api": "github:Stevens-EWS/gatsby-source-custom-api#142cbb36edee1d9d3759f46a656cd1251c3008e1",
     "gatsby-source-filesystem": "^3.7.1",
     "gatsby-transformer-sharp": "3.6.0",
     "got": "^9.6.0",
