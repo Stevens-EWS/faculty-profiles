@@ -1,5 +1,5 @@
 [context.deploy-preview.environment]
-    PEOPLEAPI_HOST = 'api.stevens.edu/people/faculty'
+    PEOPLEAPI_HOST = 'api.stevens.edu/people-dev2/faculty'
 
 [[plugins]]
 package = "@netlify/plugin-gatsby"
