@@ -38,6 +38,8 @@ module.exports = {
             notable_courses: String
             school: String
             ses_department: String
+            alt_publications: String
+            notable_publications: String
             service_university: [service_university]
             service_professional: [service_professional]
             education: [education]
