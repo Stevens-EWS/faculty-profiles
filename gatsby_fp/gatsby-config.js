@@ -38,8 +38,6 @@ module.exports = {
             notable_courses: String
             school: String
             ses_department: String
-            alt_publications: String
-            notable_publications: String
             service_university: [service_university] @link(by: "id", from: "service_university___NODE")
             service_professional: [service_professional] @link(by: "id", from: "professional___NODE")
             education: [education] @link(by: "id", from: "education___NODE")
