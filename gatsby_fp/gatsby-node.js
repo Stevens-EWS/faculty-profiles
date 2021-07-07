@@ -49,7 +49,7 @@ exports.onCreateNode = async ({
   
 }
 
-exports.createPagesStatefully = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   // Query for markdown nodes to use when creating pages during build
   const { createPage } = actions
   const result = await graphql(`
