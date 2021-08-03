@@ -65,6 +65,10 @@
     "json:server": "json-server --watch data.json",
     "dev:server": "nodemon server.js"
   },
+  "engines": {
+    "node": "14.17.4",
+    "npm": "7.20.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-default.git"
