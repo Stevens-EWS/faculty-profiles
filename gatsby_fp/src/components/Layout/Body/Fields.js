@@ -6,6 +6,7 @@ import UnivService from "./Fields/UnivService"
 import ProfSocieties from "./Fields/ProfSocieties"
 import IntellCont from "./Fields/IntellCont"
 import GeneralSection from "./Fields/GeneralSection"
+import { getImage } from "gatsby-plugin-image"
 
 export default function Fields({ facultyData }) {
   return (
@@ -19,12 +20,7 @@ export default function Fields({ facultyData }) {
         room={facultyData.room}
         phone={facultyData.pf_work_phone}
         fax={facultyData.pf_work_fax}
-        imageData={
-          facultyData.facultyImg ? 
-            (facultyData.facultyImg.childImageSharp ? 
-              facultyData.facultyImg.childImageSharp.gatsbyImageData : null) 
-          : null
-        }
+        imageData={getImage(facultyData.facultyImg)}
         username={facultyData.pf_username}
         website={facultyData.website}
         firstName={facultyData.pf_first_name}
@@ -33,7 +29,7 @@ export default function Fields({ facultyData }) {
         department={facultyData.ses_department}
         email={facultyData.pf_email}
         imagePublicURL={
-          facultyData.facultyImg ? 
+          facultyData.facultyImg ?
             facultyData.facultyImg.publicURL
           : null
         }
