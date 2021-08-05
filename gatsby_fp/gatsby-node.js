@@ -14,7 +14,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.onCreateNode = async ({
   node,
   actions: { createNode },
-  store,
   getCache,
   createNodeId
 }) => {
@@ -27,7 +26,6 @@ exports.onCreateNode = async ({
         getCache, // Gatsby's cache
         createNode, // helper function in gatsby-node to generate the node
         createNodeId,
-        store, // Gatsby's Redux store
       })
 
       if (fileNode) {
@@ -39,6 +37,7 @@ exports.onCreateNode = async ({
       // err returns a string value with no ability to
       // get the status code without searching for it within the string
       (async function getStatusCodeUsingFetch() {
+        console.log(err)
         const response = await fetch(node.photo_url)
         if(response.status != 404 ){
           throw new Error(`Invalid Status Code [${response.status}] for photo_url of user ${node.pf_username}`)
