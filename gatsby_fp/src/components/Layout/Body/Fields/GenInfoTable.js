@@ -25,7 +25,7 @@ export default function GenInfoTable({
             dangerouslySetInnerHTML={{ __html: title }}
           ></p>
         </div>
-      )} 
+      )}
       <div className="flex_box">
         {imageData && (
           <div className="img_wrapper">
@@ -39,10 +39,6 @@ export default function GenInfoTable({
               imgStyle={{
                 height: "auto",
                 width: "100%"
-              }}
-              fadeIn={false}
-              placeholderStyle={{
-                visibility: "hidden"
               }}
             />
           </div>
