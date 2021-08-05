@@ -15,6 +15,7 @@ exports.onCreateNode = async ({
   node,
   actions: { createNode },
   store,
+  getCache,
   createNodeId
 }) => {
   try {
@@ -23,6 +24,7 @@ exports.onCreateNode = async ({
       let fileNode = await createRemoteFileNode({
         url: `https://${urlObject.username}:${urlObject.password}@${urlObject.host}${urlObject.pathname}${urlObject.search}`,
         parentNodeId: node.id,
+        getCache, // Gatsby's cache
         createNode, // helper function in gatsby-node to generate the node
         createNodeId,
         store, // Gatsby's Redux store
