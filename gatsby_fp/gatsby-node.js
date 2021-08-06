@@ -37,7 +37,6 @@ exports.onCreateNode = async ({
       // err returns a string value with no ability to
       // get the status code without searching for it within the string
       (async function getStatusCodeUsingFetch() {
-        console.log(err)
         const response = await fetch(node.photo_url)
         if(response.status != 404 ){
           throw new Error(`Invalid Status Code [${response.status}] for photo_url of user ${node.pf_username}`)
