@@ -1,2 +1,5 @@
 
 .vscode/settings.json
+
+# Local Netlify folder
+.netlify
