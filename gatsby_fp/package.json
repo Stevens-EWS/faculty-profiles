@@ -44,6 +44,7 @@
     "shortid": "^2.2.16"
   },
   "devDependencies": {
+    "@netlify/plugin-gatsby": "^1.0.3",
     "graphiql": "1.4.2",
     "json-server": "^0.16.3",
     "prettier": "^1.19.1"

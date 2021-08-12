@@ -87,6 +87,7 @@ export const query = graphql`
               layout: CONSTRAINED
             )
           }
+          publicURL
         }
       }
       service_university {

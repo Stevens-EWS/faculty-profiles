@@ -14,9 +14,9 @@ export default function GenInfoTable({
   firstName,
   lastName,
   email,
-  publicURL, // for gifs and when imageData (childImageSharp) is null
+  imagePublicURL, // for gifs and when imageData (childImageSharp) is null
 }) {
-  const image = getImage(imageData?.local)
+  const image = getImage(imageData)
   return (
     <>
       {title && (
@@ -45,10 +45,10 @@ export default function GenInfoTable({
             />
           </div>
         )}
-        {(!image && publicURL) && (
+        {(!image && imagePublicURL) && (
           <div className="img_wrapper">
             <img
-              src={publicURL}
+              src={imagePublicURL}
               alt={`${firstName} ${lastName}`}
               style={{
                 height: "auto",

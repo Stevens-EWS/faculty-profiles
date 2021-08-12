@@ -19,7 +19,7 @@ export default function Fields({ facultyData }) {
         room={facultyData.room}
         phone={facultyData.pf_work_phone}
         fax={facultyData.pf_work_fax}
-        imageData={facultyData.image}
+        imageData={facultyData.image?.local}
         username={facultyData.pf_username}
         website={facultyData.website}
         firstName={facultyData.pf_first_name}
@@ -27,11 +27,7 @@ export default function Fields({ facultyData }) {
         school={facultyData.school}
         department={facultyData.ses_department}
         email={facultyData.pf_email}
-        imagePublicURL={
-          facultyData.facultyImg ?
-            facultyData.facultyImg.publicURL
-          : null
-        }
+        imagePublicURL={facultyData.image?.local.publicURL}
       />
       <div className="main_field_wrapper">
         {facultyData.education && (
