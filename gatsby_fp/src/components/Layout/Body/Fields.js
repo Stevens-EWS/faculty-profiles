@@ -27,7 +27,7 @@ export default function Fields({ facultyData }) {
         school={facultyData.school}
         department={facultyData.ses_department}
         email={facultyData.pf_email}
-        imagePublicURL={facultyData.image?.local.publicURL}
+        imagePublicURL={facultyData.image?.local?.publicURL}
       />
       <div className="main_field_wrapper">
         {facultyData.education && (
