@@ -1,5 +1,5 @@
 import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function GenInfoTable({
   school,
@@ -16,6 +16,7 @@ export default function GenInfoTable({
   email,
   imagePublicURL, // for gifs and when imageData (childImageSharp) is null
 }) {
+  const image = getImage(imageData)
   return (
     <>
       {title && (
@@ -25,12 +26,12 @@ export default function GenInfoTable({
             dangerouslySetInnerHTML={{ __html: title }}
           ></p>
         </div>
-      )} 
+      )}
       <div className="flex_box">
-        {imageData && (
+        {image && (
           <div className="img_wrapper">
             <GatsbyImage
-              image={imageData}
+              image={image}
               alt={`${firstName} ${lastName}`}
               style={{
                 display: "block",
@@ -40,14 +41,10 @@ export default function GenInfoTable({
                 height: "auto",
                 width: "100%"
               }}
-              fadeIn={false}
-              placeholderStyle={{
-                visibility: "hidden"
-              }}
             />
           </div>
         )}
-        {(!imageData && imagePublicURL) && (
+        {(!image && imagePublicURL) && (
           <div className="img_wrapper">
             <img
               src={imagePublicURL}
