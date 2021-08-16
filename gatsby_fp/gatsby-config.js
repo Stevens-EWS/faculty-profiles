@@ -11,7 +11,9 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: `https://${process.env.PEOPLEAPI_USER}:${process.env.PEOPLEAPI_PASS}@${process.env.PEOPLEAPI_HOST}`,
+        imageKeys: ['image'],
         rootKey: 'profiles',
+        auth: {username: process.env.PEOPLEAPI_USER,password: process.env.PEOPLEAPI_PASS},
         schemas: {
           profiles: `
             pf_username: String
@@ -34,17 +36,21 @@ module.exports = {
             website: String
             research: String
             room: String
-            photo_base64: String
             notable_courses: String
             school: String
             ses_department: String
             alt_publications: String
             notable_publications: String
             service_university: [service_university] @link(by: "id", from: "service_university___NODE")
-            service_professional: [service_professional] @link(by: "id", from: "professional___NODE")
+            service_professional: [service_professional] @link(by: "id", from: "service_professional___NODE")
             education: [education] @link(by: "id", from: "education___NODE")
             member: [member] @link(by: "id", from: "member___NODE")
             intellcont: [intellcont] @link(by: "id", from: "intellcont___NODE")
+            image: image @link(by: "id", from: "image___NODE")
+          `,
+          image:`
+            url: String
+            modified: String
           `,
           service_university: `
             org: String
