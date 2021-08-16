@@ -1,5 +1,5 @@
 require("dotenv").config()
-process.env.GATSBY_CONCURRENT_DOWNLOAD = '50'
+
 module.exports = {
   siteMetadata: {
     title: `Faculty Profile | Stevens Institute of Technology`,
@@ -13,7 +13,7 @@ module.exports = {
         url: `https://${process.env.PEOPLEAPI_USER}:${process.env.PEOPLEAPI_PASS}@${process.env.PEOPLEAPI_HOST}`,
         imageKeys: ['image'],
         rootKey: 'profiles',
-        auth: {username: process.env.PEOPLEAPI_USER,password: process.env.PEOPLEAPI_PASS},
+        auth: {username: process.env.PEOPLEAPI_USER, password: process.env.PEOPLEAPI_PASS},
         schemas: {
           profiles: `
             pf_username: String
