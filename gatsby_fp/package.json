@@ -30,7 +30,7 @@
     "gatsby-plugin-offline": "^4.10.0",
     "gatsby-plugin-react-helmet": "^4.10.0",
     "gatsby-plugin-sharp": "^3.10.2",
-    "gatsby-source-custom-api": "AndreasFaust/gatsby-source-custom-api#pull/30/head",
+    "gatsby-source-custom-api": "^2.3.2",
     "gatsby-source-filesystem": "^3.10.0",
     "gatsby-transformer-sharp": "^3.10.0",
     "got": "^11.8.2",
