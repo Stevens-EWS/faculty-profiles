@@ -1,2 +1,0 @@
-[context.deploy-preview.environment]
-    PEOPLEAPI_HOST = 'api.stevens.edu/people/faculty'

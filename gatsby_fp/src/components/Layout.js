@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 import Fields from "./Layout/Body/Fields"
 import Body from "./Layout/Body"
 import Seo from "./Seo.js"
+const sanitizeHtml = require("sanitize-html-react")
 
-export default function Layout({ children, data }) {
-  const sanitizeHtml = require("sanitize-html-react")
+export default function Layout({ data }) {
   function sanitizeMarkup(child) {
     return sanitizeHtml(child, {
       allowedTags: ["p", "b", "i", "u", "sup", "sub", "br", "a"],
@@ -26,36 +26,40 @@ export default function Layout({ children, data }) {
 
   // Conditionally declare sanitizedData in case API returns no content
   if (data) {
-    var sanitizedData = data.profiles
+    const sanitizedData = data.profiles
+    traverse(sanitizedData)
+    return (
+      <>
+        {sanitizedData
+          ? <Seo
+            title={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
+            description={`Faculty Profile for ${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name}`}
+          />
+          : <Seo
+            title={`Faculty Profiles - Stevens Institute of Technology`}
+            description={`Faculty Profile`}
+          />
+        }
+        {sanitizedData &&
+          <Body
+            bodyContent={<Fields facultyData={sanitizedData} />}
+          />
+        }
+
+      </>
+    )
   }
-  traverse(sanitizedData)
-
-  return (
-    <>
-      {data
-        ? <Seo
-          title={`${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name} - Stevens Institute of Technology`}
-          description={`Faculty Profile for ${sanitizedData.pf_first_name} ${sanitizedData.pf_last_name}`}
-        />
-        : <Seo
-          title={`Faculty Profiles - Stevens Institute of Technology`}
-          description={`Faculty Profile`}
-        />
-      }
-      {data &&
-        <Body
-          bodyContent={<Fields facultyData={sanitizedData} />}
-        />
-      }
-
-    </>
-  )
+  else {
+    return (
+      <>
+      </>
+    )
+  }
 }
 
-// Template Query
-export const facultyData = graphql`
-  query dataByPath($pagePath: String!) {
-    profiles(pf_username: { eq: $pagePath }) {
+export const query = graphql`
+  query dataByPath($pagePath: String) {
+    profiles(pf_username: {eq: $pagePath}) {
       appointment
       bio
       building
@@ -78,17 +82,20 @@ export const facultyData = graphql`
       website
       research
       room
-      photo_url
       notable_courses
       school
       ses_department
-      facultyImg {
-        childImageSharp {
-          fluid(maxWidth: 208) {
-            ...GatsbyImageSharpFluid
+      image {
+        local {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: NONE,
+              width: 208,
+              layout: CONSTRAINED
+            )
           }
+          publicURL
         }
-        publicURL
       }
       service_university {
         org
